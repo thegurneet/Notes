@@ -1,7 +1,7 @@
 ************************************************************************
 **********************     Apache Camel   ******************************
 ************************************************************************
-
+HELLOOO
 **************
 Q: What is Apache Camel?
 
@@ -134,7 +134,7 @@ Producers
 
 An entity which can create and send a message to an endpoints
 
-Producer converts the exchange according to the endpoint behind the scenes. 
+Producer converts the exchange according to the endpoint behind the scenes.
 
 
 
