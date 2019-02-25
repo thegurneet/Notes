@@ -1,0 +1,162 @@
+************************************************************************
+**********************     Apache Camel   ******************************
+************************************************************************
+
+**************
+Q: What is Apache Camel?
+
+Apache Camel is a Mediation Framework
+  - Mediation means an intervention between two parties to dispute something/send a message
+
+Mediation is a structured process which enables two or more parties to identify, consider
+and discuss their own and each others current and future needs.
+
+Apache Camel Acts as a mediation layer between a legacy System and new System.
+Apache Camel is a LightWeight framework and can be deployed in a varity of containers - TomCat or Docker.
+
+Q: What is the Main Feature of Apache Camel
+
+Main feature of Apache camel is that it provides us with a number of Components
+
+
+**********************
+Mediator Behaviour Design Pattern
+**********************
+
+Defines an Object that encapsulates how a set of Objects interact. Mediator promotes loose coupling
+by keeping objects referring to each other explicitly , and let you vary their interaction independently
+
+      - Tight coupling : classes and objects are dependent on one another.
+      - Loose Coupling : reducing dependencies of a class that uses a different class directly.
+
+
+**********************
+Enterpise Integration Pattern
+**********************
+
+~~~~
+1. Message
+~~~~
+
+Is a unit of data. Data is packaged into 2 parts:
+
+  1. Header:
+        -Contains meta data about the message.
+        -Could include origin of destination of the message
+  2. Body :
+      - Contains the actual data payload.
+
+~~~~
+2. Message
+~~~~
+  Sends and Recieves messages between an application and a messaging system.
+
+~~~~
+3. Message Channel
+~~~~
+  Is how applications communicate with each other in a message based integration
+
+~~~~
+4. Pipes and Filters
+~~~~
+  Way to seperate concerns of message processing when the processing logic is complex.
+  Pipes are implemented using message Channels.
+
+
+
+**********************
+Camel Context
+**********************
+
+  is a containers (of sorts) - Think of it as a camel runtime System
+  which keeps all the pieces together.
+        Runtime System : is an engine that translates a given programming language or languages into machine code.
+
+
+  CamelContext provides access to many useful services - Notable: Components, type converters, registry endpoints,
+  routes, data formats and languages.
+
+                  CamelContext context = new DefaultCamelContext():
+
+    context.addRoutes    Method of the camelContext accepts a RouteBuilder.
+
+    means you could use your own customer class to Build Camel Routes. Most common -> RouteBuilder.classes
+
+    Each  Java Statement that start with a *from*  method in the RouteBuilder creates a new route.
+
+                                      from(" ").to(" ")
+
+    from method tells camel to consume messages from an endpoint, and the *to* method tells camel to
+    send messages to an endpoint.
+
+
+
+**********************
+Consumer Template & Producer Template
+**********************
+
+      ProducerTemplate producerTemplate = context.createProducerTemplate();
+
+      ConsumerTemplate consumerTemplate = context.createConsumerTemplate();
+
+ProducerTemplate can be used as an easy way of sending messages to a camel endpoint.
+ConsumerTemplate makes consuming messages easy.
+
+########
+Consumers
+########
+
+Consumer wraps the payload and creates the exchange.
+
+        from.() is basically a consumer
+
+Two Types of Consumers:
+
+  - Event Driven
+  - Polling Consumer
+
+~~~~~
+Event Driven
+~~~~~
+
+  - Consumer Reacts to events. Also called asynchronous consumers:
+        e.g JMS, Kafka
+
+~~~~~
+Polling Consumers
+~~~~~
+  Are called asynchronous consumers. Polls and reads the content from a source on a regular interval.
+
+
+########
+Producers
+########
+
+An entity which can create and send a message to an endpoints
+
+Producer converts the exchange according to the endpoint behind the scenes. 
+
+
+
+
+
+
+
+
+
+
+
+**********************
+Processor Interface
+**********************
+
+  in Camel is an important building block.
+
+  from("").process(new Processor(){}).to("");
+
+It gives us full access to the message exchange, letting us do pretty much whatever you want with the payload or headers.
+
+
+            ?noop=true;
+
+  noop property configures the endpoint to leave the file as it is after processing - stops Camel creating an extra file/folder
