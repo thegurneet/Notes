@@ -31,7 +31,7 @@ by keeping objects referring to each other explicitly , and let you vary their i
 
 
 **********************
-Enterpise Integration Pattern
+Enterprise Integration Pattern
 **********************
 
 ~~~~
@@ -138,14 +138,6 @@ Producer converts the exchange according to the endpoint behind the scenes.
 
 
 
-
-
-
-
-
-
-
-
 **********************
 Processor Interface
 **********************
@@ -155,7 +147,7 @@ Processor Interface
   from("").process(new Processor(){}).to("");
 
 It gives us full access to the message exchange, letting us do pretty much whatever you want with the payload or headers.
-
+The Processor is a core Camel concept that represents a node of capable of using, creating, or modifying an incoming exchange.
 
             ?noop=true;
 
