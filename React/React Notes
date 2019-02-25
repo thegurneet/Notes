@@ -1,0 +1,22 @@
+************************************************************************
+**********************     REACT   *************************************
+************************************************************************
+
+React is a JavaScript Library for building User Interfaces (UI).
+
+
+
+************************
+COMPONENTS
+************************
+
+The heart of a react application.
+
+The component is essentially a piece of the User Interface. So when we build an App with React
+we build a BUNCH of independent, isolated and reusable Components, and then compose them to build
+complex  user interfaces.
+
+Every React application has atleast one Root Component - this represents the internal application and
+contains other child components .
+
+So every React Component is a tree of Components.
