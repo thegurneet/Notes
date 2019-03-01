@@ -152,3 +152,71 @@ The Processor is a core Camel concept that represents a node of capable of using
             ?noop=true;
 
   noop property configures the endpoint to leave the file as it is after processing - stops Camel creating an extra file/folder
+
+
+
+
+
+
+*****************************
+Marshalling/UnMarshaling
+*****************************
+
+~~~~~~~~~~~~~
+Marshalling
+~~~~~~~~~~~~~
+
+Marshalling a message into another form, such as marshalling Java objects to XML, CSV or other well known
+
+Have to add the pom dependencies:
+  camel-xstream
+  xom
+  ezmiroh
+  commons-beanutils
+
+
+a syntax might be :
+
+from().to().marshal().xmljson().to()
+
+
+
+~~~~~~~~~~~~~
+UnMarshalling
+~~~~~~~~~~~~~
+
+For performing the reverse operation - turns data from well known formats (XML, JSON, etc) into a message format.
+
+
+
+a syntax might be :
+
+from().to().unmarshal().xmljson().to()
+
+
+
+*****************************
+Camel gson
+*****************************
+
+dependencies required:
+
+camel-gson
+
+
+In Camel gson, marshalling is a way of converting Java Obj to Json,
+and Camel gson unmarshalling is turning a json object into a java object
+
+Student{ 
+id=1,
+name='Gurneet',
+phonenumber='23452452'
+}
+
+to
+
+{
+"id": 1,
+"name":"Gurneet",
+"phonenumber":23452452
+}
