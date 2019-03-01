@@ -204,10 +204,10 @@ dependencies required:
 camel-gson
 
 
-In Camel gson, marshalling is a way of converting Java Obj to Json,
-and Camel gson unmarshalling is turning a json object into a java object
+In Camel Gson, marshalling is a way of converting Java Obj to Json,
+and Camel Gson unmarshalling is turning a json object into a java object
 
-Student{ 
+Student{
 id=1,
 name='Gurneet',
 phonenumber='23452452'

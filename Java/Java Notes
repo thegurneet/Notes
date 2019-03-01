@@ -1,0 +1,19 @@
+************************************************************************
+**********************     Java           ******************************
+************************************************************************
+
+
+
+
+************
+  ARRAY
+***********
+      Arrays in Java  allow you to store sequence of values of the same TYPE.
+      For example and Array of integers, or an Array of Strings etc.
+
+    to Declare an Array:
+
+      int[] myIntArray = new int [10];     // this assigns 10 elements to the myIntArray array. so [_,_,_,_,_,_,_,_,_,]
+
+
+      myIntArray[5] = 50;    // this saves 50 into the 5th element: so [_,_,_,_,_,50,_,_,_,_];
