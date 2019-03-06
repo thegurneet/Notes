@@ -68,8 +68,14 @@ Now a software Object stores its state in fields and we know fields as variables
 
       }
 
-      th
+    **********************
+      Constructor
+    **********************
 
+    Constructors set the initial parameters or the initial values of fields, and any other
+    initialization that is to be performed into one constructor.
+
+    A Constructor is already created automatically by Java.
 
 
 
