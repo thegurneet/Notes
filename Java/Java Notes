@@ -3,6 +3,80 @@
 ************************************************************************
 
 
+****************************
+          OBJECTS
+****************************
+
+Real world objects have 2 Characterstics: State and Behaviour.
+
+  - State    : might be the amount of RAM it has, operating system it's running, hard drive.
+             : for an ant it - number of legs, age, conscious state.
+
+  - Behaviour : for a computer might be booting up, shutting down, outputting some sort of sound.
+              : for an ant might be eating, sleeping, drinking, fighting.
+
+              an Objects state is stored in fields and behaviour is shown via methods.
+
+Now a software Object stores its state in fields and we know fields as variables -
+  they expose it's behaviors with methods(functions).
+  Methods operate on an object's internal state and serve as the primary mechanism for
+  object-to-object communication..
+
+
+****************************
+        Classes
+****************************
+
+  public class Car {  }
+
+  Above is the statement to create a new class with the name Car.
+  The Public keyword is an access modifier that we use to determine
+  what access we want to allow others to have to this new class.
+
+    - The word Public means unrestricted access to the Class.
+
+    Other access modifiers we could use include:
+      - private  : no other class can access that class.
+      - protected: which allows classes in the current package to  access your class.
+
+  Classes allow us to create variables - that can be seen and are accesible from
+  anywhere within the class - These are known as : Class/Member Variables - but most
+  commonly refer to them as fields.
+
+  General use, when defining fields - the access modifier should be private.
+
+
+    **********************
+      Getters and Setters
+    **********************
+  Getters and setters encapsulate the fields of a class by making
+  them accessible only through its public methods and keep the values
+  themselves private
+
+
+      public Class Car {
+        private int doors;
+        private String model;
+
+        public void setDoors(int door){
+          this.door = door;
+        }
+
+        public String getDoors(){
+          return doors;
+        }
+
+      }
+
+      th
+
+
+
+
+
+
+
+
 
 
               ************
@@ -78,7 +152,7 @@ Reference Type vs Value Type
     So this variable myIntArray holds a reference/an address to an array in memory.
 
     if we make changes to anotherArray or myIntArray, the other one will change with it -
-    because they both hold a reference to an array in memory; 
+    because they both hold a reference to an array in memory;
 
 
 

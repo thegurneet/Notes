@@ -20,3 +20,37 @@ Every React application has atleast one Root Component - this represents the int
 contains other child components .
 
 So every React Component is a tree of Components.
+
+
+
+What is a single page application?
+
+Single HTML page - inject all your Javascript components.
+
+
+What is React?
+Library for building user interface
+
+what does ReactDOM.render(..) do?
+How many arguments does it take?
+What is JSX?
+
+
+
+
+Task to do:
+
+- Create a currency convertor.
+
+*******
+functional component:
+*********
+
+
+********
+class based components:
+*******
+
+
+
+next week:  props & event handling.
