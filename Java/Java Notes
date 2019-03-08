@@ -29,10 +29,13 @@ Now a software Object stores its state in fields and we know fields as variables
 ****************************
         Classes
 ****************************
+  A Class is basically a blueprint.
+
 
   public class Car {  }
 
-  Above is the statement to create a new class with the name Car.
+
+  Above is the statement to create a new class with the name Car - it is the blueprint for a car.
   The Public keyword is an access modifier that we use to determine
   what access we want to allow others to have to this new class.
 
@@ -278,6 +281,95 @@ Now a software Object stores its state in fields and we know fields as variables
                     @Override - it overrides the Parent Classes method. Because in this instace a Dog Chews when it eats.
 
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+                    **********************    **********************     **********************
+                          Override vs Overloading           Override vs Overloading
+                    **********************    **********************     **********************
+
+                    *************
+                    OverLoading
+                    *************
+                      Method overloading means providing two or more separate methods in a class with the same name, but different parameters.
+                          Method return type may or may not be different, and that allows us to reuse the same method name.
+
+                          It reduces duplicated code and we don't have to remember multiple method names;
+                          OverLoading happens inside a single class, but a method can also be treated as overloaded in the subclass of that class.
+
+                          It is because a subclass inherits one version of the method from the parent class.
+
+                        Method will be considered overloaded if both follow the following rules:
+                            - Methods must have the same method name
+                            - Method must have different parameters.
+
+                            Example:
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                          public class Sum {
+
+                              public int sum(int x, int y){
+                                return x + y;
+                              }
+
+                              public int sum(int x, int y, int z){
+                                return x + y + z
+                              }
+                          }
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+                        *************
+                        Overriding
+                        *************
+                          when we override a method, it's recommended to put @Override immediately above the method definition.
+                            this is an annotation that the compiler reads and will then show us an error if we don't follow overriding rules correctly.
+
+                          We can't override static methods, only instance methods.
+                                  ~~~~~~~~~~~~~~~
+                                  Static methods
+                                  ~~~~~~~~~~~~~~~
+                                    Are methods in Java that can be called without creating an object of class. They are referenced by the class name itself or reference to the Object of that class.
+                                    They are declared using a static modifier.
+                                    Static methods can't access instance methods and instance variables directly.
+                                    Cannot use this keyword.
+
+                                      Example :
+                                            public static void geek(String name){
+                                              sysout("this is a static method")
+                                            }
+
+                                            // Must have static modifier in their declaration.
+                                            // Return type can be int, float, String or user defined data type.
+
+                                  ~~~~~~~~~~~~~~~
+                                  instance methods
+                                  ~~~~~~~~~~~~~~~
+                                    Are methods which require an object of its class to be created before it can be called. To invoke an instance method,
+                                    we have to create an Object of the class in within which it defined.
+
+                                    instance method can access instance methods and instance variables directly.
+                                    instance methods can also access static methods and static variables directly. 
+
+                                    Example :
+                                    public void geek(String name){
+                                      sysout("this is an instance method")
+                                    }
+
+                                        // return type can be int, float, String or user defined data type.
+
+                          Return type can be a subclass of the return type in the parent class.
+                          It can't have a lower access modifier.
+                            For example - if the parent method is protected, then using private in the child is not allowed, but using public in the child would be allowed.
+
+
+
+
+
+
+
+
+
+
+
 
               ************
                 ARRAY
