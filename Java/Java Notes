@@ -68,17 +68,152 @@ Now a software Object stores its state in fields and we know fields as variables
 
       }
 
-    **********************
-      Constructor
-    **********************
+
+
+    **********************    **********************     **********************
+        Constructor                Constructor                 Constructor
+    **********************    **********************     **********************
+
+    A constructor initializes objects.
 
     Constructors set the initial parameters or the initial values of fields, and any other
     initialization that is to be performed into one constructor.
 
-    A Constructor is already created automatically by Java.
+    A Constructor is already created automatically by Java. The constructor is called when
+    an object of a class is created.
+
+    so when we do :
+
+      Car porsche = new Car();
+
+    the Car() bit is called the constructor.
+    the new keyword creates the object of Class Car() and invokes the constructor;
 
 
+    There are 3 types of Constructors:
+      - Default
+      - No args
+      - Parameterized
 
+
+      ***************
+          Default
+      ***************
+
+      If a constructor is not implemented in the class, Java compiler inserts a default
+      constructor into your code.  - Known as a default constructor, and is inserted into the code
+      during compilation and only exists in .class file.
+
+      If you implement a constructor, then you no longer receive a default constructor from
+      Java compiler.
+
+
+      *************************
+          No-Arg constructor
+      *************************
+
+
+      A constructor with no arguments is known as a No-Args constructor.
+
+      The signature is the same as a default constructor, however the body can
+      have any code unlike default constructor where the body of the constructor
+      is empty.
+
+      Class Demo {
+        public Demo(){
+        }
+      }
+
+      public Demo(){}  -> is the No-Arg constructor.
+
+      *******************************
+          Parameterized Constructor
+      *******************************
+
+      Constructor with arguments.
+
+      example:
+
+        public class Employee {
+
+          int empId:
+          String empName;
+
+          Employee(int id, int name){
+            this.empId = id;
+            this.empName = name;
+          }
+
+        }
+
+      Key points:
+
+        - Every class has a constructor whether its a normal class or an abstract class.
+        - Constructors are not methods and they don't have any return type.
+        - Constructor name should match with class name.
+        - Constructor can use any access specifier, they can be declared as private also.
+            Private Constructors scope is within the class only.
+
+        - Like constructors method can also have name same as class name, but still they have return type
+              , though which can identify them that they are methods not constructors.
+
+        - If you don't implement any constructor within the class, compiler will do it for you.
+        - this() and super() should be the first statement  in the constructor code.
+        - Constructor overloading is possible but override is not possible.
+
+
+        **********************    **********************     **********************
+          Inheritance               Inheritance                   Inheritance
+        **********************    **********************     **********************
+          JAVA uses the word extends when inheriting.
+
+          Inheritance is the process by which one class acquires the properties(data members) and functions(methods)
+          of another class is called inheritance.
+
+          AIM:
+            the aim of inheritance is to provide the reusability of code, so that a class has to write only the unique features.
+
+          There are two type of classes:
+            - Child  Class
+            - Parent Class
+
+                **************
+                  Child Class
+                **************
+                  The class that extends the features of another class is known as a child class/ sub class.
+
+                ****************
+                  Parent Class
+                ****************
+                    The class whos properties and funcionalities are used/inherited by another class is known as a
+                    Parent Class or Super Class or Base Class.
+
+
+            Inheritance is a process of defining a new class based on an existing class by extending it's common data members and methods.
+            So Variables and Methods of the Parent class can be used in the child class.
+
+
+          Types of Inheritance:
+          ~~~~~~~~~~~~~~~~~~~~~~
+            - Single inheritance
+            - Multilevel inheritance
+            - Hierarchical Inheritance.
+            - Multiple Inheritance.
+
+                Single Inheritance :   refers to a child and parent class relationship where a class extends another class.
+
+                Multilevel Inheritance : refers to a child and parent class relationship where a class extends the child class.
+                                        Example:  Class C extends class B and class B extends class A.
+
+                Hierarchical Inheritance : refers to a child and parent class relationship, where more than one child class extends the same parent.
+                                      Example: classes B, C & D extends class A.
+
+                Multiple Inheritance : Refers to the concept of one class extending more than one classes, which means a child class has two parent classes.
+                                              JAVA DOES NOT SUPPORT THIS.
+
+
+            SUPER keyword:
+              the super keyword means is to call the constructor that if for the class we're extending from.
 
 
 
@@ -131,10 +266,6 @@ Now a software Object stores its state in fields and we know fields as variables
           return values;
       }
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-
 
 
 ****************************
