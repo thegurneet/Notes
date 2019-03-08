@@ -15,7 +15,7 @@ Real world objects have 2 Characterstics: State and Behaviour.
   - Behaviour : for a computer might be booting up, shutting down, outputting some sort of sound.
               : for an ant might be eating, sleeping, drinking, fighting, speak.
 
-              an Objects state is stored in fields and behaviour is shown via methods.
+              an Objects state is stored in fields/variables and behaviour is shown via methods.
 
 Now a software Object stores its state in fields and we know fields as variables -
   they expose it's behaviors with methods(functions).
@@ -82,7 +82,7 @@ Now a software Object stores its state in fields and we know fields as variables
         Constructor                Constructor                 Constructor
     **********************    **********************     **********************
 
-    A constructor initializes objects.
+    A Constructor initializes Objects.
 
     Constructors set the initial parameters or the initial values of fields, and any other
     initialization that is to be performed into one constructor.
@@ -132,7 +132,9 @@ Now a software Object stores its state in fields and we know fields as variables
         }
       }
 
-      public Demo(){}  -> is the No-Arg constructor.
+      public Demo(){        -> is the No-Arg constructor.
+
+      }
 
       *******************************
           Parameterized Constructor
@@ -223,10 +225,59 @@ Now a software Object stores its state in fields and we know fields as variables
             SUPER keyword:
               the super keyword means is to call the constructor that if for the class we're extending from.
 
+                      ~~~~~~~~~~~~~EXAMPLE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                      ****ANIMAL CLASS *********
+                      public class Animal{
+                        private String name;
+                        private int weight;
+
+                            public int getWeight(){
+                                return this.weight;
+                              }
+
+                            public String getName(){
+                              return this.name;
+                            }
+
+                            public void setWeight(int weight){
+                              this.weight = weight;
+                            }
+
+                            public void setName(String name){
+                              this.name = name;
+                            }
+
+                        public void eat(){
+                          sysout("Animal.eat() called");
+                        }
+                      }
+
+                      *******DOG CLASS************
+                      public class Dog extends Animal {
+
+                          	private int legs;
+
+                          	public Dog(String name, int weight) {
+                          		super(name, weight);
+                          		this.legs = legs;
+                          	}
+
+                            public void chew(){
+                              sysout("Dog.chew() is called")
+                            }
+
+                          	@Override
+                          	public void eat() {
+                          		System.out.println("Dog.eat() called");
+                          		chew();
+                          		super.eat();
+                          	}
+                    }
 
 
+                    @Override - it overrides the Parent Classes method. Because in this instace a Dog Chews when it eats.
 
-
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
               ************
                 ARRAY
