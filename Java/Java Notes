@@ -3,6 +3,10 @@
 ************************************************************************
 
 
+/* */   - piece of code that works that defo needs explaining
+/** */  - this class does alot of work - and this text can be extracted into documentation.
+//      - single line comment. 
+
 ****************************
           OBJECTS
 ****************************
@@ -15,9 +19,9 @@ Real world objects have 2 Characterstics: State and Behaviour.
   - Behaviour : for a computer might be booting up, shutting down, outputting some sort of sound.
               : for an ant might be eating, sleeping, drinking, fighting, speak.
 
-              an Objects state is stored in fields/variables and behaviour is shown via methods.
+              an Objects state is stored in fields/variables and behaviour is shown via methods/functions.
 
-Now a software Object stores its state in fields and we know fields as variables -
+  Now a software Object stores its state in fields and we know fields as variables -
   they expose it's behaviors with methods(functions).
   Methods operate on an object's internal state and serve as the primary mechanism for
   object-to-object communication..
@@ -30,6 +34,7 @@ Now a software Object stores its state in fields and we know fields as variables
         Classes
 ****************************
   A Class is basically a blueprint.
+    Naming Convention: HelloWorld, InputStream, ClassClass.
 
 
   public class Car {  }
@@ -260,7 +265,7 @@ Now a software Object stores its state in fields and we know fields as variables
 
                           	private int legs;
 
-                          	public Dog(String name, int weight) {
+                          	public Dog(String name, int weight, int legs) {
                           		super(name, weight);
                           		this.legs = legs;
                           	}
@@ -347,7 +352,7 @@ Now a software Object stores its state in fields and we know fields as variables
                                     we have to create an Object of the class in within which it defined.
 
                                     instance method can access instance methods and instance variables directly.
-                                    instance methods can also access static methods and static variables directly. 
+                                    instance methods can also access static methods and static variables directly.
 
                                     Example :
                                     public void geek(String name){
