@@ -1,0 +1,104 @@
+
+
+**********************    **********************     **********************
+    let & const               let & const                  let & const
+**********************    **********************     **********************
+
+    **********
+      in ES5 :
+    **********
+        we use var.
+
+        var name5 = 'Jane Smith';
+        var age5 = 23;
+
+        var isn't typesafe. It is a JavaScript Variable - and is a container for storing data values;
+        They are Case Sensitive - so y and Y are  different variables.
+
+
+    *******
+      ES6:
+    *******
+      let and const provides Block Scope variables (constants) in JavaScript.
+      in ES5 - they were only two - Global Scope and Function Scope.
+
+      ~~~~~~~~~~~~~~~~
+        Global Scope
+      ~~~~~~~~~~~~~~~~
+          Variables declared globally (outside functions) have Global Scope.
+          Global variables can be access from anywhere in JavaScript.
+
+      ~~~~~~~~~~~~~~~~
+        Function  Scope
+      ~~~~~~~~~~~~~~~~
+          Variables declared locally (inside a function) have a Function Scope.
+          They can only be accessed within the function, and not outside of it.
+
+      ~~~~~~~~~~~~~~~~
+        Block  Scope
+      ~~~~~~~~~~~~~~~~
+          Variable declared with the var keyword cannot have Block Scope.
+                these variables can be accessed outside of : { }
+
+          Variables declared with the let keyword can have Block Scope.
+                these variables cannot be accessed outside : { }
+
+          ~~~~~~~
+            LET
+          ~~~~~~~
+            Variables declared with let keyword can have Block Scope, thus meaning it can not be accessed outside  { }
+
+            var x = 10;
+                // here x is 10;
+              {
+                let x = 2;
+                  // here x = 2;
+              }
+              // here x is 10;
+
+
+                    ~~~~~~~~~~~~~~~~
+                      Loop  Scope
+                    ~~~~~~~~~~~~~~~~
+                          var i = 5;
+                          // here i = 5;
+                            for (var i = 0; i < 10; i++){
+                              //
+                            }
+                          // here i = 10;
+
+                    Where as:
+
+                          let i = 5;
+                          // Here i = 5;
+                            for(var i = 0; i < 10; i++){
+                              //
+                            }
+                          //Here i = 5;
+
+          ~~~~~~~
+            Const
+          ~~~~~~~
+            const behaves exactly like the let variable - being block scoped.
+            HOWEVER - it cannot be reassigned. It's fixed. forever.
+
+            var x = 10;
+              // here x is 10
+            {
+              const x = 2;
+                // here x is 2
+            }
+            // here x is 10
+
+
+            the keyword const can be misleading. It does NOT define a constant value. it defines a constant reference to a value.
+              SO we CANNOT change constant primitive values, HOWEVER we can change the properties of CONSTANT OBJECTS.
+
+            const PI = 3.14;
+            PI = 3    // gives error can't change it.
+            PI = PI * 10   // gives error can't change it. 
+
+            const personArray = ["hello"].
+            personArray.push("bye");   // perfectally  fine.
+
+            personArray becomes ["hello", "bye"]
