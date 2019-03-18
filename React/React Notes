@@ -8,19 +8,120 @@ React is a JavaScript Library for building User Interfaces (UI).
 *********************************
 What is a Single Page Application
 *********************************
+Single HTML page - inject all your Javascript components.
 
+
+ In the past JavaScript performance was slow - Every page was coming from a server.
+ Everytime something was clicked on - a new request was made to the server from the browser, and then
+ the browser would subsequently load the new page.
+
+ NOW HOWEVER, JavaScript intercepts the browser events and instead of making a new request to the server that then
+ returns a new document, the client requests some JSON or performs an action ON the server. BUT the page the user see's is never
+ NEVER completely wiped away.
+
+  *********
+    PROS:
+  *********
+    SPA are much faster for the USER, because instead of waiting for the client server communication to happen
+    and wait for the browser to  re-render the page - you get instant feedback..
 
 
 ****************
 What React is
 ****************
+  Is a JavaScript library Created by Facebook.
+  Is a User Interface (UI) Library.
+  Is a tool for building UI components.
+
+  **************************        **************************        **************************
+          JSX                                 JSX                             JSX
+  **************************         **************************       **************************
+  Like an XML/HTML like syntax used by React - extends ECMAScript.
+  Intended to be used by preprocessors (like Babel) to transform HTML like text found in Javascript files
+  into standard JavaScript objects.
+
+  JSX is not valid JavaScript. Web Browsers can't read JSX. It has to be complied. A JavaScript compiler will translate any JSX into regular JavaScript.
+
+        ******************
+          JSX element
+        ******************
+
+            basic units of JSX is called a JSX element.
+
+            an EXAMPLE:
+             <h1> Hello world </h1>
+
+            Looks like HTML. However you'll find this in a JavaScript file.
+
+
+  JSX elements are treated as JavaScript expressions. They can go anywhere that JavaScript expressions can go.
+  So JSX elements can be stored in variables, passed into functions or even stored in an Object/Array.
+
+      EXAMPLE:
+      several JSX elements stored in an Object.
+
+      const myTeam = {
+        <li>Football Team</li>,
+        striker:<li> Gurneet</li>,
+        goalKeeper: <li> Josh</li>
+      };
+
+
+  JSX elements can have attributes - like HTML elements. A name followed by a value (the value should be wrapped in quotes).
+
+  EXAMPLE:
+  my-attribute-name = "my-attribute-value";
+
+  EXAMPLE:
+    const title = <h1 id="title"> Introduction to React <h1>
+
+
+  You can nest JSX elements inside of other JSX elements. Just like in HTML.
+    EXAMPLE:
+    (
+      <a href="https://www.example.com">
+        <h1>Click me!</h1>
+      </a>
+    )
+
+    IF JSX expression takes up more than one line, then it must be wrapped in parentheses. And then these can be saved as Variables.
+
+    const theExample =     (
+                              <a href="https://www.example.com">
+                                <h1>Click me!</h1>
+                              </a>
+                            );
 
 
 
+    A JSX expression must have exactly one outermost element!
 
-***************
-  JSX
-***************
+    So we can't have:
+
+    const theExample = (
+
+      <h1> Hello World </h1>
+      <p>  hello paragraph </p>
+    )
+
+    JSX expressions must have the same start tag and end tag. JSX now sees <h1> to start with and </p> to end with. WRAP IT WITH A <div>
+
+
+    **************************        **************************        **************************
+            Render                             Render                             Render
+    **************************         **************************       **************************
+
+    ReactDOM.render();
+
+    import ReactDOM from 'react-dom';
+
+    ReactDOM is the name of a JavaScript library.
+    ReactDOM.render() is the most common way to render JSX. It takes a JSC expression, creates a corresponding tree of DOM nodes,
+    and adds that tree to the DOM.
+
+    This is the way to make a JSX expression appear onscreen.
+
+
 
 
 **************************
@@ -118,3 +219,13 @@ class based components:
 
 
 next week:  props & event handling.
+
+
+
+
+
+###### TO DO#####
+
+
+Create my own Currency convertor in ES5 and then using ES6.
+Create my own Currency convertor in React

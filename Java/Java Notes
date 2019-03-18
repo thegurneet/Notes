@@ -5,7 +5,35 @@
 
 /* */   - piece of code that works that defo needs explaining
 /** */  - this class does alot of work - and this text can be extracted into documentation.
-//      - single line comment. 
+//      - single line comment.
+
+
+
+ ************************
+    Variable Scopes
+ ************************
+
+    ~~~~~~~~~~~~
+    Static Scope
+    ~~~~~~~~~~~~
+
+
+    Instance Scope
+
+
+
+    Local Scope
+
+***********************************
+
+Logical Or |
+Logical and &
+Logical Xor ^     ???????????? - Won't use.
+
+
+Exceptions
+
+***********************************
 
 ****************************
           OBJECTS
@@ -213,6 +241,9 @@ Real world objects have 2 Characterstics: State and Behaviour.
 
           Types of Inheritance:
           ~~~~~~~~~~~~~~~~~~~~~~
+
+          ######  Specaialisation inhertiance ...
+
             - Single inheritance
             - Multilevel inheritance
             - Hierarchical Inheritance.
@@ -283,7 +314,7 @@ Real world objects have 2 Characterstics: State and Behaviour.
                     }
 
 
-                    @Override - it overrides the Parent Classes method. Because in this instace a Dog Chews when it eats.
+                    @Override - it overrides the Parent Classes method. Because in this instance a Dog Chews when it eats.
 
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -356,7 +387,7 @@ Real world objects have 2 Characterstics: State and Behaviour.
 
                                     Example :
                                     public void geek(String name){
-                                      sysout("this is an instance method")
+                                      sysout("this is an instansce method")
                                     }
 
                                         // return type can be int, float, String or user defined data type.
@@ -366,7 +397,181 @@ Real world objects have 2 Characterstics: State and Behaviour.
                             For example - if the parent method is protected, then using private in the child is not allowed, but using public in the child would be allowed.
 
 
+          **********************    **********************     **********************
+            Composition               Composition                   Composition
+          **********************    **********************     **********************
 
+              Inheritance is an "is-a" relationship. Composition is a "has-a" relationship.
+
+              Imagine we have three classes.
+                - Monitor
+                  - MotherBoard
+                  - Resolution
+
+              The Monitor has a resolution.
+
+              imagine we had a House. Now a house HAS A kitchen, bedroom, bathoom etc.
+
+              An example would look like:
+
+                public Class House{
+
+                  private Kitchen kitchen;
+                  private Bedroom bedroom;
+                  private LivingRoom livingRoom;
+
+                  public House(Kitchen kitchen, Bedroom bedroom, LivingRoom livingRoom){
+                    this.kitchen = kitchen
+
+                    .. etc.
+                  }
+                }
+
+                A class for kitchen:
+
+                public Class Kitchen{
+                  private Fridge fridge;
+                  private int size;
+                  private String color;
+
+                    public Kitchen(Fridge fridge, int size, String color)
+                      this.fridge = fridge...
+                }
+
+                and it will keep going on. The Kitchen or Fridge class is not being extended - because they're not children of the parent class.
+                So through composition we can use them. .
+
+**********************    **********************     **********************
+  Encapsulation               Encapsulation                Encapsulation
+**********************    **********************     **********************
+
+  Encapsulation is a way of wrapping data ( variables) and methods together as a single unit.
+  In Encapsulation, variables of a class will be hidden from other classes and can only be accessed through the methods of their current class. - Data Hiding.
+
+      ~~~~~~~~~~~~~~~~~~~~~
+      Encapsulation Rules:
+      ~~~~~~~~~~~~~~~~~~~~~
+
+            - Declare the variables of a class as private.
+            - Provide public setter and getter methods to modify and view the variables values.
+
+        By making a field private, we're making sure that our class is not accessible, or the  fields within.
+
+
+
+**********************    **********************     **********************
+  Polymorphism               Polymorphism                Polymorphism
+**********************    **********************     **********************
+
+  Polymorphism, the ability to take more than one shape.
+
+  In Java, Polymorphism is the ability of an object to make on many forms. The most common use in OOP is:
+    when a parent class reference is used to refer to a child class object.
+
+    Any Java Object that can  pass more than one IS-A test - is considered to be Polymorphic.
+    The only way to access an object is through a reference Variable. A reference Variable can be of only one type.
+
+
+    The reference variable can reassigned to other objects provided that it is not declared Final.
+    A reference variable can be declared as a class or interface Type:
+
+
+
+
+
+
+
+              **********************    **********************     **********************
+                    Arrays                      Arrays                 Arrays
+              **********************    **********************     **********************
+
+              Arrays are used to store multiple values in a single variable, instead of declaring separate variable for each value.
+
+
+              Arrays in Java  allow you to store sequence of values of the same TYPE.
+              For example and Array of integers, or an Array of Strings etc.
+
+              To Declare an Array:
+
+              int[] myIntArray = new int [10];     // this assigns 10 elements to the myIntArray array. so [_,_,_,_,_,_,_,_,_,]
+              double[] myDoubleArray = new double[10];
+              String[] myStringArray = new String[10];
+
+              myIntArray[5] = 50;    // this saves 50 into the 5th element: so [_,_,_,_,_,50,_,_,_,_];
+
+
+              Imagine we want to preset the values, because doing myIntArray[0] = 10, myIntArray[1] = 11; ---- will take forever.
+              WE can do this:
+
+              // this is us declaring a variable that holds an array of strings.
+                    String[] cars;
+
+                    String[] cars = { "BMW" , "AUDI", "Mazda"};
+
+              ************
+                Change
+              ************
+                To change a value at a specific location we do:
+                cars[0] = "Honda";
+
+                // So it will now be:    { "Honda" , "Audi" , "Mazda" };
+
+                ~~~~~~~~~~~
+                Length
+                ~~~~~~~~~~~
+                cars.length
+                  output = 3;
+
+
+              **************************
+                  For-Each Loop
+              **************************
+                  A For each loop, that is used exclusively to loop through elements in arrays.
+
+                      for (type variable : arrayName){
+                        ...
+                      }
+                    SO.
+
+                      for (String i : cars){
+                        sysout(i)
+                      }
+                            This will print all the values in Cars.
+
+
+            - An Array is a data structure that allows you to store multiple values of the same types into a single variable;
+            - The default values of numeric array elements are set to Zero.
+            - Arrays are zero indexed: an array with n elements is indexed from 0 to n-1. (so 10 elements index range is from 0-9);
+            - if we try to access index that is out of range, Java will give us an ArrayIndexOutOfBoundsException, which means that the index is out of range/out of bounds.
+
+
+
+    **************************            ***************************
+    Reference Types vs Value Types         Reference Types vs Value Types
+    **************************            ***************************
+
+    An Array is a reference type.
+    A String is also a reference type.
+
+    When we create an Array - it references it in Memory.
+
+    primitive types are:
+
+    int, double and boolean.
+
+    All primitive types are value types, as in they hold a value;
+
+    An Array is a Reference type, and String is also a Reference type.
+
+    A reference holds a Reference/an address to an object, but not the object itself.
+
+          int[] myIntArray = new int[5];
+          int[] anotherArray = myIntArray;
+
+      So this variable myIntArray holds a reference/an address to an array in memory.
+
+      if we make changes to anotherArray or myIntArray, the other one will change with it -
+      because they both hold a reference to an array in memory;
 
 
 
