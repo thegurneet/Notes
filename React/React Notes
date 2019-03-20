@@ -121,8 +121,55 @@ What React is
 
     This is the way to make a JSX expression appear onscreen.
 
+    ****************
+    ClassName vs Class
+    ****************
+
+in HTML, it's common to use class as an attribute name:
+      <h1 class="big"> Hey</h1>
+
+HOWEVER in JSX , we can't use class. We have to use className;
+
+    <h1 className="big"> Hey <h1>
+
+When JSX is rendered, JSX className attributes are automatically rendered as class attibute;
 
 
+
+****************
+Self-Closing Tag
+****************
+ When you write a self-closing tag in HTML, it is optional to include a forward-slash immediately before the final angle-bracket:
+      <br />   or <br>        fine in HTML.
+
+  Howeveer in JSX you have to include the slash. If you write a self closing tag in JSX and forget the slash, you will raise an error.
+
+
+
+
+  ****************
+  Variables in JSX
+  ****************
+
+  When we inject JavaScript into JSX, that JavaScript is part of the same environment as the rest of the JavaScript in the file.
+
+  That means, we can access variables while inside of a JSX expressions, even if those variables were declared on the outside.
+
+
+
+  ****************
+  Event Listeners in JSX
+  ****************
+
+  JSX elements can have event Listeners, just like HTML elements can. Programming in React means constanlty working with event listeners;
+
+  We can create an event listener by giving a JSX element a special attribute
+
+          <img onClick={myFunc} />
+
+
+  - An event listener attibute's name should be somthing like onClick or OnMouseOver: the word on, plus the type of event that you're listening for.
+  - An event listener attribute's value should be a function. The above example would only work if myFunc were a valid function that had been defined elsewhere:
 
 **************************
   Rendering content through the use of ReactDOM.render()

@@ -576,90 +576,30 @@ Real world objects have 2 Characterstics: State and Behaviour.
 
 
 
+      **************************            ***************************
+            ArrayList                                 ArrayList
+      **************************            ***************************
+      An ArrayList Can Hold Objects. and An Array List is a class;
 
+          An ArrayList is a resizable-array. In other words it handles the resizing automatically.
+          It handles it all internally, not only maintains a size of how many elements, but also the capacity, the amount of memory that is reserved.
+          As elements are added to an ArrayList, its capacity grows automatically - so don't have to worry about resizing - unlike an array.
 
+          ArrayList is part of the collection Framework.
+          ArrayList inherit AbstractList class and implements List interface
 
+          ArrayList() : This constructor is used to build an empty array list.
+          ArrayList(Collection c): This constructor is used to build and array List initialized with the elements from collection c.
+          ArrayList(int capacity): this constructor is used to build and array list with initial capacity being specified.
 
-
-              ************
-                ARRAY
-              ***********
-      Arrays in Java  allow you to store sequence of values of the same TYPE.
-      For example and Array of integers, or an Array of Strings etc.
-
-    to Declare an Array:
-
-      int[] myIntArray = new int [10];     // this assigns 10 elements to the myIntArray array. so [_,_,_,_,_,_,_,_,_,]
-      double[] myDoubleArray = new double[10];
-      String[] myStringArray = new String[10];
-
-      myIntArray[5] = 50;    // this saves 50 into the 5th element: so [_,_,_,_,_,50,_,_,_,_];
-
-
-      Imagine we want to preset the values, because doing myIntArray[0] = 10, myIntArray[1] = 11; ---- will take forever.
-      WE can do this:
-
-      int[] myIntArray = {10,11,12,13,14,15};   Java here sets the values and creates the elements. 6 elements.
-      so if we do myIntArray[1] , we get 11;
-
-
-
-      we can pass an Array to a method:
-
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-      public static void main(String[] args){
-        int[] myIntegers = getIntegers(5);
-
-        for (int i = 0; i < myIntegers.length; i++) {
-          System.out.println("Element " + i + ", typed value was " + myIntegers[i]);
-        }
-
-      }
-
-      public static int[] getIntegers(int number){
-          int[] values = new int[numbers];
-
-          for(int i=0; i<values.length; i++){
-            value[i] = i+1;
-          }
-
-          return values;
-      }
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-****************************
-Reference Type vs Value Type
-****************************
-
-  primitive types are:
-
-  int, double and boolean.
-
-
-  All primitive types are value types, as in they hold a value;
-
-  An Array is a Reference type, and String is also a Reference type.
-
-  A reference holds a Reference/an address to an object, but not the object itself.
-
-        int[] myIntArray = new int[5];
-        int[] anotherArray = myIntArray;
-
-    So this variable myIntArray holds a reference/an address to an array in memory.
-
-    if we make changes to anotherArray or myIntArray, the other one will change with it -
-    because they both hold a reference to an array in memory;
-
-
-
-
-            ************
-              ARRAYLIST
-            ***********
-
-
-
-    An ArrayList is a resizable-array. In other words it handles the resizing automatically.
-    As elements are added to an ArrayList, its capacity grows automatically - so don't have to worry about resizing.
+              a few Methods in ArrayList:
+                -forEach()
+                -removeIf()
+                -contains()
+                -remove()
+                -get()
+                -set()
+                -size()
+                -removeAll()
+                -isEmpty()
+                -removeRange()
