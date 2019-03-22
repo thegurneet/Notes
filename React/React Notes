@@ -185,6 +185,14 @@ Self-Closing Tag
     Props
 **************************
 
+- React ways of passing data between components
+- React data binding is uni-directional - data only flows Down
+- Props are immutable(read only)
+Single strict rule:
+  - all React components must act like pure functions with respect to their props.
+
+
+
 
 **************************
     Event handling
@@ -194,6 +202,15 @@ Self-Closing Tag
 **************************
     State
 **************************
+
+- Similar to Props, except it;s private and fully contrilled by the component.
+- Describes the component and what data it holds/look after.
+- Never modify state directly, instead call setState();
+
+- setState calls are asynchronous - don't expect state to be immediately updated.
+- if we rely on the result of a setState call, either use a function call to setState or callBack.
+
+- setState causes state in the component to be merged(using shallow merge). 
 
 
 **************************
