@@ -41,13 +41,13 @@ Exceptions
 
 Real world objects have 2 Characterstics: State and Behaviour.
 
-  - State    : might be the amount of RAM it has, operating system it's running, hard drive.
-             : for an ant it - number of legs, age, color, conscious state.
+  - State     : might be the amount of RAM it has, operating system it's running, hard drive.
+              : for an ant it - number of legs, age, color, conscious state.
 
   - Behaviour : for a computer might be booting up, shutting down, outputting some sort of sound.
               : for an ant might be eating, sleeping, drinking, fighting, speak.
 
-              an Objects state is stored in fields/variables and behaviour is shown via methods/functions.
+              an Objects state is a stored in fields/variables and behaviour is shown via methods/functions.
 
   Now a software Object stores its state in fields and we know fields as variables -
   they expose it's behaviors with methods(functions).
@@ -242,7 +242,7 @@ Real world objects have 2 Characterstics: State and Behaviour.
           Types of Inheritance:
           ~~~~~~~~~~~~~~~~~~~~~~
 
-          ######  Specaialisation inhertiance ...
+          ######  Specaialisation inhertiance ...  ---- Each child class overrides a method inhertied from the parent in order to specialise the class in some way.
 
             - Single inheritance
             - Multilevel inheritance
