@@ -590,7 +590,7 @@ Real world objects have 2 Characterstics: State and Behaviour.
 
           ArrayList() : This constructor is used to build an empty array list.
           ArrayList(Collection c): This constructor is used to build and array List initialized with the elements from collection c.
-          ArrayList(int capacity): this constructor is used to build and array list with initial capacity being specified.
+          ArrayList(int capacity): This constructor is used to build and array list with initial capacity being specified.
 
               a few Methods in ArrayList:
                 -forEach()
