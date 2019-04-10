@@ -1,0 +1,303 @@
+                            ************************************************************************
+                            **********************    Spring          ******************************
+                            ************************************************************************
+
+****************
+Goals of Spring
+****************
+
+- LightWeight development with Java POJO's ( Plain old java Objects) - Makes it much easier to build compared to the heavy EJBs
+- Dependency Injection to promote loose Coupling
+- Declarative programming with Aspect-Oriented-Programming (AOP)
+- Minimize boilerplate Java code.
+
+
+*******************
+Core Container
+*******************
+  It is a factoring for creating beans and manages bean dependencies.
+  It can reconfig files for setting properties, independencies, and also the Context here's really the Spring Container that holds the beans in memory.
+
+
+******************
+Infrastructure
+******************
+
+  AOP - Aspect Oriented Programming. Add functionality to objects declaratively. - Logging, security, transactions etc.
+      And we can apply these objects in a declarative fashion so no need to modify the code to have support for this. Simply add a config in the config file.
+
+*****************
+Data Access Layer
+*****************
+
+    This is here for communicating with the database, either a relational database or a NoSQL database
+
+    JDBC - JDBC Helper classes.  Spring provides some helper classes to make it easier to access a database, using jDBC classes. Can reduce source code by over 50%.
+
+    ORM - Object to Relational Mapping - Allows you to hook into Hibernate or JPAs. Alot of support and alot of synergy between Spring and Hibernate.
+
+    JSM - Java Message Service. For sending async messages to a Message Broker. Spring provides helper classes for JMS - Can reduce code by 50%.
+
+    Transactions - Makes heavy use of AOP behind the scenes.
+
+******************
+  Inversion of Control(IoC)
+******************
+
+  "The approach of outsourcing the construction and management of objects"
+
+  It is simply the design process of externalizing, the construction and management of your objects.
+    Bascially it means that your application will outsource the creation and management of the objects, and that outsourcing will be handled by
+    an object factory.
+
+
+
+
+********************************
+Spring Inversion of Control.
+********************************
+
+  Spring provides an object factory so we can have our application talk to Spring, say yo, give me an object. Based on a configuration file or annotation
+  Spring will give you the appropriate implementation.
+  So then the app is configurable and will have full support for that based on our application requirements.
+
+
+*******************
+Spring Container
+*******************
+ The primary function of the Spring Containers is:
+
+      - Create and manage objects (inversion of Control)
+      - Inject Object's dependencies (Dependency Injection)
+
+
+
+******************************
+Spring development Process
+******************************
+
+1. Configure your Spring Beans
+2. Create a Spring Container
+3. Retrieve Beans from Spring Container.
+
+
+
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Configure your Spring Beans
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+            <beans ... >
+                <bean id="myCoach" class="com.gurneet.springdemo.BaseballCoach">
+            </beans>
+
+        the bean id is "myCoach" and the class is "com.gurneet.springdemo.BaseballCoach".
+        The id is simply the id that my Java application will use to Retrieve a bean from the spring container.
+        The class is the actual class or implementation, that you'll have for your application.
+
+
+
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Creating a Spring Container
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Spring container is generically known as ApplicationContext - See this alot on Spring documentation.
+
+        They have specialized implementations
+          - ClassPathXMLApplicationContext   -Reading XML from the class path.
+          - AnnotationConfigApplicationContext
+          - GenericWebApplicationContext
+
+            ##// CREATE A SPRING CONTAINER
+        ClassPathXMLApplicationContext context = new ClassPathXMLApplicationContext("applicationContext.xml");
+
+                    the applicationContext.xml is the actual name of the configuration file that we use for spring.
+                    Can be any name - as long as it's consistent between step 1 and step 2.
+
+          ##// RETRIEVE BEAN FROM SPRING CONTAINER
+            Coach theCoach = context.getBean("myCoach", Coach.class");
+
+            The myCoach here has to match the id in the bean. the Coach.class is the interface the BaseballCoach implements.
+
+
+
+*************************
+  What is a Spring Bean
+*************************
+
+A Spring bean is simply a Java Object.
+
+When Java objects are created by the Spring Container - then Spring referes to them as "Spring Beans".
+Spring Beans are created from normal Java classes - like Java Objects.
+
+
+****************************
+    Dependency Injection
+****************************
+
+The dependency inversion principle.
+
+The client delegates to calls to another object the responsibility of providing its dependencies.
+
+SO basically:
+  imagine i'm going to buy a car, and this car is built at the factory on demand. So there's nothing in the car shop.
+  You have to talk to the factory, and put in a request an they'll build a car for you.
+  So at the factory, you have all the different parts for the car. Chassis, engine, doors etc. The technicians assemble  the car and deliver the final car to you.
+  So you don't build the car. The car is already built for you at the Factory.
+
+  SO they inject all the dependencies for the car. So they inject the engine, the tires, the seats and so on.
+
+
+So with dependency injection you simply outsource the construction and injection of your object to an external entity.
+
+
+****************************
+    Constructor Injection
+****************************
+
+  <bean id="myFortuneService" class="com.gurneet.springdemo.HappyFortuneService">  </bean>
+  <bean id="myCoach" class="com.luv2code.springdemo.BaseballCoach"> <constructor-arg reg="myFortuneService"/> </bean>
+
+
+
+
+
+
+
+            HappyFortuneService myFortuneService = new HappyFortuneService();
+                                                                                              --------THE WORK SPRING WILL DO BEHIND THE SCENES.
+            BaseballCoach myCoach = new BaseballCoach(myFortuneService);
+
+
+  Behind the scenes the Spring framework will perform operation, based on information you have in the config file.
+
+  So when we create the first bean, myFortuneService of HappyFortuneService, behind the scenes Spring will actually construct that object for you.
+  So it will call the default constructor or no agrs constructor and they'll create a HappyFortuneService and give it the variable name of myFortuneService.
+
+  The second bean, myCoach, so it will create a new BaseballCoach, and based on the information from your config file, they'll pass in a constructor argumment
+  that we created.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    **********************        **********************         **********************
+    Model View Controller   MVC   Model View Controller    MVC    Model View Controller
+    **********************        **********************         **********************
+
+    MVC Patterns Stands for Model - View - Controller Pattern. - Used to separate applications concerns.
+
+    1.  Model      : Model represents an object or Java POJO (plan old java object) carrying data. IT can also have logic to update controller if its data changes.
+    2.  View       : View represents the visualizations of the data that model contains.
+    3.  Controller : Controller acts on both and view. Controls the data flow into model object and updates the view whenever data changes.
+                    Keeps View and Model Separate.
+
+
+
+
+      *******************
+        Model
+      *******************
+      Model code typically reflects real-world things.
+      The model contains your data - So when the controller goes and performs an operation to retrieve data from a backend system, like a database or web service
+      You can take that data and place it into the model.
+
+      So the model is the container, for shipping data between various parts between various parts of your Spring MVC Application.
+
+      Example:
+        - if we were building a To-do app, the model code would define what a "task" is and what a "list" is - since those are the main componets to a todo app.
+
+
+
+      *******************
+        View
+      *******************
+
+      View code is made up of all the functions that directly interact with the user. This is the code that makes the app look nice.
+
+
+
+
+      *******************
+        Controller
+      *******************
+
+      A controller is basically a Java Class that has certain annotations marked in it.
+      These annotations lets spring know what URL that you are mapping  it into and what should happen when the request comes to that URL so
+      there are two pieces of information that spring needs to know and you're providing both of them in the class itself and the annotations
+      of that class.
+
+      The controller contains the business logic (code that you write)
+        - Handles the request , maybe read some form data
+        - Store / retrieve data(db, web service...)
+        - place data in model
+
+
+
+
+
+        ****************
+        @Controller Class
+        ****************
+        @Controller
+          Spring MVC presentation layer
+
+          @Controller inherits from @Component and supports scanning.
+
+        designates the bean class as the controller in the presentation layer. When you add the @Controller annotation to a class, you can use another annotation i.e @RequestMapping;
+        to map URLs to instance methods of a class.
+
+        @Controller  is to create a Map of model object and find a view.
+        @RestController simply return the object and object data is directly written into HTTP response as JSON or XML.
+
+            @RequestMapping
+
+
+
+
+
+
+
+
+
+
+        @Service
+          annotation designated the bean class as a spring managed component in the business layer. It notifies spring that the class contains business logic.
+          Notifies the spring that the class contains the business logic.
+
+
+
+
+        @Component
+        A generic annotiaton - can be applied to any class of the application to make it a spring managed component(simply, generic stereotype for any spring managed component)
+
+
+
+      **************  ************  ************  ************
+          REST            REST          REST          REST
+      **************  ************  ************  ************
+
+      REST or REpresntational State Transfer, is an architectural style for providing standards between computer systems on the web,
+      making it easier for systems to communicate with each other.
+
+      A Restful API is an application programm interface that uses HTTP requests to GET, PUT , POST and Delete data.
+
+
+      Rest Compliant systems - or RESTful systems are characterized by how they are stateless and separate the concerns of client and server.
+
+      Relies on a stateless, client-server protocol, almost always HTTP.
+      Treats server objects as resources that can be created or destroyed.
+
+        *****************************
+           HOW it WORKS
+        *****************************
+
+        A RESTful API breaks down a transaction to create a series of small modules. Each moule addresses a particular underlying part of the transaction. This provides alot of flexibility.
+        A RESTful API explicity takes advantage  of HTTP methodologies.

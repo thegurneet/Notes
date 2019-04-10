@@ -603,3 +603,48 @@ Real world objects have 2 Characterstics: State and Behaviour.
                 -removeAll()
                 -isEmpty()
                 -removeRange()
+
+
+
+      **********************    **********************     **********************
+          Interface                     Interface                Interface
+      **********************    **********************     **********************
+
+      Java includes a concept called interfaces. A java interface is bit like a class, HOWEVER a java interface can only
+      contain signatures and fields. A java interface cannot contain an implementation of the methods, only the signature (name, parameter and exception) of the method.
+      By default the variables are declared in an interface are public, static & final.
+
+
+      *********
+        USES
+      *********
+       - We can use Interfaces in Java as a way to achieve polymorphism.
+
+       They are used for full abstraction. Since methods in interfaces do not have a body, they have to be implemented by the class before they can be accessed.
+       A class that implements an interface, MUST implement all the methods of that interface.
+
+       In Java you CANNOT extend more than one class. However you can implement more than one interface in  the class.
+
+      The idea is to use an interface to provide a common behavior that can be used by several classes by having them all implement the same interface.
+      - A way to standardize the way a part set of classes is used.
+
+
+      *******************
+      Nested interfaces
+      *******************
+
+      An interface which is declared inside another interface or class is called nested Interface. They are also known as inner interface.
+
+      ******************
+      Functional interface
+      *******************
+
+      An interface with a single abstract method and optionally, any number of default and static methods.
+
+Key points:
+  1.  We can't instantiate an interface in Java. Meaning we cannot create the object of an interface.
+  2. Interface provides full abstraction as it can have abstract and concrete (methods with body) methods both.
+  3. "implements" keyword is used by classes to implement an interface.
+  4. All interface methods are by default abstract and public.
+  5. Interface cannot be declared as  private or protected.
+  6. Variable declared in an interface are public, static and final by default.

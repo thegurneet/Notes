@@ -220,3 +220,52 @@ to
 "name":"Gurneet",
 "phonenumber":23452452
 }
+
+
+
+
+
+
+
+
+
+
+
+
+    ********************
+          Tags
+    ********************
+
+    - from()   : could be either from(String uri) or from(Endpoint endpoint)
+                uri - URI describes a camel Endpoint.     endpoint - a Camel Endpoint.
+                Start a route with the File endpoint. Each file in the directory creates an Exchange that is put into
+                the camel route.
+
+    - routeId() : is used to assign each route a meaningful name, which will then show up in the management console or in the logs.
+                  if we don't assign an ID, camel will auto-assign an ID using the scheme.
+                  example: from("direct:update").routeId("update")  or from("file://target/inventory/updates").routeId("file").
+
+
+    - transacted() : if the route is transacted, the transactional context is limited to run without one thread only.
+
+    - doTry(), doCatch(), doFinally() :
+                  A counterpart to the classic try..catch..finally block.
+                  Can make the code compile and work at runtime as you would expect with a try and catch block.
+                  The doTry..doCatch block has one limitation - it's only route scoped. The blocks only work in
+                  the route in which  they're defined.
+
+   - setHeader() : creates a header that exists within the current route. Headers are name-value pairs; the name is a unique,
+                  case-insensitive string and the vlaue is of type java.lang.object.
+
+   - bean()     : Bean binding in Camel defines both which methods are invoked and also how the message is converted into
+                  the parameters of the method when it is invoked.
+
+
+   - inOnly()   : a one-way message ( known as Event message). E.G JMS messaging is often one-way messaging.
+
+   - InOut()    : A request-response message. E.G: HTTP- based transports are often request reply. Where a client
+                  requests to retrieve a webpage, waiting for the reply from the server.
+
+  - marshal()   : For marshalling a message into another form, such as marshalling Java objects to XML, JSON, CSV, EDI 
+
+   - unmarshal() : For performing the reverse operation, which turns data from well-known format back into a message.
