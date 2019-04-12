@@ -2,6 +2,21 @@
                             **********************    Spring          ******************************
                             ************************************************************************
 
+***************************************
+      WHAT IS SPRING BOOT
+***************************************
+
+Spring is the framework that lets us write Enterprise Java Applications.
+Boot is BootStrap.
+SpringBoot  makes it easy to create stand-alone, production grade spring based application that you can  "just run"
+
+
+- Spring is something that lets us build java Enterprise application.
+    - Programming and configuration model.
+        - Spring lets you build classes, that are basically pojos and have annotations on them.
+
+
+
 ****************
 Goals of Spring
 ****************
@@ -10,6 +25,30 @@ Goals of Spring
 - Dependency Injection to promote loose Coupling
 - Declarative programming with Aspect-Oriented-Programming (AOP)
 - Minimize boilerplate Java code.
+
+
+
+
+
+************************************************************
+    BILL OF MATERIALS           BILL OF MATERIALS
+***********************************************************
+
+There are a certain
+
+
+
+
+
+***********************************
+    Application.properties
+***********************************
+
+
+    server.port = 8080
+        lets you change the port number.
+
+
 
 
 *******************
@@ -32,6 +71,8 @@ Data Access Layer
 
     This is here for communicating with the database, either a relational database or a NoSQL database
 
+    JPA - Java Persistence API.  Basically a specification that lets you do ORM when connection to a database.
+
     JDBC - JDBC Helper classes.  Spring provides some helper classes to make it easier to access a database, using jDBC classes. Can reduce source code by over 50%.
 
     ORM - Object to Relational Mapping - Allows you to hook into Hibernate or JPAs. Alot of support and alot of synergy between Spring and Hibernate.
@@ -49,9 +90,6 @@ Data Access Layer
   It is simply the design process of externalizing, the construction and management of your objects.
     Bascially it means that your application will outsource the creation and management of the objects, and that outsourcing will be handled by
     an object factory.
-
-
-
 
 ********************************
 Spring Inversion of Control.
@@ -158,10 +196,6 @@ So with dependency injection you simply outsource the construction and injection
 
 
 
-
-
-
-
             HappyFortuneService myFortuneService = new HappyFortuneService();
                                                                                               --------THE WORK SPRING WILL DO BEHIND THE SCENES.
             BaseballCoach myCoach = new BaseballCoach(myFortuneService);
@@ -254,6 +288,10 @@ So with dependency injection you simply outsource the construction and injection
         designates the bean class as the controller in the presentation layer. When you add the @Controller annotation to a class, you can use another annotation i.e @RequestMapping;
         to map URLs to instance methods of a class.
 
+          Has information about
+            - the URL that you are mapping it to.
+            - What method to run when accessed.
+
         @Controller  is to create a Map of model object and find a view.
         @RestController simply return the object and object data is directly written into HTTP response as JSON or XML.
 
@@ -301,3 +339,24 @@ So with dependency injection you simply outsource the construction and injection
 
         A RESTful API breaks down a transaction to create a series of small modules. Each moule addresses a particular underlying part of the transaction. This provides alot of flexibility.
         A RESTful API explicity takes advantage  of HTTP methodologies.
+
+
+
+
+
+
+            **********    ************    ***********   ***********   ************    ************
+                TAGS          TAGS           TAGS          TAGS           TAGS            TAGS
+            **********    ************    ***********   ***********   ************    ************
+
+
+      @Entity             :     A JPA entity class is a POJO class, that is marked/annotated to have the ability  to represent objects in the database.
+                                the @Entity annotation marks the class as an entity class.
+
+      @Id                 :     The annotation indicated the member field below is the primary key of current entity.
+
+
+      @controller         :     Typically used in combination with a @RequestMapping annotation used on request handling methods.
+
+
+      @RestController     :     Is a specialized version of the controller. Includes the @Controller and @ResponseBody annotations.

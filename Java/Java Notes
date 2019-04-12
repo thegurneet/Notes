@@ -648,3 +648,34 @@ Key points:
   4. All interface methods are by default abstract and public.
   5. Interface cannot be declared as  private or protected.
   6. Variable declared in an interface are public, static and final by default.
+
+
+
+
+
+
+
+
+  **********************    **********************     **********************
+      Lambda Basics             Lambda Basics              Lambda Basics
+  **********************    **********************     **********************
+
+
+**************
+  Why Lambdas? 
+**************
+
+    - Enables functional programming.
+    - readable and concise code
+    - Easier to use APIs and libraries
+    - Enables support for parallel processing.
+
+
+    *************************************************************
+      Functional Programming vs Object Oriented Programming
+    *************************************************************
+
+    - Functional programming lets you right more readable, easier to write and more maintable code.
+
+    In OOP everything is an Object. All code blocks are associated with classes and objects.
+    You cannot have a piece of code that exists in isolation. - has to be part of a class or object.
