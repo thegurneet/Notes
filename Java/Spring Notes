@@ -298,14 +298,6 @@ So with dependency injection you simply outsource the construction and injection
             @RequestMapping
 
 
-
-
-
-
-
-
-
-
         @Service
           annotation designated the bean class as a spring managed component in the business layer. It notifies spring that the class contains business logic.
           Notifies the spring that the class contains the business logic.
@@ -333,16 +325,81 @@ So with dependency injection you simply outsource the construction and injection
       Relies on a stateless, client-server protocol, almost always HTTP.
       Treats server objects as resources that can be created or destroyed.
 
+
+**************  ************    *************  ************
+  SPRING AOP      SPRING AOP   SPRING AOP  SPRING AOP
+**************  ************    *************  ************
+
+      A key component of Spring is AOP - Aspect Oriented Programming Framework. AOP entails braking down program logic into distinct parts called
+          "so-called concerns".
+      Function that span muliple points of an applications are called cross-cutting concerns. These Cross-cutting concerns are conceptually separate from the application's business logic.
+      Examples:
+          - Logging
+          - Auditing
+          - Declarative Transactions
+          - Security
+          - Caching
+
+      Spring AOP module lets interceptors intercept an application. For example - when an method is executed , you can add extra functionality before or after the method execution.
+
+
+          ***************************
+            AOP Concept and Terminology
+          ***************************
+            ~~~~~~
+            Aspect      : a module which has a set of APIs provided cross-cutting requirements. Example: logging module would be called AOP aspect for logging.
+            ~~~~~~
+
+            ~~~~~~
+            Join Point      : Represents a point in your application where you can plug-in AOP Aspect. The actual place in the application
+            ~~~~~~                where an action will be taken using Spring AOP.
+
+            ~~~~~~
+            Advice      : actual action to be taken either before or after the method execution. Actual piece of code that is invoked during program execution by Spring AOP framework.
+            ~~~~~~
+
+              ###############
+                Advice Types        - Spring aspects can work with 5 kinds of advice.
+              ###############
+
+                    -  before           :     Run advice before the method execution.
+
+                    - after             :     Run advice after the method execution, regardless of its outcome.
+
+                    - after-returning   :     Run advice after the method execution, only if the method completes successfully.
+
+                    - after-throwing    :     Run advice after the method execution, only if the method exists by throwing an exception.
+
+                    - around            :     Run advice before and after the advised method is invoked.
+
+
+
+
+
+      **************  ************    *************  ************
+      MICROSERVICES   MICROSERVICES   MICROSERVICES  MICROSERVICES
+      **************  ************    *************  ************
+
+      Micoservices allow large systems to be built up from  a number of collaborating components.
+
+      For example imagine an online shop with separate microservices for:
+        - user-accounts
+        - product-catalog
+        - order-processing
+        - shopping carts
+
+      There are a number of moving parts that need to be setup and configured to build such a system.
+
+
+
+
+
         *****************************
            HOW it WORKS
         *****************************
 
         A RESTful API breaks down a transaction to create a series of small modules. Each moule addresses a particular underlying part of the transaction. This provides alot of flexibility.
         A RESTful API explicity takes advantage  of HTTP methodologies.
-
-
-
-
 
 
             **********    ************    ***********   ***********   ************    ************

@@ -1,0 +1,13 @@
+*******************************************************************************************************************************
+                                    WEPT  --- WebMethod ESB Platform Transformation --- WEPT
+*******************************************************************************************************************************
+
+~~~~~~~~~~~
+    GOAL
+~~~~~~~~~~~
+      The Goal of the WEPT project is to replace the current WebMethods integration platform and migrate Circa 170 messages on to the future state solution. 
+
+      Currently HMRC uses :  "webMethods Itegration Software". Primarily utilising a publish/subscribe design pattern.
+                    webMethods is an enterpise software company- focused on application integration, business process integration and B2B partner integration.
+
+          The current version of webMethods used by HMRC is no longer supported by Software AG.

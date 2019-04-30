@@ -12,7 +12,11 @@ Mediation is a structured process which enables two or more parties to identify,
 and discuss their own and each others current and future needs.
 
 Apache Camel Acts as a mediation layer between a legacy System and new System.
-Apache Camel is a LightWeight framework and can be deployed in a varity of containers - TomCat or Docker.
+Apache Camel is a LightWeight framework and can be deployed in a Varity of containers - TomCat or Docker.
+
+Apache Camel is a versatile open-source integration framework based on known Enterpirse Integration Patters.
+
+
 
 Q: What is the Main Feature of Apache Camel
 
@@ -26,7 +30,7 @@ Mediator Behaviour Design Pattern
 Defines an Object that encapsulates how a set of Objects interact. Mediator promotes loose coupling
 by keeping objects referring to each other explicitly , and let you vary their interaction independently
 
-      - Tight coupling : classes and objects are dependent on one another.
+      - Tight Coupling : classes and objects are dependent on one another.
       - Loose Coupling : reducing dependencies of a class that uses a different class directly.
 
 
@@ -224,11 +228,55 @@ to
 
 
 
+*********************
+      ROUTE:
+*********************
+    - In Camel everything is a Route. In general, a camel route will have a Starting Point -> Ending Point.
 
 
+          Example:
+              in Camel a route starts from a from method and ends with a to method.
+                  from("file:data/input?noop=true").to("file:data/output");
+
+          A URI has 3 parts:
+            URI :     "file:data/input?noop=true"
+
+            PART 1:
+                    file  -> component.
+                      a file is a component in Apache Camel.
+
+            PART 2:
+                    data/input -> context path.
+                      is t he actual path where we are going to read the  file.
+
+            PART 3:
+                    ? -> Options
+                      where we provide additional options for the URI>
+                        noop=true -> options. Meaning do not perform any operations after you've copied files from it.
 
 
+  *******************
+    Simple Camel Route
+  *******************
 
+          CamelContext context = new DefaultCamelContext();
+
+
+          try {
+             context.addRoutes(new RouteBuilder() {
+                 @Override
+                 public void configure() throws Exception {
+                     from("file:data/input?noop=true").to("file:data/output");
+               }
+           });
+             context.start();
+              Thread.sleep(5000);
+             context.stop();
+          } catch (Exception e) {
+             System.out.println("Exception is : " + e);
+             e.printStackTrace();
+          }
+          
 
 
 
@@ -266,6 +314,6 @@ to
    - InOut()    : A request-response message. E.G: HTTP- based transports are often request reply. Where a client
                   requests to retrieve a webpage, waiting for the reply from the server.
 
-  - marshal()   : For marshalling a message into another form, such as marshalling Java objects to XML, JSON, CSV, EDI 
+  - marshal()   : For marshalling a message into another form, such as marshalling Java objects to XML, JSON, CSV, EDI
 
    - unmarshal() : For performing the reverse operation, which turns data from well-known format back into a message.

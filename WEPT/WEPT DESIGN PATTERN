@@ -1,0 +1,60 @@
+
+
+WEPT MESSAGE DESIGN Pattern
+
+1 - Patterns in WEPT
+
+            We are using 4 messauure patterns:
+                - P-IF to S-IF          : IF is the Intergration framework  P is the publisher , S is the Subsriber.
+                                              http://10.102.104.72:8090/mdg/confluence/pages/viewpage.action?pageId=30246104
+
+                - P-WM to S-IF          : Publsher WebMethod  to Subsriber to Integration Framework
+                                              http://10.102.104.72:8090/mdg/confluence/pages/viewpage.action?pageId=30255368
+
+                - P-MW to S-IF          : Publisher MiddleWare to Subsriber to Intergration Framework.
+                                              http://10.102.104.72:8090/mdg/confluence/display/WEPT/DRAFT+Use+Case+5+-+P-MW+to+S-IF+-+WIP
+
+                - MW - MW               : Middle ware to middleware.
+
+
+2. Message Cardinalities
+
+
+            -   1:1
+
+            -   1:N             : 1 Subsriber and many publishers
+
+            -   N:1             : many subsribers and 1 publishers
+                                            http://10.102.104.72:8090/mdg/confluence/display/WEPT/018+-+TO+BE+IDD%3AcnclDecisionRequest
+
+            -   N:N             : many subsribers and many publisher.
+                                            http://10.102.104.72:8090/mdg/confluence/display/WEPT/037+-+TO+BE+IDD%3AcnclAddressRequest
+
+
+
+3. Multiroute MICROSERVICES
+      Has to be configured at the root level.
+
+    1. Allow to host multiple camel routes ins ingle microservice.
+    2. All related routes per Head of Duty (HoD) System
+    3. Single Container.
+
+
+4. Scheduler
+
+    Two scheduler used in the Webmethod and IF platform. The Scheduler is hosted with the multiroute microservice. So each service will have their own scheduler.
+
+      Serial.  - single threaded.
+
+      Concurrent.  - Scheduler will be scheduling multiple threads. Multiple threads will be scheduler at the same time.
+
+
+5. Filtering
+
+    For filtering a message, where there is a multiple subsribers or publisher.
+
+
+
+6. Generic Publisher and Subsriber.
+
+    http://10.102.104.72:8090/mdg/confluence/display/WEPT/7.2+-+Queue+Publisher+Service
