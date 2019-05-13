@@ -54,7 +54,7 @@ Real world objects have 2 Characterstics: State and Behaviour.
   Methods operate on an object's internal state and serve as the primary mechanism for
   object-to-object communication..
 
-  Object referes to a particular instance of a class, where the object can be a combination
+  Object refers to a particular instance of a class, where the object can be a combination
   of variables, functions and data structures.
 
 
@@ -109,7 +109,6 @@ Real world objects have 2 Characterstics: State and Behaviour.
         public String getDoors(){
           return doors;
         }
-
       }
 
 
@@ -662,7 +661,7 @@ Key points:
 
 
 **************
-  Why Lambdas? 
+  Why Lambdas?
 **************
 
     - Enables functional programming.

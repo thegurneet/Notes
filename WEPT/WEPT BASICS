@@ -5,9 +5,49 @@
 ~~~~~~~~~~~
     GOAL
 ~~~~~~~~~~~
-      The Goal of the WEPT project is to replace the current WebMethods integration platform and migrate Circa 170 messages on to the future state solution. 
+      The Goal of the WEPT project is to replace the current WebMethods integration platform and migrate Circa 170 messages on to the future state solution.
 
       Currently HMRC uses :  "webMethods Itegration Software". Primarily utilising a publish/subscribe design pattern.
                     webMethods is an enterpise software company- focused on application integration, business process integration and B2B partner integration.
 
           The current version of webMethods used by HMRC is no longer supported by Software AG.
+
+
+
+**********
+    IDD
+**********
+    An IDD - is an Interface Design Document that defines the current "AS IS" message flow
+    and how it will work in the new solution design ("To Be") for WEPT.
+
+    THE IDD captures  the details required to develop, test and support the message flow.
+
+
+    IDD DoR Material
+    IDD Referenced Documents
+    IDD Dependencies
+    IDD Deliverable Components
+    IDD Assumptions
+    IDD In-Scope
+    IDD Overview
+    IDD Workflows and Message Analysis
+      -  Publisher Flow
+      - Component diagrams
+      - Sequence Diagram
+    Canonical Transformation
+    Utility Services
+    OBIS - INTDS Database
+    Publisher Services(s) - Server logs
+    Subscriber Flow
+    Component Diagrams
+
+
+
+
+
+
+
+
+**********
+    DOR   - Definition of Ready
+**********

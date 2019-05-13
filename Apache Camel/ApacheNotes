@@ -47,6 +47,8 @@ Is a unit of data. Data is packaged into 2 parts:
   1. Header:
         -Contains meta data about the message.
         -Could include origin of destination of the message
+
+        - Key value pairs, where the key is a string and the value is an object.
   2. Body :
       - Contains the actual data payload.
 
@@ -110,35 +112,36 @@ ConsumerTemplate makes consuming messages easy.
 Consumers
 ########
 
-Consumer wraps the payload and creates the exchange.
+    Consumer wraps the payload and creates the exchange.
 
-        from.() is basically a consumer
+            from.() is basically a consumer
 
-Two Types of Consumers:
+    Two Types of Consumers:
 
-  - Event Driven
-  - Polling Consumer
+      - Event Driven
+      - Polling Consumer
 
-~~~~~
-Event Driven
-~~~~~
+        ~~~~~
+        Event Driven
+        ~~~~~
 
-  - Consumer Reacts to events. Also called asynchronous consumers:
-        e.g JMS, Kafka
+          - Consumer Reacts to events. Also called asynchronous consumers:
+                e.g JMS, Kafka
 
-~~~~~
-Polling Consumers
-~~~~~
-  Are called asynchronous consumers. Polls and reads the content from a source on a regular interval.
+        ~~~~~
+        Polling Consumers
+        ~~~~~
+          Are called synchronous consumers. Polls and reads the content from a source on a regular interval.
+            Example: Polling a directory on a regular interval in a FTP Server
 
 
 ########
 Producers
 ########
 
-An entity which can create and send a message to an endpoints
+    An entity which can create and send a message to an endpoints
 
-Producer converts the exchange according to the endpoint behind the scenes.
+    Producer converts the exchange according to the endpoint behind the scenes.
 
 
 
@@ -276,10 +279,39 @@ to
              System.out.println("Exception is : " + e);
              e.printStackTrace();
           }
-          
+
+  *******************
+   Logging in Camel
+  *******************
+        Maven dependencies : slf4j-api     &     slf4j-log4j12
+        add log4j.properties
 
 
 
+  **********************************
+   How Camel transports the content?
+  **********************************
+
+      -  As soon as Camel starts a route (with the from method), it creates an EXCHANGE OBJECT.
+      -  An Exchange object is something which will hold the whole data that is getting transported in that particular route.
+
+          ************
+            MESSAGE
+          ************
+            Consists of 3 things:    Header , Attachement, Body
+            1. Header:
+                  -Contains meta data about the message.
+                  -Could include origin of destination of the message
+                  - Key value pairs, where the key is a string and the value is an object.
+
+            2. Attachements:
+                  - Are optionals. Potentially used for scenarioes where you need to attach something as part of the message.
+
+            3. Body :
+                Type: Java.lang.object
+                - Can hold any type of Object.
+
+      - Transports the Exchange object from the from  method to the to method
     ********************
           Tags
     ********************
@@ -303,7 +335,7 @@ to
                   the route in which  they're defined.
 
    - setHeader() : creates a header that exists within the current route. Headers are name-value pairs; the name is a unique,
-                  case-insensitive string and the vlaue is of type java.lang.object.
+                  case-insensitive string and the value is of type java.lang.object.
 
    - bean()     : Bean binding in Camel defines both which methods are invoked and also how the message is converted into
                   the parameters of the method when it is invoked.

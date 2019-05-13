@@ -327,7 +327,7 @@ So with dependency injection you simply outsource the construction and injection
 
 
 **************  ************    *************  ************
-  SPRING AOP      SPRING AOP   SPRING AOP  SPRING AOP
+  SPRING AOP      SPRING AOP   SPRING AOP  SPRING AOP   ----- ASPECT Oriented Programming
 **************  ************    *************  ************
 
       A key component of Spring is AOP - Aspect Oriented Programming Framework. AOP entails braking down program logic into distinct parts called
@@ -343,38 +343,150 @@ So with dependency injection you simply outsource the construction and injection
       Spring AOP module lets interceptors intercept an application. For example - when an method is executed , you can add extra functionality before or after the method execution.
 
 
+      ##########
+       WHY AOP
+      ##########
+
+          - Code for Aspect is defined in a single class.
+              - Promotes code reuse and easier to change.
+
+          - Business code is the application is cleaner.
+              - Only applied to business functionality : addAccount
+              - Reduces code complexity.
+
+          - Configurable
+              - Based on configuration, apply Aspects selectively to different parts of app
+              - No need to make changes to main application code.. Very important.
+
+      ############################
+        Additional AOP Use Cases
+      ###########################
+
+        - Most Common
+            - logging, security, transactions.
+
+        - Audit logging
+            - who, what, when, where
+
+        - Exception handling
+            - log exception and notify DevOps team via SMS/email
+
+        - API Management
+            - How many times has a method been called user
+            - Analytics: what are peak times? What is average load? who is top user?
+
+                ~~~~~~~~~~~~~~~~~~~                                         ~~~~~~~~~~~~~~~~~~~~~~~~
+                  Advantages                                                   Disadvantages
+                ~~~~~~~~~~~~~~~~~~~                                         ~~~~~~~~~~~~~~~~~~~~~~~~
+
+                  - Reusable modules                                          - Too many aspects and app flow is hard to follow.
+                  - Resolve code tangling                                     - Minor performance cost for aspect execution. (Run-time weaving)
+                  - Resolve code scatter
+                  - Applied selective based on configuration
+
+
+
+        ~~~~~~~~~~~~~~~~~~~~~~~
+        Cross-Cutting Concerns
+        ~~~~~~~~~~~~~~~~~~~~~~~
+          so a "Concern" means logic / functionality. Basic Infrastructure code that all applications will need.
+
+            Concerns are two types:
+
+                1. Concerns representing single and specific functionality for primary requirements are known as core concerns.
+                  OR
+                  Primary functionality of the system is known as core concerns. EXAMPLE: Business Logic.
+
+                2. Concerns representing functionalities for secondary requirements are referred to as crosscutting concerns or system-wide concers.
+                  OR
+                    The crosscutting concern is a concern which is applicable throughout the application and it
+                    effects the entire application.
+                      EXAMPLE: logging, security, data transfer.
+
+
+
+
           ***************************
             AOP Concept and Terminology
           ***************************
             ~~~~~~
-            Aspect      : a module which has a set of APIs provided cross-cutting requirements. Example: logging module would be called AOP aspect for logging.
-            ~~~~~~
+            Aspects          : a module which has a set of APIs provided cross-cutting requirements. Example: logging module would be called AOP aspect for logging.
+            ~~~~~~        Aspect can be reused at multiple locations. Aspect is just a class. Can be applied to different parts of the project with configuration.
 
             ~~~~~~
-            Join Point      : Represents a point in your application where you can plug-in AOP Aspect. The actual place in the application
+            Join Point       : Represents a point in your application where you can plug-in AOP Aspect. The actual place in the application
             ~~~~~~                where an action will be taken using Spring AOP.
+                                  When to apply code during program execution
 
             ~~~~~~
-            Advice      : actual action to be taken either before or after the method execution. Actual piece of code that is invoked during program execution by Spring AOP framework.
-            ~~~~~~
+            Advice           : actual action to be taken either before or after the method execution. Actual piece of code that is invoked during program execution by Spring AOP framework.
+            ~~~~~~        What action is taken and when it should be applied.
+
+
+            ~~~~~~~~
+            Pointcut         : A predicate expression for where advice should be applied.
+            ~~~~~~~~
 
               ###############
                 Advice Types        - Spring aspects can work with 5 kinds of advice.
               ###############
 
-                    -  before           :     Run advice before the method execution.
+                    - before           :     Run advice before the method execution.
+                                            Example :     @Before("execution(public void addAccount())")
 
                     - after             :     Run advice after the method execution, regardless of its outcome.
 
-                    - after-returning   :     Run advice after the method execution, only if the method completes successfully.
+                    - after-returning   :     Run advice after the method execution, only if successful execution.
 
-                    - after-throwing    :     Run advice after the method execution, only if the method exists by throwing an exception.
+                    - after-throwing    :     Run advice after the method execution, only if exception thrown.
 
-                    - around            :     Run advice before and after the advised method is invoked.
-
-
+                    - around            :     Run advice before and after the method.
 
 
+
+              ~~~~~~~~
+              Weaving
+              ~~~~~~~~
+                  - Connecting aspects to target objects to create an advised object.
+
+                  Different Types of Weaving:
+                    - Compile-time.
+                    - Load-time.
+                    - Run-time.       - the slowest regarding performance.
+
+    *********************
+      AOP Frameworks
+    *********************
+
+      - Two leading AOP Frameworks for Java.
+
+          - Spring AOP
+          - AspectJ
+
+
+      *************
+        Spring AOP
+      *************
+            Spring provides AOP Support, and uses it in the background. Light weight implementation of AOP.
+              Solves common problem in enterpise projects.
+
+            Key Components of Spring:
+              - Security, Transactions, caching etc.
+
+          Uses run-time weaving of aspects.
+
+      *************
+        AspectJ
+      *************
+          Original AOP framework. Provides Complete support for AOP.
+
+      Rich Support for:
+            - Join points: method-level, constructor, field.
+            - Code weaving: compile-time and load-time.
+
+
+
+          - Spring provides AOP support
 
       **************  ************    *************  ************
       MICROSERVICES   MICROSERVICES   MICROSERVICES  MICROSERVICES
