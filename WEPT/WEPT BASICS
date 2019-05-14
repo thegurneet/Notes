@@ -51,3 +51,27 @@
 **********
     DOR   - Definition of Ready
 **********
+
+
+
+
+
+
+************
+    Broker
+************
+
+A message broker (sometimes known as an Integration broker / interface engine) is an intermediary computer program module that translates a message from the formal
+messaging protocol of the send of the formal messaging protocol of the receiver. Message brokers are elements in computer networks where software applications communicate by exchanging
+formally-defined messages.
+
+a message broker is an architectural pattern for message validation, transformation and routing. The purpose of a broker is to take incoming messages from applications and perform some actions on them.
+For example a message broker may be used to manage a workload queue or message queue for multiple receivers, providing reliable storage, guaranteed message delivery and perhaps transaction management.
+
+Some examples of actions that might be handled by a broker:
+
+  - Route messages to one or more destinations
+  - transform messages to an alternative representation
+  - Perform message aggregation , decomposing messages into multiple messages and sending them to their destination - then recompsing the responses into one message to return to the user.
+  - Invoke web services to retrieve  data.
+  - Response to events or errors.
