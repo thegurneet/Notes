@@ -23,23 +23,6 @@
     THE IDD captures  the details required to develop, test and support the message flow.
 
 
-    IDD DoR Material
-    IDD Referenced Documents
-    IDD Dependencies
-    IDD Deliverable Components
-    IDD Assumptions
-    IDD In-Scope
-    IDD Overview
-    IDD Workflows and Message Analysis
-      -  Publisher Flow
-      - Component diagrams
-      - Sequence Diagram
-    Canonical Transformation
-    Utility Services
-    OBIS - INTDS Database
-    Publisher Services(s) - Server logs
-    Subscriber Flow
-    Component Diagrams
 
 
 
@@ -49,7 +32,7 @@
 
 
 **********
-    DOR   - Definition of Ready
+    DoR   - Definition of Ready
 **********
 
 
