@@ -1,0 +1,32 @@
+
+
+
+
+
+
+
+
+
+*******************
+    What is GIT
+*******************
+
+      Version Control System (VCS) for tracking changes in computer files.
+
+      - Helps coordinate work between multiple developers.
+      - Who made what changes and when.
+      - Local and remote repositories.
+      - Keeps track of code history
+
+
+  *********************
+      Basic Commands
+  *********************
+
+    * git init              // initializes Local Git Repository
+    * git add <file>       // Add Files(s) to Index - will then be ready for commit. Can run this as many times
+    * git status           // Displays the differences between the working tree and the staging area/ index
+    * git commit          // Commit changes in Index. Add the Index to the local Repository
+    * git push            // Push to Remote Repository. Take local Repository and pushes it to the remote Repository.
+    * git pull            // Pull latest from remote Repository
+    * git clone           // Clone repository into a new Directory

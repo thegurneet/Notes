@@ -3,7 +3,7 @@
 **********************    **********************     **********************
     let & const               let & const                  let & const
 **********************    **********************     **********************
-
+hi
     **********
       in ES5 :
     **********
@@ -96,7 +96,7 @@
 
             const PI = 3.14;
             PI = 3    // gives error can't change it.
-            PI = PI * 10   // gives error can't change it. 
+            PI = PI * 10   // gives error can't change it.
 
             const personArray = ["hello"].
             personArray.push("bye");   // perfectally  fine.
