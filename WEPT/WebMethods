@@ -5,14 +5,14 @@
 
         FIFO - First in, First Out.
               Method for handling data structures where the First element is processed first and the Newest element is processed last.
-                  - Like a queue for a cinema ticket.
+                  - Like a queue for a cinema ticket. First one in the line gets processed first
 
                     FIFO approach is used as an operating system algorithm, which gives every process CU time in the order they arrive.
 
 
         LIFO - Last in , First Out. or FILO - First in Last out.
-              Method for handling data structures where the last element is processed first and the first element is processed lat.
-                  - like balls in a tennis ball tube. Last ball to go in, comes out first.
+              Method for handling data structures where the last element is processed first and the first element is processed last.
+                  - Like balls in a tennis ball tube. Last ball to go in, comes out first.
 
                     LIFO approach is used as a queuing theory that refers to the way items are stored in types of data structures.
 
@@ -20,9 +20,13 @@
     What is  Messaging
  ***********************
 
-  Messaging involved passing messages around, different from email and text, because it is intended for communication between software components , and not between people.
+  Messaging involved passing messages around, different from emails and text, because it is intended for communication between Software Components , and not between people.
 
   A message usually contains a payload - whatever information the application sends: XML, JSON, binary data etc. Can add optional attributes and metadata to a message.
+    - Header
+    - Body
+      - payload
+    - env
 
   A SQL or NOSql database often has a server that stores data. Similarly - a messaging server or service allows a place for the messages to be stored temporarily transmitted.
 
@@ -35,13 +39,13 @@
         A queue is like a buffer -  buffer: a data buffer is a region of a physical memory storage used to temporarily store data while it is being moved from one place to another -
           Think of it like a Train. Train = Buffer. Add people to train, take them off when you need to. Add Data to a buffer - remove/use them when you need it.
 
-            - A software that puts messages into a  queue is called a Message Producer
-            - the software that retrieves messages is called a Message Consumer/ Subscriber
+            - A software that Puts Messages into a Queue is called a Message Producer
+            - the software that Retrieves Messages is called a Message Consumer/ Subscriber
 
     A Topic is like a broadcasting station - publish messages to a topic and anyone interested in these messages can subscribe to the topic.
     The interested parties are notified about the published messages.
 
-      The software that broadcasts topics is called a Topic Publisher and the software that subscribes to broadcast is called a Topic Subscriber!
+      The software that Broadcasts Topics is called a Topic Publisher and the software that Subscribes to broadcast is called a Topic Subscriber!
 
 
 
@@ -50,7 +54,7 @@
 *************************************************************
 
   Publish/Subscribe messaging, or pub/sub messaging - is a form of asynchronous service - to - service communication used in serverless and micro services architectures.
-    In a pub/sub model, any message published to a topic is immediately received by all of the Subscribers to the topic. Pub/sub messaging can be used  to enable event-driven architectures,
+    In a pub/sub model, any message published to a topic is immediately received by all of the Subscribers of the topic. Pub/sub messaging can be used  to enable event-driven architectures,
     or to decouple applications in order to increase performance, reliability and scalability.
 
   In a modern cloud architecture applications are decoupled into smaller, independent building blocks that are easier to develop, deploy and maintain.
