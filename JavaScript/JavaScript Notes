@@ -1,9 +1,1473 @@
+Resources:
 
+https://developer.mozilla.org/bm/docs/Web/JavaScript
+
+Babel -
+
+
+The Langauge has 4 function invocation types:
+
+*  function invocation    :        alert('Hello World!')
+*  method invocation      :        console.log('Hello World!')
+*  constructor invocation :        new RegExp('\\d')
+*  indirect invocation    :        alert.call(undefined, 'Hello World!')
+
+
+/*
+ES6   vs     ES5    :
+
+
+let   and     const    keywords are ES6   =  ES5 is    var     which stands for variable.
+
+variables come in two forms: number and string
+
+					var number = 30;
+						or
+					var number = "30";
+
+
+*/
+
+		**********STRING ON STRINGS**************
+There are a few methods we can use to add a tab, break and speach marks withing a string.
+
+Examples:
+
+1.    >   "Flight #:\t921\t\tSeat:\t21C"
+						output =     Flight #:	921		Seat:	21C
+
+***so using \t adds a tab.
+
+
+2.   >    "Login Password:\"Hello"\"
+						output=      Login Password: "Hello"
+***to add the "" inside the "" we use, \ around it.
+
+
+3.   >     "Origin\\Destination:\\tOrlando(MCO)
+						output =    Origin\Destination:	Orlando(MCO)
+***to add a \ cause it might be assumed to be something else. use \\
+
+4.   >     "Departure:\t09:55A\nArrival:t14:55P"
+						output =    Departure: 09:55A
+									Arrival:   14:55P
+**to add a break/space use \n
+
+
+/*   NOTES/COMMENT/HELP for JAVASCRIPT
+
+    mutable means changeable.
+
+    ***Creating a Variable, examples: ****
+
+        (ES6) let orderNumber = 0 ;
+		var orderNumber = 0;
+
+        or
+
+        let foodType = "pizza";
+
+
+****Variable Exploration*******
+
+Each position in a String has a numbered "index" starting from 0.
+.charAt()   gives us the index assigned to the charAt() <- the number in here.
+
+	> var sentence = "Antidisestablishmentarianism is fun to say!"
+
+
+> sentence.charAt(11)
+				-> "b"
+> sentence.charAt(31)
+				-> " "
+
+
+
+
+  **Create and empty Object***
+
+  let flightRequirements = {};
+
+
+    ***Creating a Function, examples: ****
+
+    A const ( function ) can not be changed. a variable can.
+
+        const Ordernumber = () => { }
+
+        or
+
+        const takeOrder = (topping) => { }
+
+        or
+        function meetStaffRequirements () { };
+
+
+
+
+                                    *****PROMPT******
+            the prompt allows us to prompt a small console at the top of the browser to allow us to input a value.
+
+            EXAMPLE:
+
+            const kelvin = prompt("What is the Kevlin temperature today?")
+
+
+
+
+                                    ******HOW TO DO AN IF / ELSE STATEMENT****
+
+            var bird = "fly";
+
+            if (bird == "fly") {
+                console.log("This bird can fly")
+            } else {
+                console.log("This bird cannot fly")
+            }
+
+
+                                    ****HOW TO DO AN IF/ IF-ELSE STATEMENT****
+
+
+            var moonPhase = 'full';
+
+            if(moonPhase == 'full') {
+                console.log('Howl');
+            } else if (moonPhase == 'mostly full'){
+                console.log('Arms and legs are getting hairer')
+            } else if (moonPhase == 'mostly new') {
+                console.log('Back on two feet')
+            } else (
+                console.log('Invalid moon Phase');
+            )
+
+
+                                    *****HOW TO DO A SWITCH STATEMENT****
+
+
+            var moonPhase = 'full';
+
+            switch (moonPhase) {
+
+                case 'full' :
+                    console.log('Howl!')
+                    break;
+
+                case 'mostly full' :
+                    console.log('Arms and legs are getting hairer')
+                    break;
+
+                case 'mostly new':
+                    console.log('Back on two feet')
+                    break;
+                default:
+                    console.log('Invalid moon Phase');
+                    break;
+            }
+
+
+                                         ****LOGICAL OPERATORS****               how to do a are these two things equal
+
+            to say both must be true we use:   &&
+            to say either can be true we use:  ||
+
+
+
+            var moonPhase = 'full';
+            var isFoggyNight = true;                             **REMEBER TRUE AND FALSE DOES NOT HAVE TO BE IN " "*****
+
+             if(moonPhase === 'full' && isFoggyNight === true) {
+                console.log('Howl');
+            } else if (moonPhase == 'mostly full'){
+                console.log('Arms and legs are getting hairer')
+            } else if (moonPhase == 'mostly new') {
+                console.log('Back on two feet')
+            } else (
+                console.log('Invalid moon Phase');
+            )
+
+              ** OUTPUT  = "Howl!" **
+
+
+
+
+
+                                            ****TERNARY OPERATOR*****
+
+            Javascripts provide a way to shorten simple if/else statements
+            called the ternary operator.
+
+            Normal If/else statement:
+
+            let moonPhase = 'full';
+
+            if(moonPhase === 'full') {
+                console.log("Howl!")
+            } else {
+                console.log("Don't Howl!");
+            }
+
+
+            TERNARY OPERATOR   Example 1:
+
+            let moonPhase = 'full';
+
+            moonPhase ? console.log('Howl!') : console.log('Don't Howl!');
+
+
+            TERNARY OPERATOR   Example 2:
+
+            let age = 16;
+
+            age >= 16  ?  console.log("You are old enough to drive!") : console.log ('you are not old enough to drive yet!' );
+
+
+
+                                            *****FUNCTIONS******
+                                            ********************
+                                            *****FUNCTIONS******
+                                            ********************
+                                            *****FUNCTIONS******
+
+            a function is a block of code, designed to perform a task.
+            You must use parenthesis/brackets () to call a function.
+
+            Two types of of way to type these. There is the ES6 way and the ES5 way. Richard recommeneds to learn the ES5 way first.
+
+            ES5:
+
+            materials.map(function(material) {
+            return material.length;  })
+
+
+			Example 1:
+
+				function sumOfCubes(a, b) {
+
+				var aCubed = a*a*a;
+				var bCubed = b*b*b;
+
+
+				return aCubed + bCubed;
+
+				}
+
+				var mySum = sumOfCubes(5,6);
+				alert(mySum);
+
+				 -> 341
+
+			Example 2:
+
+				function countE ( ) {
+
+					var phrase = prompt("Which phrase would you like to examine?");
+					if ( typeof(phrase) != "string" ) {
+						alert("That's not a valid entry!");
+						return false;
+
+					} else {
+
+					 var eCount = 0;
+					 for (var index = 0; index < phrase.length; index++ ) {
+						if (phrase.charAt(index) == 'e' || phrase.charAt(index) == 'E')
+							eCount++;
+					 }
+					}
+					 alert("There are " + eCount + "E's in \"" + phrase + "\".")
+				}
+
+
+
+   *****  ES6:
+
+            material.map((material) => {
+            return material.length;  })
+
+
+******Returning Functions and immediate Innovation*******
+
+Since functions can be treated as expressions, they can also be returned like values!
+
+EXAMPLE:
+
+										var parRides = [["Birch Bumpers", 40],["Pines Plunge", 55],["Cedar Coaster", 20],["Ferris Wheel of Firs", 90] ];
+
+										var fastPassQueue = ["Cedar Coaster", "Pines Plunge", "Birch Bumpers", "Pines Plunge"];
+										var wantsRide = "Birch Bumpers";
+										var ticket = buildTicket(parkRides, fastPassQueue, wantsRide);
+
+											function buildTicket (allRides, passRides, pick) {
+
+												if(passRides[0] == pick) {
+
+													var pass = passRides.shift();
+														return function ( ) { alert("Quick! you've got a Fast Pass to " + pass + "!");
+														};
+
+
+												} else {
+															for (var i = 0; i<allRides.length; i++) {
+																if(allRides[i][0] == pick)
+																	return function () { alert ("A ticket is printing for " + pick + "!\n" + "Your wait time is about " + allRides[i][1] + " minutes. " )
+																	}
+															}
+
+													};
+
+											};
+
+
+
+
+
+
+****** Functions expressions and map method*******
+
+
+a function expressions is ..an expression. we can pass them without variables
+
+EXAMPLE:
+
+								var numbers = [12, 4, 3, 9, 8, 6, 10];
+
+								var results = numbers.map(**a function**)
+
+the map() method will always take in a function as a parameter.
+
+the map() is basically this method:
+
+								 		var results = [];
+										for (var i = 0; i < numbers.length; i++) {
+												results[i] = coolFunction(numbers[i]);
+										}
+
+in one line. It takes the entire loop format and consolidates it to one nice line of code.
+
+
+                                               ***Parameters***
+                                               ****************
+
+            Parameters are variables in a fuction defintion that represent
+            data we can input into the function
+
+            **topping is the parameter**
+
+
+            const takeOrder = (topping) => {
+                console.log('Order : pizza' + topping);
+            };
+
+            takeOrder('with mushrooms');
+
+
+
+
+            **OUTPUT :   Order: pizza with mushrooms  ***
+            *with mushrooms is being inputed into topping, so basically
+             its ( let topping = 'with mushrooms'; )*
+
+
+
+
+
+
+                                             ***RETURN***
+
+So using the return keyword will literally make the function that it is called in,
+equal to the value return. So, if we:
+
+                                      add() {
+
+                                      return 4;
+
+                                      }
+
+now whenever we call add(), it will literally be equal to 4.
+
+
+
+
+
+
+
+            consts getAverage = (numberOne, numberTwo) => {
+                const average = (numberOne + numberTwo) / 2;
+                return average;
+            }
+
+            console.log(getAverage(365, 27));
+
+
+
+            **OUTPUT : 196   ****
+
+
+
+
+
+            let orderCount = 0;
+
+            const takeOrder = (topping, crustType) => {
+                orderCount ++;
+                console.log('Order:' + crustType + topping);
+            };
+
+            takeOrder(' with bacon.' , ' thin crust pizza' );
+            takeOrder(' with chesse.' , ' thin crust pizza' );
+            takeOrder(' with onion.' , ' thin crust pizza' );
+
+            const getSubtotal = (itemCount) => {
+                return itemCount * 7.5;
+            }
+            console.log(getSubTotal(orderCount));
+
+            const getTax = (orderCount) => {
+
+                return getSubTotal(orderCount) * 0.06;
+            }
+
+            const getTotal = () => {
+                    return getSubTotal(orderCount) + getTax(orderCount);
+            }
+
+            console.log(getTotal());
+
+
+            ****FUNCTION DECLARATION****
+
+            A function declaration is a function that is bound to an identifer or a name.
+            using function is equal to const, but reduces the amount of code required.
+
+            for example: ]
+
+            const isGreaterThan = (numberOne, numberTwo) ==> {                    ***Static so it doesnt change**
+            }
+
+            OR
+
+            isGreaterThan = fuction()
+
+            isgeterthan = 44
+
+
+            function name()
+
+            function isGreaterThan (numberOne, numberTwo) {                       ***Just the type, not fixed****
+              }
+
+
+
+            *****FUNCTION EXPRESSION***
+
+**** Functions on the fly**
+
+Building functions withing code execution rather than at program load time.
+
+	Example:
+            function diffOfSquares (a,b) {
+				return a*a - b*b;
+			}
+
+Since this function is declared, it will run when the program is run, loaded into memory - for when you need it.
+
+Anonymous function.
+EXAMPLE 2:
+								 |    No need. Its annoynmous.
+								 V
+			var diff = function diffOfSquares(a,b) {
+				return a*a - b*b;
+			};
+		//need the semicolon to complete the assignment statement in a file.
+
+
+		********************  ********************  ********************   ********************  ********************
+	  ********************  ********************  ****** CLOSURE *******   ********************  *******************
+	  ********************  ********************  ********************   ********************  ********************
+
+		A closure wraps up an entire environment, binding necessary variables from other scopes.
+		A closure can make the creation of very similar functions ultra-efficient.
+
+Example: (NO GOOD EXAMPLE)
+
+					function assignTorpedo ( name, passengerArray ){
+						var torpedoAssignment;
+						for (var i = 0; i<passengerArray.length; i++) {
+							if(passengerArray[i] == name){
+								torpedoAssignment = function ( ) {
+									alert("HEY, " + name + "!\n" + "Man your post at Torpedo #" + (i+1) + "!");
+								};
+							}
+						}
+						return torpedoAssignment;
+					};
+
+		var subPassenger = ["Luke", "Leia", "Han", "Chewie", "Yoda"];
+		var giveAssignment = assignTorpedo("Chewie", subPassenger);
+		giveAssignment();
+
+
+Closures bind values at the very last moment. So we have to pay attention to
+return times and final variable states.
+
+
+Example: (GOOD EXAMPLE:)
+
+
+				function assignTorpedo ( name, passengerArray ){
+						for (var i = 0; i<passengerArray.length; i++) {
+							if(passengerArray[i] == name){
+								torpedoAssignment = function ( ) {
+									alert("HEY, " + name + "!\n" + "Man your post at Torpedo #" + (i+1) + "!");
+								};
+							}
+						}
+					};
+
+			var subPassenger = ["Luke", "Leia", "Han", "Chewie", "Yoda"];
+			var giveAssignment = assignTorpedo("Chewie", subPassenger);
+			giveAssignment();
+
+
+ANOTHER EXAMPLE: (GOOD EXAMPLE:)
+
+			function makeTorpedoAssigner ( passengerArray ) {
+				return function( name ) {
+					for (var i = 0 ; i < passengerArray.length; i++) {
+						if (passengerArray[i] == name) {
+							alert("Ahoy, " + name + "!\n" + "Man your post at Torpedo #" + (i+1) + "!")
+						}
+					}
+				};
+			}
+
+			var subPassenger = ["Luke", "Leia", "Han", "Chewie", "Yoda"];
+			var getTorpedoFor = makeTorpedoAssigner(subPassenger);
+			getTorpedoFor("Chewie");
+
+
+
+
+		 ********************  ********************   ********************  ********************
+			 ********************  ****** Hoisting *******   ********************  *******************
+			 ********************  ********************   ********************  ********************
+
+- Hoisting is not something you do...its something that happens in the back end (memory related)
+
+- Hoisting is Javascript's default behaviour of moving declarations to the top.
+- Ensuring that every line of code can execute when it's needed.
+
+First, memory is set aside for all necessary variables and declared functions.
+
+Declared stuff that needs space in memory is first "hoisted" to the top of scope
+before any operational code is run.
+
+Function expressions are never hoisted! They are treated as assignments.
+
+Hoisting in a function that returns a capacity status for the JavaScript Express.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      ******************
+                                      *******SCOPE******
+                                      ******************
+
+
+            Scope refers to where a variable can be accessed
+            in a program.
+
+            Scope is the idea in programm that some variables are accessible/
+            inaccessible from otehr parts of the program;
+
+            GLOBAL Scope refers to variables that are accessible to every part
+            of the program.
+
+            BLOCK SCOPE referes to variables that are accessible onyl within
+            the block they are defined.
+
+
+            For example:
+
+
+
+            const starCount = () => {
+
+              let i = 5;
+              console.log(i);                          ** prints : 5 **
+
+              for (let i = 0 ; i < 12 ; i++) {
+              console.log (i);
+            }                                          ** still on prints : 5 **
+          }
+
+            starCount ();                             **prints: 5 and then 0 to 11 **
+
+            console.log(i);                           **this gives an error. as its not accessible **
+
+
+
+
+                                          ***************
+                                          ****ARRAYS*****
+                                          ***************
+
+			An Array is a data structure with automatically indexed positions.
+
+            Arrays are Javascripts way of making lists. theres lists can be store
+            any data types (including strings, numbers, and booleans) and they are ordered,
+            meaning each item has a numbered position.
+
+            In Javascript you start counting arrays from 0, NOT 1. JavaScript is
+            zero-indexed.
+
+            variables declared weith let can be reassigned
+            variables assigned with const cannot be reassigned.
+            Arrays declared with const remain mutuable or changeable.
+
+
+            Example:
+
+            let listOfGames =
+
+            [
+              'Metal Gear Solid',
+              'FortNight',
+              'Destiny'
+            ]
+
+
+
+            There are many array methods:
+
+            let fruits = ['Pear','Apple','Banana','Peach']      ****ARRAY LIST*****
+            let veg = ['Potato' , 'Ubergine']
+
+
+              .push()     *adds an item/index to the end of the array/list.
+              .unshift()  *adds an item/index to the front of the array/list.
+              .pop()      *removes the last item/index from the array/list.
+              .shift()    *removes the first item/index from the array/list.
+              .join()     *joins something into the list.                         e.g fruits.join(' and ');   result : Pear and Apple and Banana and Peach
+              .concat()   *joins array lists together                             e.g fruits.concat(veg) ;    result : Pear, Apple, Banana, Peach, Potato , Ubergine.
+              .slice()    *allows you to slice your array.                        e.g fruits.slice(1,4);    this will get 1,2,3 items not 4.  ( pear, apple, banana)
+
+              .splice     *allows you to add at a location in a list, and         e.g fruits.splice(2,0, "Kiwi");   adds from 2 onwards and removes 0 amount after 2.
+                            *also remove.                                             result: Pear, Apple, Kiwi,
+                                                                                  e.g fruit.splice(1,1, "Kiwi");  Result: Pear, Apple, Kiwi, Peach. (it removed, 1 after apple
+                                                                                    which is banana)
+
+
+
+
+
+                                ****************
+                                *****LOOPS******
+                                ****************
+
+              Types of Loops:
+
+                for loops :  which let us loop a block of code a known amount of times.
+
+                while loops : let us loop a block of code an unknown amount of times.
+
+                Nest For Loops: Run a for loop inside another for loop to comapre the items in two arrays.
+
+                Infinite Loops : endless loop in short. Infinite loops are more common in while loops becuase they dont have an iterator built
+                                  into their syntax.
+
+								for-in Loop    : allows us to access each enumerable property in turn.
+
+
+
+
+              ****Example of a For Loop:                                                Will Print:
+                                                                                        I want to go to Paris
+
+                  var vacactionSpots = ['Paris', 'Cornwall', 'Geneva', 'London']        I want to go to Cornwall
+                                                                                        I want to go to Geneva
+                  for (i = 0 ; i < vactionSpots.length ; i++) {                         I want to go to London
+                      console.log('I want to go to' + vactionSpots[i]);
+                    }
+
+
+
+              ****Example of a backwards For Loop;
+                                                                                        Will Print:
+                  var vacactionSpots = ['Paris', 'Cornwall', 'Geneva', 'London']        I want to go to London
+                                                                                        I want to go to Geneva
+                  for (i = vactionSpots.length - 1 ; i >= 0 ; vactionSpots--) {         I want to go to Cornwall
+                    console.log('I want to go to' + vactionSpots[i]);                   I want to go to Paris
+                  }
+
+
+              ****Example of a while Loop;
+
+
+                    var cards = ['Diamond', 'Spade', 'Heart', 'Club'];
+                    var currentCard = 'Heart';
+
+                      while (currentCard !== 'Spade') {
+                          console.log(currentCard);
+                        currentCard = cards[Math.floor(Math.random() * 4)];
+                    }
+
+                          console.log('You found a spade!');
+
+	Another Example:
+
+				var numSheep = 4;
+				var monthNumber = 1;
+				var monthsToPrint = 12;
+
+
+					while (monthNumber <= monthsToPrint) {
+
+					  numSheep = numSheep * 4
+					  console.log( "There will be " + numSheep + " sheep after " + monthNumber + " month(s)!")
+					  monthNumber++;
+					}
+
+
+
+
+
+
+            ****Example of a Infinte Loop:
+
+
+
+
+                                ****************
+                                ***Iterators****
+                                ****************
+
+      Iterators, are called on arrays and complete sich tasks as altering each
+      element and selecting elements that fit certain criteria.
+
+      An object is an iterator when it knows how to access items from a
+      collection one at a time, while keeping track of its current position
+      within that sequence. In JavaScript an iterator is an object that
+      provides a next() method which returns the next item in the sequence.
+
+      There are many Iterators. Look at resources for more
+
+      Iterators:
+
+      let fruits = ['mango', 'papaya', 'pineapple', 'apple'];
+
+      .forEach()     : will execute the same code on each element on an array.
+
+                      Example:                                                      Answer:
+                      fruits.forEach(function(fruitItem){                                 - I want to eat Mango
+                      console.log("- I want to eat " fruitItem);                          - I want to eat papaya
+                    });                                                                   - I want to eat pineapple
+                                                                                          - I want to eat apple
+
+
+      .map()       : Creates a new array with results of calling a function for
+                    every array element.
+                   : Calls the provided function once for each element in an
+                    array, in order
+
+
+
+
+    .filter()     : Returns an array. Also returns certian elements from the
+                    original array that evaluate to truthy based on conditions
+                    written in the block of the method.
+
+    .entries()
+    .every()
+    .find()
+    .findIndex()
+    .forEach
+    .keys
+    .some
+    .values
+    .reduceRight
+    .reduce
+
+
+
+
+                                      ********************
+                                      ****Control Flow****
+                                      ********************
+
+
+
+Control flow statements enable JavaScript programs to make decisions by
+executing code based on condition. If a given condition is true, we execute
+one block of code. if a given condition is true, we execute one block of code.
+If the statement is false, we execute another block of code.
+
+
+Line of code between curly braces are called blocks. If/else statements have two
+code block.
+
+JavaScript provides an operator for swapping the truthiness and falsiness of values.
+the exclamation point:
+
+ ( ! )
+
+Example:
+
+    let isPhoneCharged = true;
+    if (!isPhoneCharged) {
+      console.log("Plug in your phone!")
+  } else {
+    console.log("Phone is Charged!")
+}
+
+since ! is infront of the isPhoneCharged, it will show the opposite. so
+"Phone is Charged" will show.
+
+
+
+
+********Comparison Operators******
+
+These evaluate true or false
+
+Less Than :   <
+Greater Than : >
+
+Less than or equal to: <=
+Greater than or equal to: >=
+
+    ===   : check if two things equal each other.
+
+    !==   : check if two things do not equal each other.
+
+    =     : assigning a value to a variable.
+
+
+
+  ********************  ********************  ********************   ********************  ********************
+  ********************  ********************  ******Objects*******   ********************  ********************
+  ********************  ********************  ********************   ********************  ********************
+Overview:
+
+- Objects are Containers of related information.
+- Object store key-values pairs and let us represent real-world things in JavaScript.
+- Properties in objects are separated by commas. Key-Value pairs are always separated by a colon.
+- You can add or edit a property within an object with dot notation.
+- a method is a function in an object.
+- this. helps us with scope inside of a object methods. this. is a dynamic variable that can
+    change depending on the object that is calling the method.
+
+- Getter and setter methods allow you to process data before accessing or
+  setting property values.
+
+JavaScript objects are containers that can store data and functions. the data
+stored in an object is NOT ORDERED. - We can only access it via calling its
+associated KEY.
+
+Objects are considered mutable, which means you can change them after they're
+created. Even if you save an object to a const variable, you can still add to
+and edit the key-value pairts inside of it without causing an error.
+
+EXAMPLE:
+
+            var restaurant = {
+              name : 'Chakra Resturant',
+              seatingCapacity: 20,
+              hasDineInSpecial: true,
+              entrees: ['Mai de Daal, Chicken Tikka, Butter Naan']
+          }
+
+
+-We create an object between the curly brackets {}
+-name , seatingCapacity , hasDineInSpecial, entrees are all KEYS.
+-seperate each key from its corresponding value by a colon(:)
+-An object keys point to values that can be any data type, including other objects.
+
+
+The most common way to access a key's value is to use DOT NOTATION.
+
+For Example, by using :
+
+                              console.log(resturant.name);
+
+it will print out "Chakra Resturant"
+
+
+
+
+
+Another way to access a key's vlaue is with BRACKET NOTATION.
+
+for Example, by using:
+
+                              console.log(resutrant['name']);
+
+it will print out "Chakra Resturant".
+
+
+
+
+
+An advantage that bracket notation has over dot notation is that you can use
+variables inside the brackets to select the keys of an object.
+
+For Example:
+
+                  let meal = 'none';
+                  let time = 12;   //use of military time (0-24);
+
+                  const restaurantSpecials = {
+                    breakfast: 'The breakfast special is 20% off freshly queexed orange juice',
+                    lunch: 'The lunch special is 10% off appetizers',
+                    none: 'There are no specials currently'
+
+                };
+
+                if (time < 11) {
+                  meal = 'breakfast'
+              } else if (time < 17 ) {
+                  meal = 'lunch'
+            }
+
+
+            console.log(restaurantSpecials[meal]);
+
+
+  JavaScript looks at the meal variable's value. In this case meal is set to 'lunch'
+  within the if/else statement because time is equal to 12. Since specials equal 'lunch',
+  writing restaurantSpecials[meal] is the same as writing restaurantSpecials['lunch'].
+
+  Bracket notation is required to use variables.
+
+
+*****ADDING******
+Since Objects are mutable, we can add/change them. By doing:
+
+            restaurantSpecials.desserts = ['chocolate cake', 'vanilla icecream'].
+
+outside of the object.
+
+
+
+
+****EDITING******
+
+We can modify a key value.
+
+
+  after adding. if we do
+
+            restaurantSpecials.desserts = ['chocolate cake']
+
+  it will change the array to just chocolate cake.
+
+
+
+******METHODS*******
+
+  When objects have key-function paris, we call the function a method.
+  Methods take place inside an object.
+
+
+  EXAMPLE:
+
+
+          const restaurant = {
+          name : 'Chakra Resturant',
+          seatingCapacity: 20,
+          hasDineInSpecial: true,
+          entrees: ['Mai de Daal, Chicken Tikka, Butter Naan']
+
+          openRestaurant: () => {                   //here on is a method
+          returns 'unlock the door'
+          };
+          closeRestaurant: () => {
+          return 'lock the door'
+          };
+      }
+
+
+      console.log(restaurant.openRestaurant());     //this calls it
+
+
+
+This prints out:
+                  unlock the door
+
+
+****THIS Keyword*******
+
+The this keyword referes to the current objectm which we use to grab the value
+saved to.
+"This" always referes to the owner object of the function in which the "this" is used.
+
+
+
+
+
+*****GETTERS AND SETTERS*******
+
+A common object design paradigm is to include getter and setter methods as
+attributes.
+
+Getters and setter methods get and set the properties inside an object.
+There are a couple of advantages to using these methods for getting and setting
+properties directly:
+
+- you can check if new data is valid before setting a property.
+- you can perform an action on the data while you are getting or setting a property
+- you can control which properties can be set and retrived.
+
+We prepend property names with underscores ( _ ), because :
+
+To denote that property should not be manipulated directly, but rather through
+getter and setter methods.
+  So when you create an object, don't change/manipulate it there. But use
+  getters and setters to change it outside of the object.
+
+Example:.
+
+setting a basic setter:
+
+                              let person = {
+                                _name: 'Lu Xun',
+                                _age: 137,
+
+//[this bit on is the setter]
+                                set age(someInt) {
+                                  if (typeof someInt === 'number') {
+                                    this._age = someInt;
+                                      } else {
+                                        console.log("Invalid input");
+                                      return 'Invalid input'
+                                      }
+                              }
+                              };
+
+
+
+Once properties have been set, you need a way to access them.
+Getters are used to get the property values inside of an object.
+
+
+
+
+                        let person = {
+                          _name: 'Lu Xun',
+                          _age: 137,
+
+                          set age(ageIn) {
+                            if (typeof ageIn === 'number') {
+                              this._age = ageIn;
+                            }
+                            else {
+                              console.log('Invalid input');
+                              return 'Invalid input';
+                            }
+                          },
+
+                          get age() {
+                            console.log(`${this._name} is ${this._age} years old.`);
+                            return this._age;
+                          }
+
+                        };
+
+                        person.age = 'Thirty-nine';
+                        person.age = 39;
+
+                        console.log(person.age);
+
+
+  ********************  ********************  ********************   ********************  ********************
+  ********************  ********************  ******Classes*******   ********************  ********************
+  ********************  ********************  ********************   ********************  ********************
+
+JavaScript is an OOP ( Object-Oriented Programming)ß
+
+Overview:
+-Classes are templates for Objects.
+-Javascript calls a constructor method when we create a new instace of a class.
+-Inheritance is when we create a parent class with properties and methods that we can extend to child classes.
+-We use the extends keyword to create a subclass.
+-The super keyword calls the constructor() of a parent class.
+-Static methods are called on the class, but not on the instances of the class.
+
+
+  Classes are a tool that developers use to quickly produce similar objects. Classes are a great way to reduce duplicate code and
+  debugging time.
+  There are two methods:
+
+   - Inheritance.
+   - Static.
+
+
+
+To create a Class we do :
+
+                              class Dog { }
+
+
+
+ ****Constructors()*****
+
+ Javascript calls the constructor() method every time it creates a new instance of a class.
+Javascript will invoke the constructor() method every time we create a new instance.
+
+
+The value of "this", when used in an object, is the object itself.
+The "this" keyword is an object constructor does not have a value. Ony a subsitute for the new object.
+"this" is not a variable. it is a keyword. you cannot change the value of "this."
+
+Inside of the constructor() method, we use the "this". "this", referes to an instance of that class.
+
+
+
+Example :
+
+                class Surgeon {
+
+                  constructor(name,department) {
+
+                  this.name = name ;
+                  this.department = department;
+
+                }
+
+              }
+
+              var gurneet = new Surgeon ("Gurneet", "EPR");
+              console.log(gurneet.department);
+
+
+****Instance***
+
+An instance is an object that contains the property names and methods of a class, but with unique property values.
+
+
+***Methods****
+
+Class methods and getter syntax is the same as it is for objects, except you can not include commas between methods.
+
+The syntax for calling methods and getters on an instance is the the same as calling them on an object -
+append the instace witha period, then the property or method name. For method you must include opening and closing
+parentheses.
+
+
+
+For Example:
+
+                    class Surgeon {
+                      constructor(name, department) {
+                        this._name = name;
+                        this._department = department;
+                        this._remainingVactionDays = 20;
+                    }
+
+                    get name() {
+                      return this._name;
+                    }
+
+                    get department() {
+                      return this._department
+                    }
+
+                    get _remainingVactionDays() {
+                      return this._remainingVactionDays'
+                    }
+
+                    takeVacationDays(daysOff) {
+                    this._remainingVactionDays -= daysOff;        //this is a method that accepts one argument, and inside subtracts daysOff from
+                                                                          _remainingVactionDays.
+                  }
+
+                    }
+
+                    const surgeonCurry = new Surgeon('Curry', 'Cardiovascular');
+                    const surgeonDurant = new Surgeon('Durant', 'Orthopedics');
+
+
+
+
+
+
+
+Prototypical.
+***Inheritance****
+
+When multiple classes share properties or methods, they become candidates for instances - a tool developers use to decrease
+the amount of code they need to write.
+
+With instances, you can create a parent class( also known as a superclass ) with properties and emthods that mutiple child classes
+( also known as subclasses) share. The child classes inherit the properties and methods from their parent class.
+
+
+-The "extends" keyword makers the methods of the animal class available inside the cat class.
+-The "super" keywords calls the constructors of the parent class.
+
+
+
+      EXAMPLE:
+
+
+                class HospitalEmployee {
+
+                  constructor(name) {
+                  this._name = name;
+                  this._remainingVactionDays = 0;
+                  }
+
+                  get name() {
+                  return this._name = name ;
+                  }
+                  get _remainingVactionDays() {
+                  return this._remainingVactionDays = 0;
+                  }
+
+                  takeVacationDays(daysOff) {
+                    this._remainingVactionDays -= daysOff;
+                  }
+                }
+
+
+              class Nurse extends HospitalEmployee {
+
+                constructor(name, usesLitter) {
+                super(name);
+                this._certification = certification;
+                }
+              }
+
+              const nurseGur = new Nurse ("Gurneet", 'Trauma')
+
+
+
+*** Static Methods ***
+
+Static method calls are made directly on the class and are not callable on instances of the class.
+Static methods are often used to create utility functions.
+  a utility function - is a mathematical funcion which ranks alternatives according to their utility to and individual
+
+
+
+
+
+
+  ********************  ********************  ********************   ********************  ********************
+  ********************  ********************  ****** Modules *******   ********************  ********************
+  ********************  ********************  ********************   ********************  ********************
+
+OverView:
+
+- Modules in JavaScript are reusable pieces of code that can be exported from one program and imported for use in another program.
+- module.exports       exports the module for use in another program.
+- require()            imports the module for use in the current program.
+
+
+IN ES6   introduced a more flexible, easier syntax to export modules:
+
+- default export uses     export default   to export JavaScript objects, functions, primitive data types.
+- named exports use the export keyword to export data in variables
+- named exports can be aliased with the as keyword
+- import is a keyword that imports any object, function, or data type.
+
+
+
+
+
+  Javascript modules are reusable pieces of code that can be exported from one program
+  and imported for use in another program.
+
+  Modules are useful for a number of reseaons. By separating code with
+  similar logic into files called modules:
+
+  we can:
+
+  - find, fix and debug code more easily.
+  - reuse and recycle defined logic in different parts of our applications.
+  - keep information private and protected from other modules.
+  - prevent pollution of the global namespace and potential naming collisions,
+    by cautiously selecting variables and behaviour we load into a program.
+
+
+The pattern we use to export modules is thus:
+
+  - Define an object to represent the module.
+  - Add data or behaviour to the module.
+  - Export the module .
+
+***ES6*****
+***In ES6, Javascript has implemented a new more readable and flexible syntax for exporting modules. These are
+broken down into two techniques:
+
+- default export
+- named exports
+
+
+
+********DEFAULT EXPORT
+the default export syntax works similar to the module.exports syntax.
+
+
+Import:
+Example:
+
+import Menu from './menu';
+
+- the import keyword begins the statement
+- the keyword Menu specifices the name of the variable to store the default
+- from specifies where to load the modules from
+- './menu' is the name of module to load.
+
+
+
+EXAMPLE:
+
+*airplane.js*
+
+let Airplane = {};
+
+Airplane.availableAirplanes = [
+{
+
+name: 'AeroJet',
+fuelCapacity: 800
+},
+{
+name: 'SkyJet',
+fuelCapacity: 500
+}
+
+];
+
+export default Airplane;
+
+
+
+**missionControl.js****
+
+import Airplane from './airplane';
+
+function displayFuelCapacity () {
+  Airplane.availableAirplane.forEach(function(element){
+    console.log('Fuel Capacity of ' + element.name + ': ' +
+      element.fuelCapacity);
+
+  });
+}
+
+displayFuelCapacity();
+
+
+
+**
+This will display :
+
+Fuel Capacity of AeroJet: 800
+Fuel Capacity of SkyJet: 500
+
+
+
+*******NAMED EXPORTS
+
+Named exports allow us to export data through the use of variables.
+
+Named exports are also distinct in that they can be exproted as soon as they are declared, by placing the keyword:   "export"
+in front of variable declarations.
+
+-The export keyword allows us to export objects upon declaration.
+- this means we no longer need an export statement at the bottom of our file.
+
+Example:
+
+let specialty
+
+
+
+****NAMED IMPORTS
+
+to import objects stored in a variable, we use the import keyword and include the variables in a set of {}
+
+
+
+
+
+************Buit-in Bluffs***********
+
+Built-in functions you can use at any time to get and send information.
+
+- alert()     Sends a message to the user in a small pop-up window.
+		e.g.  alert("Hello this is an alert");
+
+- confirm()   Asks user for consent to mvoe forward with an action. with ok or cancel.
+			  clicking ok gives true , cancel gives false.
+		e.g.  confirm("DUDE, are you sure you wanna go?");
+
+- prompt()    sends a message and retieves an entry from the user.
+		e.g. prompt("what do you want to eat?");
+
+
+******TYPEOF Operators******
+Identifying the "type" of value inside a variable or expression.
+
+> typeof true                          -> "boolean"     //typeof true returns boolean
+
+> typeof "Thats not a valid entry!"    -> "string"
+
+> typeof 42          				   -> "number"
+
+> typeof undefined                     -> "undefined"
+
+> typeof null  						   -> "object"
+
+
+************SCRIPT TAGS**********************
+
+To run a Javascript in an HTML FILE:
+Embedding code that signal which JavaScript file to use.
+
+	<html>
+		<head>
+		<script src="train.js"></script>
+		</head>
+		<body>
+		<h1>
+		JAVASCRIPT EXPRESSION
+		</h1>
+		</body>
+	</html>
+
+
+
+
+
+
+
+
+
+
+*/
 
 **********************    **********************     **********************
     let & const               let & const                  let & const
 **********************    **********************     **********************
-hi
+
     **********
       in ES5 :
     **********
