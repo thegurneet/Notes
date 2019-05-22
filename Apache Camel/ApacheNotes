@@ -108,40 +108,39 @@ Consumer Template & Producer Template
 ProducerTemplate can be used as an easy way of sending messages to a camel endpoint.
 ConsumerTemplate makes consuming messages easy.
 
-########
-Consumers
-########
+      ########
+      Consumers
+      ########
 
-    Consumer wraps the payload and creates the exchange.
+          Consumer wraps the payload and creates the exchange.
 
-            from.() is basically a consumer
+                  from.() is basically a consumer
 
-    Two Types of Consumers:
+          Two Types of Consumers:
 
-      - Event Driven
-      - Polling Consumer
+            - Event Driven
+            - Polling Consumer
 
-        ~~~~~
-        Event Driven
-        ~~~~~
+              ~~~~~
+              Event Driven
+              ~~~~~
+                - Consumer Reacts to events. Also called asynchronous consumers:
+                      e.g JMS, Kafka
 
-          - Consumer Reacts to events. Also called asynchronous consumers:
-                e.g JMS, Kafka
-
-        ~~~~~
-        Polling Consumers
-        ~~~~~
-          Are called synchronous consumers. Polls and reads the content from a source on a regular interval.
-            Example: Polling a directory on a regular interval in a FTP Server
+              ~~~~~
+              Polling Consumers
+              ~~~~~
+                Are called synchronous consumers. Polls and reads the content from a source on a regular interval.
+                  Example: Polling a directory on a regular interval in a FTP Server
 
 
-########
-Producers
-########
+      ########
+      Producers
+      ########
 
-    An entity which can create and send a message to an endpoints
+          An entity which can create and send a message to an endpoints
 
-    Producer converts the exchange according to the endpoint behind the scenes.
+          Producer converts the exchange according to the endpoint behind the scenes.
 
 
 
@@ -250,7 +249,7 @@ to
 
             PART 2:
                     data/input -> context path.
-                      is t he actual path where we are going to read the  file.
+                      is the actual path where we are going to read the  file.
 
             PART 3:
                     ? -> Options
@@ -262,8 +261,8 @@ to
     Simple Camel Route
   *******************
 
-          CamelContext context = new DefaultCamelContext();
-
+          CamelContext context = new DefaultCamelContext();                            // Every Camel application uses CamelContext. That is started and stopped.
+                                                                                // Camel context is the runtime system and the loading container of all resources required for the execution of the routing.
 
           try {
              context.addRoutes(new RouteBuilder() {
@@ -312,6 +311,42 @@ to
                 - Can hold any type of Object.
 
       - Transports the Exchange object from the from  method to the to method
+
+
+
+***********************************************
+            Camel Context
+***********************************************
+Camel context is the runtime system and the loading container of all resources required for the execution of the routing. Keeps everything together to allow the user to
+execute the routing logic. When the context starts, also starts various components and endpoints and activates the routing rule.
+
+Camel context contains:
+   * The components and endpoints used in the Routing
+   * type convertor used to transform a message of type to anther.
+   * data formats used to define the format of a message body.
+   * registry where Camel will look for the beans used in the routing.
+
+
+        ***************
+            Methods
+        ***************
+        Some of the methods are :                   https://camel.apache.org/maven/current/camel-core/apidocs/org/apache/camel/CamelContext.html
+
+            - start()                                                               : to start
+            - stop()                                                                : to shutdown (will stop all routes/components/endpoints etc and clear internal cache)
+            - SuspendableService.suspend()                                          : to pause routing messages
+            - SuspendableService.resume()                                           : to resume routing a message.
+
+            - addComponent(String componentName, Component component)               : adds a component to the Context
+            - addRoute(RoutesBuilder builder)                                       :
+
+
+
+
+
+
+
+
     ********************
           Tags
     ********************
@@ -339,6 +374,7 @@ to
 
    - bean()     : Bean binding in Camel defines both which methods are invoked and also how the message is converted into
                   the parameters of the method when it is invoked.
+                  .bean(new DataClass(), "map");    - run the class DataClass and the method map.
 
 
    - inOnly()   : a one-way message ( known as Event message). E.G JMS messaging is often one-way messaging.
@@ -348,4 +384,4 @@ to
 
   - marshal()   : For marshalling a message into another form, such as marshalling Java objects to XML, JSON, CSV, EDI
 
-   - unmarshal() : For performing the reverse operation, which turns data from well-known format back into a message.
+   -unmarshal() : For performing the reverse operation, which turns data from well-known format back into a message.

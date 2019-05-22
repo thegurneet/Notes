@@ -1,0 +1,39 @@
+
+
+
+      "A JavaScript runtime built on Chrome's V8 JavaScript engine. Node uses an  event-driven, non-blocking model that makes it LightWeight
+      and efficient. Node.Js package ecosystem, npm , is the largest ecosystem of open source libraries in the world. "
+
+NODE  JS IS:
+    - a platform to allow us to run JavaScript on a computer/ server
+    - Read, delete and update files
+    - Easily communicate with a database
+
+
+JavaScript Engine V8 engine.
+
+  - Computer doesn't understand JavaScript, it switches it into machine code.
+  - V8 is Googles opens source high-performance JavaScript and WebAssembly engine. Written in C++ - used in Chrome and Node.JS
+  - Node.js is written in C++, gets complied down to machine code.
+
+
+  
+
+
+Global OBJECT
+
+The global object is the window object.
+
+The Global object in node is an Object called Global?
+  Like the window object it allows us to use similar methods .
+
+
+Function Expression
+
+  var saybye = function(){
+    console.log('bye')
+  }'
+
+
+
+  saybye();
