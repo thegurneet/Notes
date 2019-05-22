@@ -17,7 +17,7 @@ JavaScript Engine V8 engine.
   - Node.js is written in C++, gets complied down to machine code.
 
 
-  
+
 
 
 Global OBJECT
@@ -37,3 +37,188 @@ Function Expression
 
 
   saybye();
+
+
+
+
+
+  Every functionality Javascript has available to use in the Browser - we have it available in node.
+
+*************
+    Bring in modules   - REQUIRE
+*************
+
+        Node.js has a require function  - require()  - that helps us bring in modules.
+        And these modules are built in node.
+
+
+
+*******************
+    Global Object
+*******************
+
+    Gloabl objects are global in nature and available in all modules. Don't need to include these objects in your application.
+            - rather they can accessed/used directly.
+    These objects are:
+        - modules
+        - functions
+        - strings
+        - objects
+
+    Some objects aren't actually in the global scope but in the module scope.
+
+            List:
+
+            *  __dirname            :  a string. Specifies the name of the directory that currently contains the code.
+            *  __filename           : Specifies the filenmae of the code being executed.
+            * Console
+            * Process
+            * Buffer
+
+
+
+************************
+    the Process Object
+************************
+
+the process object (an instance of the EventEmitter) is a global variable that provides information
+on the currently running Node.js process.
+
+What is an EventEmitter?
+    - When something is done it runs an event/function.
+
+    - When an EventEmitter instance faces any error, it emits an 'error' event.
+
+    List of process Methods:
+
+        * addListener(event, listner)
+        * on(event,listener)
+        * once(event,listener)
+        * removeListener(event,listener)
+        * removeAllListeners([event])
+        * setMaxListeners(n)
+        * listners(event)
+        * emit(event, [arg1],[arg2])
+
+
+************************
+    ReadLine
+************************
+
+The readLine module provides a way of reading a datastream, one line at a time.
+
+the syntax for including the Readline module in the application:
+
+        var readline = require('readline);
+
+ Once this module has been invoked, your node program will not terminate until you've closed the interface.
+   *  rl.close();
+
+    List of some of the Methods:
+
+        * rl.setPrompt(prompt)
+        * rl.prompt([preserveCursor])
+        * rl.question(query,callback)
+        * rl.pause()
+        * rl.resume()
+        * rl.close()
+        * rl.write(data[,key])
+
+
+
+***********************************
+        Events and Custom Events
+***********************************
+        https://www.dev2qa.com/node-js-event-loop-and-custom-event-example/
+        https://www.tutorialspoint.com/nodejs/nodejs_event_loop.htm
+
+    Node.js is a single-threaded application, but it can support concurrecny via Events and Callbacks.
+    Node.js used events heavily and it one of the reasons why Node.js is fast compared to other techonologies.
+
+    **********
+    Event driven programming
+    **********
+
+    As soon as node starts its server, it initiates its variables and declares functions and then simply waits
+    for the events to occur.
+
+    in an Event-driven application, there is generally a main loop that listens for events and then triggers a callback function
+    when one of these events is detected.
+
+
+    Events look quite similar to callbacks, the difference is the fact that callback functions are cllaed when an asynchronous function
+    returns its result. Where's event handling works on the observer pattern. The functions that listen to events act as Observers.
+
+    *************
+    EventEmitter
+    *************
+        All objects that emit events are members of EventEmitter class. These objects expose an eventEmitter.on() function
+        that allow one or more functions to be attached to named events emitted by the object. When the EventEmitter object
+        emits an event, all the functions attached to that specific event are called synchronoulsy.
+
+
+
+    EventEmitter class is used to bind events and event-listeners:
+
+    // Import events module
+        var events = require('events');
+
+    // Create an eventEmitter object
+        var eventEmitter = new events.EventEmitter();
+
+    // Bind event and event handler
+        eventEmmiter.on('eventName' , eventHandler);
+
+    // Fire an event
+        eventEmitter.emit('eventName')
+
+
+
+
+    ******************
+            Module
+    ******************
+
+Node includes three types of modules:
+
+    1. Core modules
+    2. Local modules
+    3. Third Party Modules
+
+The core modules in Node.js include bare minimum functionalities of Node.js. These core modules are complied into its binary
+distribution and load automatically when Node.js process starts. However, you need to import the core modules first in order to use it in
+the application.
+
+        Core Modules:
+
+            *  http         :   http module includes classes, methods and events to create Node.js http server.
+            *  url          :   url module includes methods for URL resoltuion and parsing.
+            *  querystring  :   querystring module includes methods to deal with query string
+            *  path         :   path module includes method to deal with file paths.
+            *  fs           :   fs module includes classes, methods, and events to work with file I/O
+            *  util         :   util module includes utility functions useful for programmers.
+
+
+    ******************
+        Local Module
+    ******************
+
+            Local modules are modules create locally in your Node.js application. These modules include different functionalities of your application
+            in separate files and folder.
+
+        In Node.js, module should be placed in a separate Javascript file.
+
+        Example :
+
+            var log = {
+
+                cal: function (x, y){
+                    console.log(x + y);
+                }
+            }
+
+        module.exports = log;
+
+
+    the module.export exposes the log object as a module. The module.exports is a special object which is included in every JS file in the Node.js
+    application by default. Use module.exports or export to expose a function, object or variable as a module in Node.js
