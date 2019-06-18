@@ -42,10 +42,10 @@ Exceptions
 Real world objects have 2 Characterstics: State and Behaviour.
 
   - State     : might be the amount of RAM it has, operating system it's running, hard drive.
-              : for an ant it - number of legs, age, color, conscious state.
+              : for an ant it - number of legs, age, color, conscious state. ( variable )
 
   - Behaviour : for a computer might be booting up, shutting down, outputting some sort of sound.
-              : for an ant might be eating, sleeping, drinking, fighting, speak.
+              : for an ant might be eating, sleeping, drinking, fighting, speak.   ( function )
 
               an Objects state is a stored in fields/variables and behaviour is shown via methods/functions.
 
