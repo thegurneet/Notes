@@ -244,3 +244,116 @@ the application.
       also response with a header. And on the request we can send Request Headers.
 
         Headers are extra information about the request / response.
+
+
+
+              ***********************
+                  File Server
+              ***********************
+
+
+              ***********************
+                  Clients and Servers
+              ***********************
+
+              When we browse a website on Chrome for instance - The browser is the client.
+              If we do a search on the webiste for instance, the browser will send a REQUEST to
+              the SERVER and the SERVER will handle the REQUEST and send back a RESPONSE to the Client.
+
+              How do the two sides communicate with each other?
+
+                      **********
+                      PROTOCOLS
+                      *********
+
+                  A Protocol is a set of communication rules, that two sides agree to use when
+                  communicating.
+                  Germans vs French no good. Both know English, then they can communicate.
+
+                  Each computer or server has an IP address. The client has to open a SOCKET between the Client
+                  and Server.  33
+
+                  When the structure of the information that is being sent has been decided, Eg HTTP,
+                  the information is sent down the socket between the two computers via a Protocol known as
+                  TCP.
+
+                  The way the info is sent from a Client to server is via TCP. This splits the information into smaller 'packages'
+                  and sends them along the socket.
+
+                  Node JS lets use utalize this functionality.
+
+                  The HandShake:
+                      1. Computers agree on how to encrypt (set of rules), HTTPS/FTP.
+                      2. Server sends certificate
+                      3. Your computer say's 'start encrypting'
+                      4. The server says 'start encrypting'
+                      5. All messages are now encypted.
+
+
+               PORTS
+              - A program running on a computer can listen for requests sent to a particular port number.
+
+
+
+          *************
+              SERVER
+          *************
+
+
+
+          ****************
+           HTTP Headers
+          ****************
+
+          Response headers:
+                  - Content-types
+                  - Status
+
+              HTTP headers allow the client and server to pass additional information with the
+              request and the response.
+
+
+
+
+          **************************
+              Streams and Buffers
+          **************************
+
+              Buffer :
+                  - Temporary storage spot for a chunck of data that is being
+                      transferred from one place to another.
+
+                  - The buffer is filled with data , then passed along.
+                  - Transfers small chunks of data at a time.
+
+
+                  We have DATA and we need to pass the DATA on. But the DATA is toooo big to be passed along in one go. Because it will take to long
+                  to be stored in memory.
+                  So we have a buffer. We slowly start pushing stuff into the buffer(Temporary memory) and the from the buffer the data is passed on.
+
+                  A stream is a stream of data that flows from one place to another. The Data flows down the stream, into the buffer, which collects small
+                  chuncks of data together, then when the buffer is full, it chucks the data down the STREAM for it to be processed and sent to the client.
+
+              Streams :
+
+                  - Can create streams in Node.js to transfer data.
+                  - Increase performance.
+                  - Writeable Streams - allow nodeJs to write data to a stream by breaking it up
+                  - Readable streams - allow node js to read data from a stream by breaking it up
+                  - Duplex - can read and write to a stream.
+
+
+              ------------
+                  PIPES
+              ------------
+              Piping is a great mechanism in which you can read data from the source and write to the destination without
+              managing the flow yourself.
+              Within Node applications, streams can be piped together using the pipe() method, which takes two arguments:
+
+                  - Required Writeable stream that acts as the destination for the data
+                  - An optional object used to pass in options.
+
+              Typical example of using pipes, if you want to transfer data from one file ot the other.
+
+                   example :
+                          myReadStream.pipe(myWriteStream);
