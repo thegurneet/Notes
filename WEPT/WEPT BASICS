@@ -24,19 +24,9 @@
 
 
 
-
-
-
-
-
-
-
 **********
     DoR   - Definition of Ready
 **********
-
-
-
 
 
 
@@ -58,3 +48,13 @@ Some examples of actions that might be handled by a broker:
   - Perform message aggregation , decomposing messages into multiple messages and sending them to their destination - then recompsing the responses into one message to return to the user.
   - Invoke web services to retrieve  data.
   - Response to events or errors.
+
+
+  ------------------------------------
+    Transient vs Non Transient Error
+  ------------------------------------
+
+  Subclass of SqlException have two types: Transient and Non-Transient
+
+  Transient exceptions are those that when retired could succeed without making any changes.
+  Non-Transient exceptions are those that won't succeed, unless an underlying problem is fixed.
