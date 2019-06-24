@@ -357,3 +357,58 @@ the application.
 
                    example :
                           myReadStream.pipe(myWriteStream);
+
+
+
+            ******************************
+                        NPM         - Node Package Manager
+            ******************************
+
+
+            ******************************
+                        Express
+            ******************************
+
+                - Easy and flexible routing syste
+                - Integrates with many templating engines , for Front end purposes.
+                - Contains a middleware framework
+
+
+
+                ------------
+                HTTP METHODS
+                ------------
+                    - Get           - app.get('route',fn)
+                    - Post          - app.post('route',fn)
+                    - Delete        - app.post('route',fn)
+                    - PUT
+
+                ----------------
+                    Middleware
+                ----------------
+                    Code that runs between the response and the request.
+
+
+
+                -------------------
+                    Query Strings
+                -------------------
+
+                    A Query string is part of a URL - which assigns values
+                    to a specified parameters.
+
+                A web server can handle a HyperText Transfer Protocol request either by
+                reading a file from its file system based on the URL path or by handling
+                the request using logic that is specific to the type of resource.
+
+                Typical URL containing a Query String is as:
+
+                    http://example.com/over/there?name=ferret
+
+                ?            - Used as a separator, not part of the query string. But it starts the query
+                name=ferret  - this is a query
+                &            - multiple query parameters are separated by the ampersand
+
+                    http://example.com/path/to/page?name=ferret&color=purple
+
+                Parse the request and pull the data.

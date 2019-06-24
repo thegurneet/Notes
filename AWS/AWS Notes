@@ -1,0 +1,71 @@
+
+        *****************************************************
+                  AWS     -    Amazon Web Services
+        *****************************************************
+
+"Invention requires two things: 1 - the ability to try alot of experiments and
+ 2 - not having to live with the collateral damage of failed experiments"
+
+
+-----------------------------
+  AWS Global Infrastructure
+-----------------------------
+  Regions around the world where AWS is based.
+
+  On top of the global Infrastructure sits alot of higher level services.
+
+  Compute  :   examples - EC2, Lambda etc.
+  Storage  :            - S3, EFS
+  Databases :           - Can be relational like RDS, or nonRelational like DianmoDB
+  Network & Content Delivery :
+  Security, Identity & Compliance
+
+
+--------------------------------
+  Region & Availability Zones
+--------------------------------
+
+    An Availability Zone is basically a Data Centre. A Data Centre is basically a building filled with servers.
+      "An AZ is one or more discrete data Centres, each with redundant power, networking and connectivity, housed in separate facilities. "
+
+    A Region is a geographical area. Each Region consists of 2 (or more) Availability Zones.
+
+    --------------
+    EdgeLocations
+    --------------
+
+    You will always have more EdgeLocations than you will regions.
+
+    Edge locations are endpoints for AWS which are used for caching content. Typically this consists of cloudFront, Amazon's Content
+    Delivery Network (CND)
+
+---------------------------
+      IAM - Identity Access management
+---------------------------
+
+    IAM allows us to manage users and their level of access to the AWS Console.
+    Important to understand IAM and how it works.
+
+    Offers the following features:
+      - Centralised Control of your AWS account
+      - Shared Access to your AWS account
+      - Granular Permissions
+      - Identity Federation (including Active Directory, Facebook, Linkedin etc)
+      - Multifactor Authentication
+      - Provide Temporary access for users/devices and services where necessary
+      - Allows password rotation policy
+      - Integrates with different AWS services.
+
+    Key Terms:
+
+      - Users    :   End Users such as people, employees of an organisation
+      - Groups   :   A collection of Users. Each user in the group will inherit the Permissions of the Group
+      - Policies :   Policies are made up of documents, called Policy documents. These documents are in a format called JSON - give Permissions as to what a user/Group/Role is able to do.
+      - Roles    :   You create roles and then assign them to AWS Resources.
+
+
+    IAM is universal. Does not apply to regions at this time.
+    The 'root account' is simply the account created when first setup your AWS account. Has complete admin access.
+
+    New users have No permissions when first created.
+    New Users are assigned Access Key ID & Secret Access Keys when first created
