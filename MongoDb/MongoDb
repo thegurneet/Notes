@@ -1,0 +1,22 @@
+
+        ***************************************************************
+                                  MongoDB
+        ***************************************************************
+
+
+        - NOSQL Database
+                : Data can be stored in a schema-less or free-form fashion. Any data can be stored in
+                any record.
+                "Instead of storing data in tables as we would with a SQL Database, we instead store it in documents
+                or collections of objects - LIKE (JSON) "
+
+      - Use it anytime you want to store data and persist it in your app. 
+
+
+
+      - Mongo is the 'M' in MEAN Stack.
+              MongoDB, Express, Angular, Node.
+
+
+
+      Mongoose makes it easier for Node to talk to MongoDB.

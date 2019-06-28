@@ -168,7 +168,6 @@ Real world objects have 2 Characterstics: State and Behaviour.
       }
 
       public Demo(){        -> is the No-Arg constructor.
-
       }
 
       *******************************
