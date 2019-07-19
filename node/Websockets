@@ -1,0 +1,8 @@
+
+                                  *****************************************
+                                            Websockets
+                                  *****************************************
+
+- communication between a client (browser) and server.
+- Bidirectional (data flows both ways)
+- Allows real-time data flow : because websockets are always open
