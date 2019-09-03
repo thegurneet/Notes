@@ -1,0 +1,77 @@
+
+##############################################
+    REST : Representational State Transfer
+##############################################
+
+LightWeight Approach for communication between applications
+
+Rest is language independent:
+
+The Client application can use ANY Programming language
+The Server application can use ANY programming language
+
+RestFul App can use any Data format.
+I like using JSON.
+
+Rest calls can be made over HTTP, Rest is language independent.
+
+
+
+REST over HTTP
+
+Leverage HTTP methods for CRUD operations.
+
+    HTTP METHOD    ||   CRUD Operation
+    _________________________________________
+    POST           ||   Create a new entity
+    GET            ||   Read a list of entities or single entity
+    PUT            ||   Update an existing entity
+
+
+#######################
+  HTTP Request Message
+#######################
+Has 3 main parts:
+
+- Request Line
+- Header Variables
+- Message Body
+
+      Request Line:    The HTTP Command
+            Has the POST,GET or PUT command.
+
+      Header Variables:  Request metadata
+            Has addition information about the request
+
+      Message body: contents of the message.
+
+
+#######################
+  HTTP Response Message
+#######################
+Has 3 main parts:
+
+- Response Line
+- Header Variables
+- Message Body
+
+      Response Line : server protocol and status code
+          could be one of the http status code: 200,404,500
+
+      Header variables: response metadata
+          information about the data, content type: xml or json, size etc.
+
+      Message body: contents of message
+           The data that is being sent.
+
+
+MIME Content Types:
+The message format is described by MIME content type.
+    Multipurpose Internet Mail-Extension.
+
+Syntax:   type/sub-type
+
+Example:   text/html , text/plain
+          application/json ,,application/xml
+
+s
