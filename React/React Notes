@@ -99,7 +99,6 @@ What React is
     So we can't have:
 
     const theExample = (
-
       <h1> Hello World </h1>
       <p>  hello paragraph </p>
     )
@@ -142,7 +141,7 @@ Self-Closing Tag
  When you write a self-closing tag in HTML, it is optional to include a forward-slash immediately before the final angle-bracket:
       <br />   or <br>        fine in HTML.
 
-  Howeveer in JSX you have to include the slash. If you write a self closing tag in JSX and forget the slash, you will raise an error.
+  However in JSX you have to include the slash. If you write a self closing tag in JSX and forget the slash, you will raise an error.
 
 
 
