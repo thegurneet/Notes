@@ -8,6 +8,23 @@
 //      - single line comment.
 
 
+##################################
+    Object Oriented Programming 
+##################################
+
+Organises a program arounds its data (that is, objects) and a set of well-defined interfaces to that data.
+An Object Oriented program can be characterised as data controlling access to code.
+
+
+    ***********************
+    Three OOP Principles
+    ***********************
+
+OOP provides mechanisms that help you implement the Object-Oriented model:
+  - Incapsulation
+  - Encapsulation
+  - Polymorphism
+
 
  ************************
     Variable Scopes

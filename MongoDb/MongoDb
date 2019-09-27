@@ -1,4 +1,4 @@
-
+ 
         ***************************************************************
                                   MongoDB
         ***************************************************************
@@ -10,13 +10,30 @@
                 "Instead of storing data in tables as we would with a SQL Database, we instead store it in documents
                 or collections of objects - LIKE (JSON) "
 
-      - Use it anytime you want to store data and persist it in your app. 
+                - " NotOnlySQL database or more popularly known as NoSQL database - is a database design approach that provides a mechanism to store
+                        and access a wide variety of unstructured data in documents and collections"
+
+
+            Benefits:
+                - Don't follow any specific Schema
+                - No Query Language
+                - No or few relationships.
+
+      - Use it anytime you want to store data and persist it in your app.
 
 
 
       - Mongo is the 'M' in MEAN Stack.
               MongoDB, Express, Angular, Node.
 
+
+MongoDB
+
+  - It is an open source non-relational database that stores the data in the form of collections and documents
+  - preserves most of the functionalities while offering horizontal scalability
+  - this eases the work fo a developer by providing persistence to the data and enhancing ability
+  - stores the JSON documents in the form of collections having dynamic schemas
+  - stores all the related information together which enhances the speed of query processing.
 
 
       Mongoose makes it easier for Node to talk to MongoDB.

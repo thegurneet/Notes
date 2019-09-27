@@ -594,7 +594,7 @@ Hoisting in a function that returns a capacity status for the JavaScript Express
             in a program.
 
             Scope is the idea in programm that some variables are accessible/
-            inaccessible from otehr parts of the program;
+            inaccessible from other parts of the program;
 
             GLOBAL Scope refers to variables that are accessible to every part
             of the program.
