@@ -1,0 +1,67 @@
+
+
+
+*******************************************************************************
+                              CHALLENGES
+*******************************************************************************
+
+https://www.hackerrank.com/contests/programming-interview-questions/challenges
+
+
+########################
+    Palindrome
+########################
+
+A palindrome is a word, sentence or other type of character sequence which reads the same backward as forward.
+For example, “racecar” and “Anna” are palindromes. “Table” and “John” aren’t palindromes, because they don’t read the same from left to right and from right to left.
+
+
+
+Q :  given a string, return true if the string is a palindrome and false if it isn’t.
+    Include spaces and punctuation in deciding if the string is a palindrome.
+
+E.g :
+palindrome('racecar')  ===  true
+palindrome('table')  ===  false
+
+
+
+########################
+    FizzBuzz
+########################
+
+The FizzBuzz challenge goes something like this. Write a function that does the following:
+
+console logs the numbers from 1 to n, where n is the integer the function takes as its parameter
+logs fizz instead of the number for multiples of 3
+logs buzz instead of the number for multiples of 5
+logs fizzbuzz for numbers that are multiples of both 3 and 5
+
+
+########################
+      Anagram
+########################
+
+A word is an anagram of another word if both use the same letters in the same quantity, but arranged differently.
+
+
+Q :  write a function that checks if two provided strings are anagrams of each other;
+    letter casing shouldn’t matter. Also, consider only characters, not spaces or punctuation.
+
+
+########################
+    Find the Vowels
+########################
+
+Q :  You can state the vowels challenge as follows: write a function that takes a string as argument and returns the number of vowels contained in that string.
+
+The vowels are “a”, “e”, “i”, “o”, “u”.
+
+########################
+      Fibonacci
+########################
+
+A Fibonacci sequence is an ordering of numbers where each number is the sum of the preceding two.
+For example, the first ten numbers of the Fibonacci sequence are: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.
+
+Q: write a function that returns the nth entry in the Fibonacci sequence, where n is a number you pass in as argument to the function

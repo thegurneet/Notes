@@ -33,6 +33,30 @@ What React is
   Is a User Interface (UI) Library.
   Is a tool for building UI components.
 
+
+*********************************************************************
+              Single Page Application vs Multi Page Applications
+*********************************************************************
+
+  Single Page Application
+
+    - Only One HTML Page, Content is (re)rendered on Client
+    - Usually everything is managed with JS with React.
+    - The whole page is made of components/ rendered and handled by JS
+
+
+  Multi Page Application
+
+    - Multiple HTML Pages, Content is rendered on Server.
+    - React might be used for widgets on individual pages.
+
+
+
+
+
+
+
+
   **************************        **************************        **************************
           JSX                                 JSX                             JSX
   **************************         **************************       **************************
@@ -210,7 +234,7 @@ Single strict rule:
 - setState calls are asynchronous - don't expect state to be immediately updated.
 - if we rely on the result of a setState call, either use a function call to setState or callBack.
 
-- setState causes state in the component to be merged(using shallow merge). 
+- setState causes state in the component to be merged(using shallow merge).
 
 
 **************************
@@ -239,7 +263,7 @@ Single strict rule:
 COMPONENTS
 ************************
 
-The heart of a react application.
+The Heart of a React application.
 
 The component is essentially a piece of the User Interface. So when we build an App with React
 we build a BUNCH of independent, isolated and reusable Components, and then compose them to build
@@ -249,6 +273,12 @@ Every React application has atleast one Root Component - this represents the int
 contains other child components .
 
 So every React Component is a tree of Components.
+
+- A Component looks like HTML templates (actually JSX)
+- Contain 'state' (data or UI state)
+- They also can contain JavaScript for functionality
+
+
 
 
 
