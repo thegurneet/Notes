@@ -184,6 +184,9 @@ Self-Closing Tag
     Props
 **************************
 
+props  allow you to pass data from
+a parent (wrapping) component to a child (embedded) component.
+
 - React ways of passing data between components
 - React data binding is uni-directional - data only flows Down
 - Props are immutable(read only)
@@ -206,6 +209,29 @@ Single strict rule:
 
 - State includes data that is local or private to that component. Other Components cannot access that state.
 
+      ___________________
+      stateless component
+      -------------------
+            A functional aka stateless component is just a plain JS function,
+            which takes props as an argument and returns a react element.
+
+            a stateless component has no state, means we can't reach this.state
+            inside it.
+
+      ___________________
+      stateful component
+      -------------------
+            A stateful component AKA class component, Has a state.
+            It has Lifecycle hooks an it is a JS class - means that react
+            creates instances of it.
+
+
+Rule of thumb:
+  If the component needs some data, which cannot be passes as a prop :
+    - use class component to get that data.
+
+  OTHERWISE use Functional components! aka stateless.
+  stateless > stateful!.
 
 **************************
   Lifecycle events

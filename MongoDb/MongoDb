@@ -1,4 +1,4 @@
- 
+
         ***************************************************************
                                   MongoDB
         ***************************************************************
@@ -20,9 +20,6 @@
                 - No or few relationships.
 
       - Use it anytime you want to store data and persist it in your app.
-
-
-
       - Mongo is the 'M' in MEAN Stack.
               MongoDB, Express, Angular, Node.
 

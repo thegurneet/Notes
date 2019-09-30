@@ -9,7 +9,7 @@
 
 
 ##################################
-    Object Oriented Programming 
+    Object Oriented Programming
 ##################################
 
 Organises a program arounds its data (that is, objects) and a set of well-defined interfaces to that data.
@@ -17,13 +17,16 @@ An Object Oriented program can be characterised as data controlling access to co
 
 
     ***********************
-    Three OOP Principles
+    FOUR OOP Principles
     ***********************
 
 OOP provides mechanisms that help you implement the Object-Oriented model:
-  - Incapsulation
-  - Encapsulation
-  - Polymorphism
+
+  - Encapsulation       :   In Encapsulation, variables of a class will be hidden from other classes and can only be accessed through the methods of their current class. - Data Hiding.
+  - Abstraction         :
+  - inheritance         :   Inheritance is the process by which one class acquires the properties(data members) and functions(methods) of another class is called inheritance.
+  - Polymorphism        :   Polymorphism is the ability of an object to make on many forms. polymorphism gives a way to use a class exactly like its parent so there’s no confusion with
+                            mixing types. But each child class keeps its own methods as they are
 
 
  ************************
@@ -486,14 +489,8 @@ Real world objects have 2 Characterstics: State and Behaviour.
     Any Java Object that can  pass more than one IS-A test - is considered to be Polymorphic.
     The only way to access an object is through a reference Variable. A reference Variable can be of only one type.
 
-
     The reference variable can reassigned to other objects provided that it is not declared Final.
     A reference variable can be declared as a class or interface Type:
-
-
-
-
-
 
 
               **********************    **********************     **********************

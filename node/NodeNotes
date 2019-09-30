@@ -4,20 +4,22 @@
       "A JavaScript runtime built on Chrome's V8 JavaScript engine. Node uses an  event-driven, non-blocking model that makes it LightWeight
       and efficient. Node.Js package ecosystem, npm , is the largest ecosystem of open source libraries in the world. "
 
-NODE  JS IS:
+NODE JS IS:
     - a platform to allow us to run JavaScript on a computer/ server
-    - Read, delete and update files
-    - Easily communicate with a database
+
+~~~~~~~~~~~~~
+WHY NODE: 
+~~~~~~~~~~~~~
+    - Non Blocking 
+    - Single threaded. 
+    - It uses asynchronous, event-driven I/O instead of separate processes or threads
+    - Can achieve high output via single-threaded event loop and non-blocking I/O.
 
 
 JavaScript Engine V8 engine.
-
   - Computer doesn't understand JavaScript, it switches it into machine code.
   - V8 is Googles opens source high-performance JavaScript and WebAssembly engine. Written in C++ - used in Chrome and Node.JS
   - Node.js is written in C++, gets complied down to machine code.
-
-
-
 
 
 Global OBJECT
@@ -34,11 +36,7 @@ Function Expression
     console.log('bye')
   }'
 
-
-
   saybye();
-
-
 
 
 
@@ -57,15 +55,15 @@ Function Expression
     Global Object
 *******************
 
-    a global object is a an object that always exists in the global scope.
+    A global object is a an object that always exists in the global scope.
 
     Gloabl objects are global in nature and available in all modules. Don't need to include these objects in your application.
             - rather they can accessed/used directly.
     These objects are:
-        - modules
-        - functions
-        - strings
-        - objects
+        - Modules
+        - Functions
+        - Strings
+        - Objects
 
     Some objects aren't actually in the global scope but in the module scope.
 
@@ -86,12 +84,11 @@ Function Expression
     the Process Object
 ************************
 
-the process object (an instance of the EventEmitter) is a global variable that provides information
+The process object (an instance of the EventEmitter) is a global variable that provides information
 on the currently running Node.js process.
 
 What is an EventEmitter?
     - When something is done it runs an event/function.
-
     - When an EventEmitter instance faces any error, it emits an 'error' event.
 
     List of process Methods:
@@ -147,14 +144,14 @@ the syntax for including the Readline module in the application:
     As soon as node starts its server, it initiates its variables and declares functions and then simply waits
     for the events to occur.
 
-    in an Event-driven application, there is generally a main loop that listens for events and then triggers a callback function
+    In an Event-driven application, there is generally a main loop that listens for events and then triggers a callback function
     when one of these events is detected.
 
 
-    Events look quite similar to callbacks, the difference is the fact that callback functions are cllaed when an asynchronous function
+    Events look quite similar to callbacks, the difference is the fact that callback functions are called when an asynchronous function
     returns its result. Where's event handling works on the observer pattern. The functions that listen to events act as Observers.
 
-    *************
+    *************fe
     EventEmitter
     *************
         All objects that emit events are members of EventEmitter class. These objects expose an eventEmitter.on() function
@@ -229,28 +226,29 @@ the application.
     application by default. Use module.exports or export to expose a function, object or variable as a module in Node.js
 
 
+    ***************************
+        Third- Party Module
+    ***************************
 
+        Third party modules are created by third parties..and are imported in. Eg..Mongoose, React, async ...
 
+    
 
 
     ******************************************
           Creating a Server
     ******************************************
 
-
-
     *******************
       Response Headers
     *******************
-              CLIENT      --->   Request: request + request headers          -----> SERVER
-              CLIENT      <---   Response : response data + response header   <----- SERVER
+              CLIENT      --->   REQUEST: request + request headers          -----> SERVER
+              CLIENT      <---   RESPONSE : response data + response header   <----- SERVER
 
       When we make a request to a server, and when we respond then as well as responding with some data or information, we
       also response with a header. And on the request we can send Request Headers.
 
         Headers are extra information about the request / response.
-
-
 
               ***********************
                   File Server
@@ -290,14 +288,12 @@ the application.
                   The HandShake:
                       1. Computers agree on how to encrypt (set of rules), HTTPS/FTP.
                       2. Server sends certificate
-                      3. Your computer say's 'start encrypting'
+                      3. Your computer says 'start encrypting'
                       4. The server says 'start encrypting'
                       5. All messages are now encypted.
 
-
                PORTS
               - A program running on a computer can listen for requests sent to a particular port number.
-
 
 
           *************
@@ -316,7 +312,6 @@ the application.
 
               HTTP headers allow the client and server to pass additional information with the
               request and the response.
-
 
 
 
@@ -364,12 +359,6 @@ the application.
                           myReadStream.pipe(myWriteStream);
 
 
-
-            ******************************
-                        NPM         - Node Package Managers
-            ******************************
-
-
             ******************************
                         Express
             ******************************
@@ -377,7 +366,6 @@ the application.
                 - Easy and flexible routing syste
                 - Integrates with many templating engines , for Front end purposes.
                 - Contains a middleware framework
-
 
 
                 ------------
@@ -392,9 +380,7 @@ the application.
                     Middleware
                 ----------------
                     Code that runs between the response and the request.
-
-
-
+                    
                 -------------------
                     Query Strings
                 -------------------
