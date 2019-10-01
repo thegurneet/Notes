@@ -6,3 +6,12 @@
 - communication between a client (browser) and server.
 - Bidirectional (data flows both ways)
 - Allows real-time data flow : because websockets are always open
+
+
+USES of WebSocket:
+
+- Multiplayer browser games
+- Collaborative code editing
+- Live text for sports/news websites
+- Online drawing canvas
+- Real-time to-do apps with multiple users

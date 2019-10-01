@@ -1,0 +1,16 @@
+
+
+
+**********************
+    Pizza Project
+**********************
+
+- Be able to add pizzas to basket. Price changes accordingly
+- Able to customize pizza. 
+- API that sends an email for the codes.
+- Deals / voucher/codes
+-
+
+- On order see a small bar that moves when order is being prepped.
+  - customer given reference, so they can check when they want.
+  - 5min after pizza has been made - its removed from queue.

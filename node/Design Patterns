@@ -1,0 +1,112 @@
+
+
+###################################
+    What are Design Patterns
+###################################
+
+     Reusable, reliable solutions to problems that we face everyday in software development
+    - Cataloged solutions
+    - Reusable in different situations. 
+    - Well documented
+    - Language for collaboration 
+    - Improve architecture 
+
+
+    ---------------
+        Design pattern Essentials 
+    --------------
+            - Pattern Name 
+            - The Problem 
+            - The Solution 
+            - Consequences
+
+    ---------------
+        Anti-Pattern
+    --------------
+        Code smells if theres bad patterns. 
+        Avoid:
+        - Prototype on an instance
+        - Callback Hell
+        - synchronous coding/executions.         
+
+___________________
+    Gang Of Four
+-------------------
+
+- Creational Patterns 
+- Structrual Patterns 
+- Behavioural Patterns 
+
+
+    ~~~~~~~~~~~~~~~~~~~~~
+    Creational Patterns 
+    ~~~~~~~~~~~~~~~~~~~~~
+        Singleton:
+            Ensure a class has only once instance and provides a global proint of access to it.    
+                USE:   module.exports = .... 
+                and then import the class. 
+
+        Prototype: 
+            Specify the kinds of objects to create using prototypical instance and create new objects by 
+            copying this Prototype.
+
+        The Factory Pattern: 
+            Define an interface for creating an object. But let subclasses decide which class to instantiate. 
+            Factory Method lets a class defer instantiation to subclasses. 
+
+        The Builder Pattern: 
+            Seperate the construction of a complex object from its representation so that the same construction 
+            process can create different representations. 
+
+
+
+    ~~~~~~~~~~~~~~~~~~~~~
+    Structrual Patterns 
+    ~~~~~~~~~~~~~~~~~~~~~
+        Adapter Pattern: 
+            Convert the interface of a class into another clients exect. Adapter lets classes work together 
+            that couldn't otherwise because of incompatible interfaces. 
+
+        Proxy Pattern: 
+            Provide a surrogate or placeholder for another object to control access to it.
+
+
+        Composite Pattern: 
+            Compose objects into tree structure to represent part-whole hierarchies. Composite lets clients treat 
+            individual objects and compositions of objects uniformly.
+
+
+        Decorator Pattern: 
+            Attach additional responsibility to an object dynamically. Decorators provides a flexible alternative 
+            to subclassing for exending functionality. 
+
+
+    ~~~~~~~~~~~~~~~~~~~~~~
+    Behavioural Patterns 
+    ~~~~~~~~~~~~~~~~~~~~~~
+
+        Chain of responsibility:
+            Avoid coupling the sender of a request to its receiver by giving more than one object a change 
+            to handle the request. Chain the receiving objects and pass the request along the chain. 
+
+        Command Pattern: 
+            Encapsulate a request as an object, thereby letting you parameterize with different requests, 
+            queue or log requests, and support undoable operations. 
+
+        Iterator Pattern:
+            Provide a way to access the elements of an aggregate object sequentially without exposing its underlying
+            representation. 
+
+        Observer Pattern: 
+            Define a one-to-many dependecy between objects so that when one object changes state, all it's dependents 
+            are notified and updated automatically. 
+
+        Strategy Pattern: 
+            Define a family of algorithms, encapsulate each one and make them interchangeable. Strategy lets the algorithm 
+            vary independelty from clients that use it. 
+
+
+        
+
+
+

@@ -132,9 +132,9 @@ Each position in a String has a numbered "index" starting from 0.
             var moonPhase = 'full';
 
             if(moonPhase == 'full') {
-                console.log('Howl');
+                console.log('Howl!!');
             } else if (moonPhase == 'mostly full'){
-                console.log('Arms and legs are getting hairer')
+                console.log('Arms and legs are getting hairier!! Feeling more wolf like!')
             } else if (moonPhase == 'mostly new') {
                 console.log('Back on two feet')
             } else (
@@ -274,7 +274,7 @@ Each position in a String has a numbered "index" starting from 0.
 							eCount++;
 					 }
 					}
-					 alert("There are " + eCount + "E's in \"" + phrase + "\".")
+					 alert("There is " + eCount + " E's in \"" + phrase + "\".")
 				}
 
 
@@ -291,7 +291,7 @@ Since functions can be treated as expressions, they can also be returned like va
 
 EXAMPLE:
 
-										var parRides = [["Birch Bumpers", 40],["Pines Plunge", 55],["Cedar Coaster", 20],["Ferris Wheel of Firs", 90] ];
+										var parkRides = [["Birch Bumpers", 40],["Pines Plunge", 55],["Cedar Coaster", 20],["Ferris Wheel of Firs", 90] ];
 
 										var fastPassQueue = ["Cedar Coaster", "Pines Plunge", "Birch Bumpers", "Pines Plunge"];
 										var wantsRide = "Birch Bumpers";
@@ -302,14 +302,14 @@ EXAMPLE:
 												if(passRides[0] == pick) {
 
 													var pass = passRides.shift();
-														return function ( ) { alert("Quick! you've got a Fast Pass to " + pass + "!");
+														return { alert("Quick! you've got a Fast Pass to " + pass + "!");
 														};
 
 
 												} else {
 															for (var i = 0; i<allRides.length; i++) {
 																if(allRides[i][0] == pick)
-																	return function () { alert ("A ticket is printing for " + pick + "!\n" + "Your wait time is about " + allRides[i][1] + " minutes. " )
+																	return { alert ("A ticket is printing for " + pick + "!\n" + "Your wait time is about " + allRides[i][1] + " minutes. " )
 																	}
 															}
 
@@ -1566,3 +1566,44 @@ Embedding code that signal which JavaScript file to use.
             personArray.push("bye");   // perfectally  fine.
 
             personArray becomes ["hello", "bye"]
+
+
+*************************************
+		Spread & Rest Operators
+*************************************
+			... 			<--- that is the operator.
+
+
+	Spread : used to split up array elements OR object properties.
+						const newArray = [...oldArray,1,2]
+						const new Object = {...oldObject,newProp:5}
+
+
+	Rest   : Used to merge a list of function arguments into an array
+						function sortArgs(...args){
+							return args.sort();
+						}
+
+
+*********************************
+			Destructuring
+*********************************
+
+Easily extract array elements or object properties and store them in variables, for arrays and objects.
+
+Array Destructuring:
+
+			[a,b] = ['Hello' , 'Max']
+			console.log(a) //Hello
+			console.log(b) //Max
+
+			const numbers = [1,2,3];
+			[num1, ,num3] = numbers;
+			console.log(num1,num3) 	// 1 3
+
+
+Object Destructuring:
+
+	{name} {name: 'Max', age:28}
+		console.log(name) //Max
+		console.log(age)//undefined.

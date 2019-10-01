@@ -1,0 +1,16 @@
+              **********************************************************
+                        Real Time Hotel Management System
+              **********************************************************
+Modules
+  Super admin Module
+
+
+  1. Passengers Name , Birth of Date, gender, email, number, passport details.
+  2. Be able to view the room, select if its available. Book.
+  3.
+
+
+  Check in :
+    - check box to confirm detail.
+    - apply discount if not paid
+    - be able to cancel booking/ update/downgrade room.

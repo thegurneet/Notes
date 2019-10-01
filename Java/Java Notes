@@ -38,10 +38,11 @@ OOP provides mechanisms that help you implement the Object-Oriented model:
     ~~~~~~~~~~~~
 
 
+    **************
     Instance Scope
+    *************
 
-
-
+    *************
     Local Scope
 
 ***********************************
@@ -59,15 +60,15 @@ Exceptions
           OBJECTS
 ****************************
 
-Real world objects have 2 Characterstics: State and Behaviour.
+Real world objects have 2 Characteristics: State and Behavior.
 
   - State     : might be the amount of RAM it has, operating system it's running, hard drive.
               : for an ant it - number of legs, age, color, conscious state. ( variable )
 
-  - Behaviour : for a computer might be booting up, shutting down, outputting some sort of sound.
+  - Behavior  : for a computer might be booting up, shutting down, outputting some sort of sound.
               : for an ant might be eating, sleeping, drinking, fighting, speak.   ( function )
 
-              an Objects state is a stored in fields/variables and behaviour is shown via methods/functions.
+              an Objects state is a stored in fields/variables and behavior is shown via methods/functions.
 
   Now a software Object stores its state in fields and we know fields as variables -
   they expose it's behaviors with methods(functions).
@@ -687,7 +688,7 @@ Key points:
       Functional Programming vs Object Oriented Programming
     *************************************************************
 
-    - Functional programming lets you right more readable, easier to write and more maintable code.
+    - Functional programming lets you right more readable, easier to write and more paintable code.
 
     In OOP everything is an Object. All code blocks are associated with classes and objects.
     You cannot have a piece of code that exists in isolation. - has to be part of a class or object.
