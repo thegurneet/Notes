@@ -1,0 +1,30 @@
+<body>
+    <title>
+        Asynchronous coding
+    </title>
+
+    <h1>
+            Asynchronous coding
+    </h1>
+
+    <script>
+
+var MrFrontendModule = (function() {
+  let mrFrontendMethods = {};
+  let title = 'The Mr Frontend JavaScript Module';
+
+  let addEmoticon = function() {
+    return title + ' ';
+  }
+
+  mrFrontendMethods.getTitle = function() {
+    return addEmoticon();
+  }
+
+  return mrFrontendMethods;
+})();
+
+console.log('Title: ', MrFrontendModule.getTitle());
+        
+    </script>
+</body>
