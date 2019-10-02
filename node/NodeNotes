@@ -114,10 +114,12 @@ JavaScript Engine V8 engine.
         -----------------------------------------------------------------------
 
 
-        
+##########################################################################################################################################################           
     -----------------------
      PROMISES 
-    -----------------------
+     -----------------------
+##########################################################################################################################################################    
+        - Promises solve the Callback hell issue. 
 
         - A Promise is an object that can be used to represnt the eventual completion of an asynchronous operation.
 
@@ -137,22 +139,70 @@ JavaScript Engine V8 engine.
 
             Essentially a promise a returned object to which you attach callbacks, instead of passing callbacks into a function.                 
 
+                    
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Consumer: then,catch,finally 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            a Promise object serves as a link between the consuming functions - that recieve the result or error. The Consuming functions can be used using : 
+                .then()
+                .catch()
+                .finally()
+            
+          ###  .then  ###
+            Fundemental. 
+
+            the .then function runs when the promise is resolved or rejected, and can be chained together. 
+
+            dosomething.then(
+                result => alert(result);
+                error => alert(error);
+            )
+
+         ###  .catch  ###
+            if we're intrested in errors, then we can use null as the first argument : .then(null, errorHandlingfunction) OR we can use .catch(errorHandlingfunction);
+
+            the call .catch(function(){}) is the same as .then(null, function(){})
+
+        ###  .finally  ###
+
+            Just like there’s a finally clause in a regular try {...} catch {...}, there’s finally in promises.
+
+        .finally is a good handler for perfoming cleanup - e.g stopping our loading indicatiorsm as they are not needed anymore, no matter what the outcome is: 
+
+
+            1. finally handler has no arguments. 
+
+    
+
+
+        
+
 
     -----------------------
     RESOLVING PROMISES 
     -----------------------
+        the function passed to new Promise is called the exectuor. When a new Promise is created, it runs automatically. It contains the producing code, that should 
+        eventually produce a result. 
 
+        It arguments resolve and reject are callbakcs provided by JavaScript itself. 
+        When the exectuor obtains the result, be it soon or late - doesn't matter, it should call one of these callbacks: 
 
-        const delay = (seconds) => new Promise( function(resolve,reject){ 
-            setTimeout(()=>{
-                resolve([1,2,3,4])
-            },seconds*1000);
-        }) 
+            - resolve(value)    -- If the job finished successfully, with result value. 
+            - reject(error)     -- If an error occurred, error is the error object.  
 
-        delay(1)
-            .then(function(data){
-                console.log('the delay has ended and returned: ' + data)
-            })
+                ---------------------------------------------------------------------
+                const delay = (seconds) => new Promise( function(resolve,reject){ 
+                    setTimeout(()=>{
+                        resolve([1,2,3,4])
+                    },seconds*1000);
+                }) 
+
+                delay(1)
+                    .then(function(data){
+                        console.log('the delay has ended and returned: ' + data)
+                    })
+                --------------------------------------------------------------------
+
 
 
     REJECTING PROMISES
