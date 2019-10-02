@@ -9,26 +9,10 @@
 
     <script>
 
-      var myObj = (function(){
-        var privateVar = 'im private - can\'t access me';
-        var privateFnc = function(){
-          return( 'im a private function');
-        }
-
-
-        return{
-          publicVar : 'im a public Var',
-          publicFnc : function(){return 'i am public fnc'}
-        }
-          
-      })();
-
-      console.log(myObj.privateVar);
-      console.log(myObj.privateFnc);
-      console.log(myObj.publicVar);
-      console.log(myObj.publicFnc());
-
-
+const p1 = Promise.resolve(2)
+const p2 = p1.then(x => { throw new Error('failed'); })
+const p3 = p2.then(x => x * 2)
+const p4 = p3.catch(err => console.error(err))
 
         
     </script>

@@ -119,6 +119,9 @@ JavaScript Engine V8 engine.
      PROMISES 
      -----------------------
 ##########################################################################################################################################################    
+
+        - Promises can be vaguely defined as ' proxy for a value that will eventually become available ' - can be used both synchronous and asynchronous code flows.     
+
         - Promises solve the Callback hell issue. 
 
         - A Promise is an object that can be used to represnt the eventual completion of an asynchronous operation.
@@ -131,7 +134,9 @@ JavaScript Engine V8 engine.
             States: 
         ~~~~~~~~~~~~~~~~
             A Promise can have different states: 
-                - Pending                  =  before the event has happened
+                - Pending                  =  before the event has happened. Default state
+                - Fulfilled                = 
+                - Rejected
                 - Settled / Resolved.      =  after the event has happened.    
                         - after the event: 
                             - Fulfilled || Rejected. 
@@ -168,15 +173,36 @@ JavaScript Engine V8 engine.
             Just like there’s a finally clause in a regular try {...} catch {...}, there’s finally in promises.
 
         .finally is a good handler for perfoming cleanup - e.g stopping our loading indicatiorsm as they are not needed anymore, no matter what the outcome is: 
+            . finally handler has no arguments. 
 
 
-            1. finally handler has no arguments. 
+       ----------------------------------------------
+            3 ways to create a Promise from Scratch
+       ----------------------------------------------
 
-    
+        We should know that a promise can be created using a function such as fetch, Promise.resolve, Promise.reject or Promise constructor function. 
+
+            1. Promises can be created from scratch using :   new Promise(resolver). 
+                    The resolver parameter is a function that will be used to settle the promise and it takes two arguments : resolve function and reject function. 
+
+                    new Promise((resolve,reject)=>{
+                        reject(new Error('reason'));
+                    })
+
+            2. 
+                    new Promise(resolve => setTimeout(resolve,20000))
 
 
-        
 
+            3.        
+            function resolveUnderThreeSeconds (delay) { 
+                return new Promise(function(resolve,reject){
+                    setTimeout(resolve,delay)
+                    setTimeout(reject,3000)
+                })
+            }
+            resolveUnderThreeSeconds(2000);   //PromiseStatus becomes fulfilled after 2s
+            resolveUnderThreeSeconds(7000);   //PromiseStatus becomes rejected after 3s
 
     -----------------------
     RESOLVING PROMISES 
