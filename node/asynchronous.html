@@ -9,22 +9,27 @@
 
     <script>
 
-var MrFrontendModule = (function() {
-  let mrFrontendMethods = {};
-  let title = 'The Mr Frontend JavaScript Module';
+      var myObj = (function(){
+        var privateVar = 'im private - can\'t access me';
+        var privateFnc = function(){
+          return( 'im a private function');
+        }
 
-  let addEmoticon = function() {
-    return title + ' ';
-  }
 
-  mrFrontendMethods.getTitle = function() {
-    return addEmoticon();
-  }
+        return{
+          publicVar : 'im a public Var',
+          publicFnc : function(){return 'i am public fnc'}
+        }
+          
+      })();
 
-  return mrFrontendMethods;
-})();
+      console.log(myObj.privateVar);
+      console.log(myObj.privateFnc);
+      console.log(myObj.publicVar);
+      console.log(myObj.publicFnc());
 
-console.log('Title: ', MrFrontendModule.getTitle());
+
+
         
     </script>
 </body>
