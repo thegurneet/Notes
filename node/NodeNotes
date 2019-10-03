@@ -118,9 +118,11 @@ JavaScript Engine V8 engine.
     -----------------------
      PROMISES 
      -----------------------
+     https://medium.com/quick-code/javascript-promises-in-twenty-minutes-3aac5b65b887
 ##########################################################################################################################################################    
 
-        - Promises can be vaguely defined as ' proxy for a value that will eventually become available ' - can be used both synchronous and asynchronous code flows.     
+        - Promises can be vaguely defined as ' proxy for a value that will eventually become available ' - can be used both synchronous and asynchronous code flows.  
+        - A promise is literally just a plain old object.   
 
         - Promises solve the Callback hell issue. 
 
@@ -163,6 +165,10 @@ JavaScript Engine V8 engine.
                 error => alert(error);
             )
 
+            if you have a promise, it will settle(resolve or reject) and THEN run the code that is passed as a callback to the then function. 
+            The function that we pass to then automatically receives as an arguments the resulting data or error. 
+
+
          ###  .catch  ###
             if we're intrested in errors, then we can use null as the first argument : .then(null, errorHandlingfunction) OR we can use .catch(errorHandlingfunction);
 
@@ -177,7 +183,7 @@ JavaScript Engine V8 engine.
 
 
        ----------------------------------------------
-            3 ways to create a Promise from Scratch
+            2 ways to create a Promise from Scratch
        ----------------------------------------------
 
         We should know that a promise can be created using a function such as fetch, Promise.resolve, Promise.reject or Promise constructor function. 
@@ -185,16 +191,36 @@ JavaScript Engine V8 engine.
             1. Promises can be created from scratch using :   new Promise(resolver). 
                     The resolver parameter is a function that will be used to settle the promise and it takes two arguments : resolve function and reject function. 
 
-                    new Promise((resolve,reject)=>{
-                        reject(new Error('reason'));
+
+                let promisey = new Promise((resolve, reject) => { 
+                    fs.readFile('veryImportantFile.txt' , (err,data) => { 
+                        if(err){
+                            reject err
+                        } else { 
+                            resolve(data)
+                        }
                     })
-
-            2. 
-                    new Promise(resolve => setTimeout(resolve,20000))
+                })
 
 
+                promisey.then((ourStuff) => {  console.log(ourStuff) });
 
-            3.        
+
+
+            2.  We will see that promises are supported and baked into other libraries for our application use.   SEQUELIZE. 
+                    Model.findById(id)
+                        .then((model)=>{
+                            return model.update(someNewData)
+                        })
+                        .then((updatedModel) => { 
+                            console.log('we have updated our model!, updatedMode)
+                        })
+                        .catch((error)=>{
+                            console.log('oh no, something went wrong: ' , error)
+                        })
+
+
+            3.        another way...i added anyways.   
             function resolveUnderThreeSeconds (delay) { 
                 return new Promise(function(resolve,reject){
                     setTimeout(resolve,delay)
