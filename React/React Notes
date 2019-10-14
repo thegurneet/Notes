@@ -227,11 +227,8 @@ Single strict rule:
 - setState calls are asynchronous - don't expect state to be immediately updated.
 
 - setState causes state in the component to be merged(using shallow merge).
-<<<<<<< HEAD
-=======
 
 - State includes data that is local or private to that component. Other Components cannot access that state.
->>>>>>> 309b4c0b55c59106bdd55cda33e36f6914b9953b
 
 
 **************************
@@ -294,18 +291,77 @@ What is JSX?
 
 
 
-Task to do:
-
-- Create a currency convertor.
-
-*******
-functional component:
-*********
 
 
-********
-class based components:
-*******
+      ################################
+      Functional Component:
+      ################################
+          Mainly responsible for rendering UI. 
+
+          Functional Components are basic JavaScript Functions. These are typically arrow functions but can also be created with the regular function keyWord. 
+          Known as 'stateless' components as they simply accept data and disaplay them in some form. - responsible for UI. 
+
+          -React lifecycle methods cannot be used in functional components. 
+          -There is no render methods used in functional components
+          -These are mainily responsible for UI and are typically presentational only (eg. Button)
+          
+          - Can accept and use props. 
+
+          - SHOULD be favoured if you do not need to make sure of React state. 
+
+
+          const Person = (props) =< (
+              <div>
+                <h1> Hello, {props.name}</h1>
+              </div> 
+
+          )
+
+      ################################
+      Class Based Components:
+      ################################
+
+        Class components make use of ES6 class and extends the Component class in React. 
+        - Called Stateful componenets as they tend to implement logic and state. 
+        - React lifecycle methods can be used inside class components.
+        - Can pass props down to class componenets and access them with the this.props. 
+
+
+            class Person extends Component { 
+              constructor(props){
+                super(props);
+                this,state = { 
+                  myState: true;
+                }
+              }
+
+
+              render() { 
+                return(
+                  <div>
+                    <h1> Hello Person<h1>
+                  </div>
+                )
+              }
+            }
+
+
+
+
+      _______________________
+      Conclusion 
+      -----------------------
+
+        - Should use functional components if we are writing a presentational component which doesn't have its won state or needs to access a lifecycle hook. 
+        Otherwise you can stick to class components to take a look into the library recompose which allows us to write functional components and enhance them with 
+        state or lifecycle hooks. 
+
+
+
+
+
+
+
 
 
 
