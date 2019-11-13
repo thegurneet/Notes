@@ -39,7 +39,6 @@ JavaScript Engine V8 engine.
 
                     first();
                     second(); 
-
                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -48,9 +47,7 @@ JavaScript Engine V8 engine.
     ASYNCHRONOUS : 
 
     Node is Asynchronous - so it only runs on one thread. 
-
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
                 const second = () => { 
                     setTimeout(()=>{
                         console.log('Async Here')
@@ -476,10 +473,6 @@ the application.
     application by default. Use module.exports or export to expose a function, object or variable as a module in Node.js
 
 
-
-
-
-
     ******************************************
           Creating a Server
     ******************************************
@@ -496,8 +489,6 @@ the application.
       also response with a header. And on the request we can send Request Headers.
 
         Headers are extra information about the request / response.
-
-
 
               ***********************
                   File Server

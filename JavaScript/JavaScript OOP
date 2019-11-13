@@ -1,0 +1,62 @@
+
+
+###############################
+
+###############################
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+---------
+EXAMPLE
+---------
+
+########################################
+            OOP in JavaScript
+########################################
+
+    EVERYTHING IN JS, IS AN OBJECT
+
+
+Objects in Js are like objects in real life
+    they have properties & things they can do (methods)
+
+The idea of OOP is that we use objects to model real wolrd things that we want to represent inside our programs. 
+
+Objects can contain related data and code - which represent information about the thing you are trying to model, and 
+functionnality or behaviour that you want it to have. 
+
+
+        ~~~~~~~~~~~~~~~~~~~~~~~
+            Object basics 
+        ~~~~~~~~~~~~~~~~~~~~~~~
+
+    An object is a collection of related data and/or functionnality (consists of variables and function - called properties and methods)
+
+    const person = {};   
+        console.log(person);
+            output: [object Object]   - empty object. 
+---------
+EXAMPLE
+---------
+
+    const person = { 
+        name : ['Bob', 'Smith'],
+        age : 32, 
+        gender: 'male',
+        greeting : function(){
+            alert('Hi! I\'m ' + this.name[0] + '.');
+        }
+    };
+
+    console.log(person.name)
+        output: ['Bob', 'Smith']
+     person.greeting() 
+        output: alert('Hi! I\'m ' + this.name[0] + '.');
+
+
+
+ENCAPSULATION, ABSTRACTION, 

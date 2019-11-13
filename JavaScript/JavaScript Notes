@@ -466,7 +466,7 @@ now whenever we call add(), it will literally be equal to 4.
 Building functions withing code execution rather than at program load time.
 
 	Example:
-            function diffOfSquares (a,b) {
+      function diffOfSquares (a,b) {
 				return a*a - b*b;
 			}
 
@@ -603,10 +603,7 @@ Hoisting in a function that returns a capacity status for the JavaScript Express
             BLOCK SCOPE referes to variables that are accessible onyl within
             the block they are defined.
 
-
             For example:
-
-
 
             const starCount = () => {
 
@@ -812,8 +809,6 @@ Hoisting in a function that returns a capacity status for the JavaScript Express
                                       ****Control Flow****
                                       ********************
 
-
-
 Control flow statements enable JavaScript programs to make decisions by
 executing code based on condition. If a given condition is true, we execute
 one block of code. if a given condition is true, we execute one block of code.
@@ -1010,8 +1005,7 @@ We can modify a key value.
 
 This prints out:
                   unlock the door
-
-
+                  
 ****THIS Keyword*******
 
 The this keyword referes to the current objectm which we use to grab the value
