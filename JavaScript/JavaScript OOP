@@ -9,6 +9,9 @@
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+    --------------------------------------
+
+    ---------------------------------------
 
 ---------
 EXAMPLE
@@ -42,14 +45,18 @@ functionnality or behaviour that you want it to have.
 ---------
 EXAMPLE
 ---------
-
+    //this is an object literal
     const person = { 
         name : ['Bob', 'Smith'],
         age : 32, 
         gender: 'male',
         greeting : function(){
             alert('Hi! I\'m ' + this.name[0] + '.');
+        },
+        goodbye(){
+            console.log(this.name[0], ' says goodbye')
         }
+
     };
 
     console.log(person.name)
@@ -57,6 +64,90 @@ EXAMPLE
      person.greeting() 
         output: alert('Hi! I\'m ' + this.name[0] + '.');
 
+    --------------------------------------
+        Object literal
+    ---------------------------------------
+
+    Defined using the following syntax rules: 
+         - a colon sperates property name from value
+         - a comma separates each name-value pair from the next. 
+         - no commas after the last name-value pairs. 
 
 
-ENCAPSULATION, ABSTRACTION, 
+    A JavaScript object literal is a comma-separated list of name-value pairs wrapped in curly braces. 
+    Object literals encapsulate data, enclosing it in a tidy package. This minimizes the use of global
+    variables which can cause problems when combining code.
+
+
+
+    --------------------------------------
+        DOT Notation vs Bracket Notation
+    ---------------------------------------
+
+    The dot or bracket notation allows us to access anything encapsulated inside the object. 
+    eg: person.age || person.name || person.name.last
+    eg: person['age] || person['name'] || person['name']['last']
+
+
+
+    --------------------------------------
+        What is "this"? 
+    ---------------------------------------
+
+
+    this keyword refers to the current object the code is being written inside. 
+    this keyword is very useful - it always ensure that the correct values are used when a member's context changes. 
+
+---------
+EXAMPLE
+---------
+    const person1 = {
+  name: 'Chris',
+  greeting: function() {
+    alert('Hi! I\'m ' + this.name + '.');
+  }
+}
+
+const person2 = {
+  name: 'Deepti',
+  greeting: function() {
+    alert('Hi! I\'m ' + this.name + '.');
+  }
+}
+
+
+ this is equal to the object the code is inside
+
+it comes in handy when we are dynamically generating objects (eg using constructors)
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Object-Oriented Programming - the basics
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+ENCAPSULATION, ABSTRACTION, INHERITANCE, POLYMORPHISM
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         Classes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Classes in  JavaScript are like blueprints. 
+
+    JavaScript is a prototype-based language, every object in JS has a hidden internal property called [Prototype], that can  be  used to extend object properties and methods. 
+
+    Now the  JavaScript class is a type of function. Classes are declared with the class keyword. 
+    We use function expresstion syntax to initialize a function and class expression syntax to initialize a class. 
+
+    // Initializing a function with a function expression
+    const x = function() {}
+
+    // Initializing a class with a class expression
+    const y = class {}
+
+
+
