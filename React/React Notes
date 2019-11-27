@@ -376,3 +376,32 @@ next week:  props & event handling.
 
 Create my own Currency convertor in ES5 and then using ES6.
 Create my own Currency convertor in React
+
+
+
+
+*******************************************************************************************************************************
+                                            Planning a React App
+*******************************************************************************************************************************
+
+1. Create a mockup — Either by using a design tool or pen and paper.
+
+2. Break the UI into components — Draw boxes around every component in your mockup.
+   Use the single responsibility principle to identify what should be its own component and not.
+
+3. Arrange all components in a hierarchy — Create a hierarchy by identifying components that are nested inside each other. 
+  This will help you to implement data flows later on.
+
+4. Define where state should live — Try to have as few stateful components as possible. Best would be to encapsulate state 
+  responsibility in a single component at the very top of your previously created hierarchy.
+
+*******************************************************************************************************************************
+                                            Organizing A React Project
+*******************************************************************************************************************************
+
+
+1. Have a consistent, though-out folder structure — Look for structuring patterns that are applicable to your project and be consistent with it.
+
+2. Write functional components if possible — Rule of thumb: If your class-based component only has a render method, make it a functional component.
+
+3. Use CSS modules — Don’t worry about same class names within your project by scoping classes locally to a component.
