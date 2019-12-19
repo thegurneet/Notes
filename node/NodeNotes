@@ -24,18 +24,80 @@ JavaScript Engine V8 engine.
 
 
 ##################################
-    ASYNCHRONOUS
+    ASYNCHRONOUS & SYNCHRONOUS
 #################################
+
+    Synchronous basically means that you can only execute one thing at a time.
+    Asynchronous means that you can execute multiple things at a time and you don't have to finish executing the current thing in order to move on to next one
+
+    SYNCHRONOUS : The code runs line by line as it appears in the code. 
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    const second = () => { 
+                        console.log('Second');
+                    }
+
+                    const first = () =>  { 
+                        console.log('first thing'); 
+                        second(); 
+                        console.log('End'); 
+                    }
+
+                    first();
+                    second(); 
+
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+    ASYNCHRONOUS : 
 
     Node is Asynchronous - so it only runs on one thread. 
 
-    There are Different Patterns for Asynchronous Coding. 
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+                const second = () => { 
+                    setTimeout(()=>{
+                        console.log('Async Here')
+                        console.log('Second');
+                    }, 2000)
+                }
+
+                const first = () =>  { 
+                    console.log('first thing'); 
+                    setTimeout(()=>{
+                        console.log('End'); 
+                    }, 2000)
+                    second();      
+                }
+
+                first();
+
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    E.g : Lets suppose we select an image from the DOM and pass it into a Process function. The function will take saome time to process the image, and we 
+          dont want the code to have to wait.  So we don't want to stop while the image is processing, because that would be terrible in some situations.
+          What we do here is to also pass in a Callback function, that we want to be called as soon as the function is done processing.
+
+                AND just like that we have created Asynchronous code. 
+
+        - Allow asynchronous functions to run in the 'background';
+        - Pass in callbacks that run once the frucntion has finsihed it's work 
+        - Move on Immediately: Non-blocking!
+
+
+    There are different patterns for Asynchronous coding. 
+
+
+        When we have callback inside of a callback inside of a callback..... we get CALLBACK HELL!!!  PYRAMID OF DOOM!
 
     -----------------------
     CALLBACK PATERNS 
     -----------------------
         - A callback is a block of instruction wrapped in a function to be called when an asynchronous call has completed. 
         - A callback is a function called at the completion of a given task; this prevents any blocking and allows other code to be run in the meantime. 
+
+        - call back is always an Arrow function!
 
         With Synchronous programming - code can be blocking - if one function takes too long, it blocks the whole program from continuing until its done. 
         Node.js - being an asynchronous platform stops that. It doesn't wait around and moves on while that stupid blocking function does it's stuff. 
@@ -57,9 +119,45 @@ JavaScript Engine V8 engine.
         -----------------------------------------------------------------------
 
 
+        
+    -----------------------
+     PROMISES 
+    -----------------------
+
+        - A Promise is an object that can be used to represnt the eventual completion of an asynchronous operation.
+
+        - Object that keeps track about whether a certain event has happened already or not. 
+        - If it does happen, then it determines what happens after the event has happened. 
+        - Implements the concept of a future value that we're expecting. 
+
+        ~~~~~~~~~~~~~~~~
+            States: 
+        ~~~~~~~~~~~~~~~~
+            A Promise can have different states: 
+                - Pending                  =  before the event has happened
+                - Settled / Resolved.      =  after the event has happened.    
+                        - after the event: 
+                            - Fulfilled || Rejected. 
+
+
+            Essentially a promise a returned object to which you attach callbacks, instead of passing callbacks into a function.                 
+
+
     -----------------------
     RESOLVING PROMISES 
     -----------------------
+
+
+        const delay = (seconds) => new Promise( function(resolve,reject){ 
+            setTimeout(()=>{
+                resolve([1,2,3,4])
+            },seconds*1000);
+        }) 
+
+        delay(1)
+            .then(function(data){
+                console.log('the delay has ended and returned: ' + data)
+            })
 
 
     REJECTING PROMISES

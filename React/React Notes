@@ -8,6 +8,7 @@ React is a JavaScript Library for building User Interfaces (UI).
 *********************************
 What is a Single Page Application
 *********************************
+
 Single HTML page - inject all your Javascript components.
 
 
@@ -230,11 +231,8 @@ Single strict rule:
 - setState calls are asynchronous - don't expect state to be immediately updated.
 
 - setState causes state in the component to be merged(using shallow merge).
-<<<<<<< HEAD
-=======
 
 - State includes data that is local or private to that component. Other Components cannot access that state.
->>>>>>> 309b4c0b55c59106bdd55cda33e36f6914b9953b
 
       ___________________
       stateless component

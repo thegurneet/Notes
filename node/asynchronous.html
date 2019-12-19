@@ -1,0 +1,33 @@
+<body>
+    <title>
+        Asynchronous coding
+    </title>
+
+    <h1>
+            Asynchronous coding
+    </h1>
+
+    <script>
+
+        var myObj = function(){
+          var privateVar = 'i am private';
+          var privateFnc = function(){
+            console.log('hello')
+          }
+          
+             return {
+              publicVar : 'i am a public var',
+              publicFnc : function(){console.log('I am a public fnc')}
+             } 
+
+        }();
+
+        console.log(Obj.privateVar);
+        console.log(Obj.publicVar);
+        console.log(Obj.privateFnc);
+        console.log(Obj.publicFnc);
+
+
+
+    </script>
+</body> ƒ

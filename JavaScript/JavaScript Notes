@@ -1607,3 +1607,21 @@ Object Destructuring:
 	{name} {name: 'Max', age:28}
 		console.log(name) //Max
 		console.log(age)//undefined.
+
+
+
+
+
+*****************************************
+        linked list 
+*****************************************
+
+A linked list is an ordered collection of data elements. A data element can be 
+represeneted as a node in a linked list. 
+
+Each node consists of two parts: 
+  - data & pointer/reference
+
+
+  
+
