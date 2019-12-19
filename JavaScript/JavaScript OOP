@@ -152,9 +152,37 @@ Classes in  JavaScript are like blueprints.
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-         Class INHERITANCE
+         Class INHERITANCE  - Prototypical INHERITANCE.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+    Inheritance is a mechanism in which one object acquires all the properties and behaviours of aother object. 
+    JavaScript works on prototype chain.
+
+        --------------------------------------
+            Classical INHERITANCE
+        --------------------------------------
+            - In Classical Inheritance it creates a copy of the behaviour from parent class into the child when we extend the class and after that parent
+                into the child when we extend the child. After that, the parent and child class are separate entities. 
+
+        --------------------------------------
+            JavaScript/ProtoType INHERITANCE
+        --------------------------------------
+        In JavaScript when we create the object it does not copy the properties or behavior, it creates a link. 
+        Similar kind of linkage gets created in case of extend of class as well.
+        This pattern is called Behavior Delegation Pattern which commonly known as prototypal inheritance in JavaScript.
+       
+                --------------------------------------
+                   Delegation Pattern
+                --------------------------------------
+
+                Delegation is like inehertiance done manually through object composition. 
+                Delegation is an abstraction mechanism which centralizes object (method) behaviour
+
+                It is a technique where an object expresses certain behavior to the outside but in reality delegates responsibility for implementing that 
+                behaviour to an associated object.
+
+
+                
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
