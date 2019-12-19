@@ -1,0 +1,42 @@
+
+
+******************************************
+        FUNCTIONAL PROGRAMMING
+******************************************
+
+CORE CONCEPTS : 
+
+
+1. Keeps functions and data separate 
+
+2. Avoids state change and mutable data 
+
+3. Treats functions as first-class citizen.
+
+
+    ---------------------------------------------------
+        Keep Functions and data separate
+    ---------------------------------------------------
+
+
+    class Person { 
+        constructor(name, age){
+            this.name = name;
+            this.age = age
+        }
+        getOlder(){
+            this.age += 1;
+        }
+    }
+
+
+    ---------------------------------------------------
+        Avoids state change and mutable data 
+    ---------------------------------------------------
+
+
+
+
+    ---------------------------------------------------
+        Treats functions as first-class citizen.
+    ---------------------------------------------------

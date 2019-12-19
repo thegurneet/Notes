@@ -1,0 +1,212 @@
+
+
+###############################
+
+###############################
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    --------------------------------------
+
+    ---------------------------------------
+
+---------
+EXAMPLE
+---------
+
+########################################
+            OOP in JavaScript
+########################################
+
+    EVERYTHING IN JS, IS AN OBJECT
+
+
+Objects in Js are like objects in real life
+    they have properties & things they can do (methods)
+
+The idea of OOP is that we use objects to model real wolrd things that we want to represent inside our programs. 
+
+Objects can contain related data and code - which represent information about the thing you are trying to model, and 
+functionnality or behaviour that you want it to have. 
+
+
+        ~~~~~~~~~~~~~~~~~~~~~~~
+            Object basics 
+        ~~~~~~~~~~~~~~~~~~~~~~~
+
+    An object is a collection of related data and/or functionnality (consists of variables and function - called properties and methods)
+
+    const person = {};   
+        console.log(person);
+            output: [object Object]   - empty object. 
+---------
+EXAMPLE
+---------
+    //this is an object literal
+    const person = { 
+        name : ['Bob', 'Smith'],
+        age : 32, 
+        gender: 'male',
+        greeting : function(){
+            alert('Hi! I\'m ' + this.name[0] + '.');
+        },
+        goodbye(){
+            console.log(this.name[0], ' says goodbye')
+        }
+
+    };
+
+    console.log(person.name)
+        output: ['Bob', 'Smith']
+     person.greeting() 
+        output: alert('Hi! I\'m ' + this.name[0] + '.');
+
+    --------------------------------------
+        Object literal
+    ---------------------------------------
+
+    Defined using the following syntax rules: 
+         - a colon sperates property name from value
+         - a comma separates each name-value pair from the next. 
+         - no commas after the last name-value pairs. 
+
+
+    A JavaScript object literal is a comma-separated list of name-value pairs wrapped in curly braces. 
+    Object literals encapsulate data, enclosing it in a tidy package. This minimizes the use of global
+    variables which can cause problems when combining code.
+
+
+
+    --------------------------------------
+        DOT Notation vs Bracket Notation
+    ---------------------------------------
+
+    The dot or bracket notation allows us to access anything encapsulated inside the object. 
+    eg: person.age || person.name || person.name.last
+    eg: person['age] || person['name'] || person['name']['last']
+
+
+
+    --------------------------------------
+        What is "this"? 
+    ---------------------------------------
+
+
+    this keyword refers to the current object the code is being written inside. 
+    this keyword is very useful - it always ensure that the correct values are used when a member's context changes. 
+
+---------
+EXAMPLE
+---------
+    const person1 = {
+  name: 'Chris',
+  greeting: function() {
+    alert('Hi! I\'m ' + this.name + '.');
+  }
+}
+
+const person2 = {
+  name: 'Deepti',
+  greeting: function() {
+    alert('Hi! I\'m ' + this.name + '.');
+  }
+}
+
+
+ this is equal to the object the code is inside
+
+it comes in handy when we are dynamically generating objects (eg using constructors)
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Object-Oriented Programming - the basics
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+ENCAPSULATION, ABSTRACTION, INHERITANCE, POLYMORPHISM
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         Classes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Classes in  JavaScript are like blueprints. 
+
+    JavaScript is a prototype-based language, every object in JS has a hidden internal property called [Prototype], that can  be  used to extend object properties and methods. 
+
+    Now the  JavaScript class is a type of function. Classes are declared with the class keyword. 
+    We use function expresstion syntax to initialize a function and class expression syntax to initialize a class. 
+
+    // Initializing a function with a function expression
+    const x = function() {}
+
+    // Initializing a class with a class expression
+    const y = class {}
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         Class INHERITANCE  - Prototypical INHERITANCE.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Inheritance is a mechanism in which one object acquires all the properties and behaviours of aother object. 
+    JavaScript works on prototype chain.
+
+        --------------------------------------
+            Classical INHERITANCE
+        --------------------------------------
+            - In Classical Inheritance it creates a copy of the behaviour from parent class into the child when we extend the class and after that parent
+                into the child when we extend the child. After that, the parent and child class are separate entities. 
+
+        --------------------------------------
+            JavaScript/ProtoType INHERITANCE
+        --------------------------------------
+        In JavaScript when we create the object it does not copy the properties or behavior, it creates a link. 
+        Similar kind of linkage gets created in case of extend of class as well.
+        This pattern is called Behavior Delegation Pattern which commonly known as prototypal inheritance in JavaScript.
+       
+                --------------------------------------
+                   Delegation Pattern
+                --------------------------------------
+
+                Delegation is like inehertiance done manually through object composition. 
+                Delegation is an abstraction mechanism which centralizes object (method) behaviour
+
+                It is a technique where an object expresses certain behavior to the outside but in reality delegates responsibility for implementing that 
+                behaviour to an associated object.
+
+
+                
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         Method Chaining
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         Constructors (under the hood) / ProtoType Model
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         ProtoType
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+    --------------------------------------
+            ProtoType INHERITANCE
+    ---------------------------------------
+
+
+
+
+

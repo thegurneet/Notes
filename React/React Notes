@@ -318,18 +318,77 @@ What is JSX?
 
 
 
-Task to do:
-
-- Create a currency convertor.
-
-*******
-functional component:
-*********
 
 
-********
-class based components:
-*******
+      ################################
+      Functional Component:
+      ################################
+          Mainly responsible for rendering UI. 
+
+          Functional Components are basic JavaScript Functions. These are typically arrow functions but can also be created with the regular function keyWord. 
+          Known as 'stateless' components as they simply accept data and disaplay them in some form. - responsible for UI. 
+
+          -React lifecycle methods cannot be used in functional components. 
+          -There is no render methods used in functional components
+          -These are mainily responsible for UI and are typically presentational only (eg. Button)
+          
+          - Can accept and use props. 
+
+          - SHOULD be favoured if you do not need to make sure of React state. 
+
+
+          const Person = (props) =< (
+              <div>
+                <h1> Hello, {props.name}</h1>
+              </div> 
+
+          )
+
+      ################################
+      Class Based Components:
+      ################################
+
+        Class components make use of ES6 class and extends the Component class in React. 
+        - Called Stateful componenets as they tend to implement logic and state. 
+        - React lifecycle methods can be used inside class components.
+        - Can pass props down to class componenets and access them with the this.props. 
+
+
+            class Person extends Component { 
+              constructor(props){
+                super(props);
+                this,state = { 
+                  myState: true;
+                }
+              }
+
+
+              render() { 
+                return(
+                  <div>
+                    <h1> Hello Person<h1>
+                  </div>
+                )
+              }
+            }
+
+
+
+
+      _______________________
+      Conclusion 
+      -----------------------
+
+        - Should use functional components if we are writing a presentational component which doesn't have its won state or needs to access a lifecycle hook. 
+        Otherwise you can stick to class components to take a look into the library recompose which allows us to write functional components and enhance them with 
+        state or lifecycle hooks. 
+
+
+
+
+
+
+
 
 
 
@@ -344,3 +403,32 @@ next week:  props & event handling.
 
 Create my own Currency convertor in ES5 and then using ES6.
 Create my own Currency convertor in React
+
+
+
+
+*******************************************************************************************************************************
+                                            Planning a React App
+*******************************************************************************************************************************
+
+1. Create a mockup — Either by using a design tool or pen and paper.
+
+2. Break the UI into components — Draw boxes around every component in your mockup.
+   Use the single responsibility principle to identify what should be its own component and not.
+
+3. Arrange all components in a hierarchy — Create a hierarchy by identifying components that are nested inside each other. 
+  This will help you to implement data flows later on.
+
+4. Define where state should live — Try to have as few stateful components as possible. Best would be to encapsulate state 
+  responsibility in a single component at the very top of your previously created hierarchy.
+
+*******************************************************************************************************************************
+                                            Organizing A React Project
+*******************************************************************************************************************************
+
+
+1. Have a consistent, though-out folder structure — Look for structuring patterns that are applicable to your project and be consistent with it.
+
+2. Write functional components if possible — Rule of thumb: If your class-based component only has a render method, make it a functional component.
+
+3. Use CSS modules — Don’t worry about same class names within your project by scoping classes locally to a component.

@@ -9,6 +9,7 @@
 
     <script>
 
+<<<<<<< HEAD
         var myObj = function(){
           var privateVar = 'i am private';
           var privateFnc = function(){
@@ -29,5 +30,13 @@
 
 
 
+=======
+const p1 = Promise.resolve(2)
+const p2 = p1.then(x => { throw new Error('failed'); })
+const p3 = p2.then(x => x * 2)
+const p4 = p3.catch(err => console.error(err))
+
+        
+>>>>>>> 504fa7346049ac82a9036efe549dd50f8abd1cda
     </script>
 </body> ƒ
