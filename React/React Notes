@@ -23,7 +23,7 @@ Single HTML page - inject all your Javascript components.
     PROS:
   *********
     SPA are much faster for the USER, because instead of waiting for the client server communication to happen
-    and wait for the browser to  re-render the page - you get instant feedback..
+    and waiting for the browser to  re-render the page - you get instant feedback..
 
 
 ****************
@@ -61,10 +61,10 @@ What React is
           JSX                                 JSX                             JSX
   **************************         **************************       **************************
   Like an XML/HTML like syntax used by React - extends ECMAScript.
-  Intended to be used by preprocessors (like Babel) to transform HTML like text found in Javascript files
+  Intended to be used by preprocessors (like Babel and WebPack) to transform HTML like text found in Javascript files
   into standard JavaScript objects.
 
-  JSX is not valid JavaScript. Web Browsers can't read JSX. It has to be complied. A JavaScript compiler will translate any JSX into regular JavaScript.
+  JSX is not valid JavaScript. Web Browsers can't read JSX. It has to be transpiled. A JavaScript transpiler will translate any JSX into regular JavaScript.
 
         ******************
           JSX element
@@ -139,7 +139,7 @@ What React is
     import ReactDOM from 'react-dom';
 
     ReactDOM is the name of a JavaScript library.
-    ReactDOM.render() is the most common way to render JSX. It takes a JSC expression, creates a corresponding tree of DOM nodes,
+    ReactDOM.render() is the most common way to render JSX. It takes a JSX expression, creates a corresponding tree of DOM nodes,
     and adds that tree to the DOM.
 
     This is the way to make a JSX expression appear onscreen.

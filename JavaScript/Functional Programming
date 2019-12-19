@@ -3,6 +3,28 @@
 ******************************************
         FUNCTIONAL PROGRAMMING
 ******************************************
+++ At the higher level, functiional programming is effectiely the interplay between decomposition ( breaking programs into small pieces) and composition (joining the pieces back together)
+++ Reactive programming What is it???
+
+
+First must learn the fundamental concepts on which Functional programming is based on: 
+
+ - Declarative programming 
+ - Pure Functions
+ - Referential transparency
+ - Immutability
+
+
+Functional programming is done in a declarative style that's easy to reason about. this improves teh overall readability 
+of the application and makes your code leaner through a combination of functions and lamda expression. 
+Functional programming treats functions as building blocks by relying on first-calss, higher-order to improve the modularity and reusability of the code. 
+
+
+
+Functional programs aim for statelessness and immutability as much as possible.
+Stateless
+code has zero chance of changing or breaking global state.
+
 
 CORE CONCEPTS : 
 
@@ -15,10 +37,10 @@ CORE CONCEPTS :
 
 
     ---------------------------------------------------
-        Keep Functions and data separate
+        Keep Functions and Data Separate
     ---------------------------------------------------
 
-
+    ****** OOP ****
     class Person { 
         constructor(name, age){
             this.name = name;
@@ -28,6 +50,20 @@ CORE CONCEPTS :
             this.age += 1;
         }
     }
+
+    ******  Functional ****
+
+    const joe = { 
+        name : "Joe", 
+        age: 30 
+    }
+
+    function increaseAge(obj) { 
+        const objCopy = _.cloneDeep(obj)
+        objCopy.age += 1
+        return objCopy
+    }
+
 
 
     ---------------------------------------------------
