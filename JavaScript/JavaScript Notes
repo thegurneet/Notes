@@ -5,7 +5,7 @@ http://backspaces.net/temp/Ebooks/ModularJSPracticalES6/Modular_JS_Practical_ES6
 
 Babel -
 
-
+s
 The Langauge has 4 function invocation types:
 
 *  function invocation    :        alert('Hello World!')
@@ -801,9 +801,6 @@ Hoisting in a function that returns a capacity status for the JavaScript Express
     .values
     .reduceRight
     .reduce
-
-
-
 
                                       ********************
                                       ****Control Flow****
