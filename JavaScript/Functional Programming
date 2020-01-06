@@ -142,86 +142,95 @@ CORE CONCEPTS :
 
 
 
-    ---------------------------------------------------
+*******************************************************************
                  Higher-Order Functions
-    ---------------------------------------------------
-
-    In all functional langauges, functions are values.
-
-    We can assign functions to a variable. 
-
-        var triple = function(x){
-            return x * 3
-        }
-        var waffle = triple; 
-        waffle(30)
-
-    In functinal langauges, functions are values, just like strings or numbers functions can be assigned 
-    to variables OR pass into other functions - Higher Order Functions.
-
-    Higher order functions are good for COMPOSITION. The fact that we can take one function
-     and put it into another function allows us to COMPOSE smaller functions into BIGGER functions. 
-
-     One of the most common one is FILTER. Filter is a function on the array that accepts another function as its argument. 
-     Which it will use to return a new filter verison of the array. 
-
-    We can create smaller functions that only take care of one piece of logic. Then, we compose more complex functions by using different smaller functions.
-
-    This technique reduces bugs and makes our code easier to read and understand.
+*******************************************************************
 
 
+    ABSTRACTION: 
+        -  In the context of programming, Abstraction hide details and gives us the ability to talk about problems at a higher (or more abstract) level. 
 
-            EXAMPLE ::::: 
-
-        var animals - [
-            {name:'Caro' , species:'dog'},
-            {name:'poppy' , species:'dog'},
-            {name:'fluffy' , species:'rabbit'},
-            {name:'jonny' , species:'dog'},
-            {name:'kito' , species:'cat'},
-            {name:'sam' , species:'horse'},
-        ]
-
-        var dogs = animals.filter(function(animal){
-            return animal.species === 'dog'
-        })
+        Higher-order functions allow us to abstract over actions, not just values. They come in serveral form. 
+            A Higher Order function has more than 2 level of functions to it. in its argument - it expects another function. OR it returns a function back to you. 
+             Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions.
 
 
-        var isDog = function(animal){
-            return animal.species === 'dogs'
-        }
+        In all functional langauges, functions are values.
 
-        var dogs = animals.filter(isDog);
-        var otherAnimals = animals.reject(isDog)
+        We can assign functions to a variable. 
+
+            var triple = function(x){
+                return x * 3
+            }
+            var waffle = triple; 
+            waffle(30)
+
+        In functinal langauges, functions are values, just like strings or numbers functions can be assigned 
+        to variables OR pass into other functions - Higher Order Functions.
+
+        Higher order functions are good for COMPOSITION. The fact that we can take one function
+        and put it into another function allows us to COMPOSE smaller functions into BIGGER functions. 
+
+        One of the most common one is FILTER. Filter is a function on the array that accepts another function as its argument. 
+        Which it will use to return a new filter verison of the array. 
+
+        We can create smaller functions that only take care of one piece of logic. Then, we compose more complex functions by using different smaller functions.
+
+        This technique reduces bugs and makes our code easier to read and understand.
 
 
 
-        -----------
-            Map
-        -----------
+                EXAMPLE ::::: 
 
-            Like the filter, MAP is another higher-order function. Also like filter - it goes through an array, BUT unlike filter it doesn't throw the objects away. 
-            Instead it TRANSAFORMS THEM. 
+            var animals - [
+                {name:'Caro' , species:'dog'},
+                {name:'poppy' , species:'dog'},
+                {name:'fluffy' , species:'rabbit'},
+                {name:'jonny' , species:'dog'},
+                {name:'kito' , species:'cat'},
+                {name:'sam' , species:'horse'},
+            ]
+
+            var dogs = animals.filter(function(animal){
+                return animal.species === 'dog'
+            })
 
 
-             var names = []; 
-             for (var i=0; i < animals.length; i++){
-                 names.push(animals[i].name);
-            };
+            var isDog = function(animal){
+                return animal.species === 'dogs'
+            }
 
-            VS 
+            var dogs = animals.filter(isDog);
+            var otherAnimals = animals.reject(isDog)
 
-            var names = animals.map(function(animal){
-                return animal.name;
-             })
 
-        -----------
-            Reduce
-        -----------
 
-        Reduce is another Higher-Order function. 
-        reduce is the multi tool on list transformations. It can be used to express any list 
-        transformations. 
+            -----------
+                Map
+            -----------
+
+                Like the filter, MAP is another higher-order function. Also like filter - it goes through an array, BUT unlike filter it doesn't throw the objects away. 
+                Instead it TRANSAFORMS THEM. 
+
+
+                var names = []; 
+                for (var i=0; i < animals.length; i++){
+                    names.push(animals[i].name);
+                };
+
+                VS 
+
+                var names = animals.map(function(animal){
+                    return animal.name;
+                })
+
+            -----------
+                Reduce
+            -----------
+
+            Reduce is another Higher-Order function. 
+            reduce is the multi tool on list transformations. It can be used to express any list 
+            transformations. 
 
 
 
@@ -389,3 +398,15 @@ CORE CONCEPTS :
             }
 
     CAN LEAD TO AN INFINTE LOOP IF NOT CAREFUL.
+
+
+
+
+*******************************************************************
+                            Objects 
+*******************************************************************
+
+
+
+
+
