@@ -162,6 +162,18 @@ CORE CONCEPTS :
     Higher order functions are good for COMPOSITION. The fact that we can take one function
      and put it into another function allows us to COMPOSE smaller functions into BIGGER functions. 
 
+    There are alot of Higher Order Functions available for JavaScript Arrays: 
+        - .filter() 
+        - .map()
+        - .reduce()
+        - .sort()
+        - .fill();
+
+
+     ------------
+        FILTER
+     -----------
+
      One of the most common one is FILTER. Filter is a function on the array that accepts another function as its argument. 
      Which it will use to return a new filter verison of the array. 
 
@@ -200,8 +212,9 @@ CORE CONCEPTS :
             Map
         -----------
 
-            Like the filter, MAP is another higher-order function. Also like filter - it goes through an array, BUT unlike filter it doesn't throw the objects away. 
-            Instead it TRANSAFORMS THEM. 
+            Like the filter, MAP is another higher-order function. Also like filter - it goes through an array,
+            BUT unlike filter it doesn't throw the objects away. 
+            Instead it TRANSFORMS THEM. 
 
 
              var names = []; 
