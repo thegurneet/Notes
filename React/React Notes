@@ -394,11 +394,41 @@ What is JSX?
       React Router:
  ################################
 
-  At it's core - what React Router does is conditionally render certain componenets to display depending on the route being 
-  used in the URL(/ for home, /about for about etc)
+  npm install react-router-dom
+  import { BrowserRouter, Route } from  'react-router-dom'
 
-  Many Modern websites are actually made up of a single page. They just look like multiple pages because they contain components 
-  which render like separate pages. These are usually referred to as SPAs - singlepage applications. 
+      At it's core - what React Router does is conditionally render certain componenets to display depending on the route being 
+      used in the URL(/ for home, /about for about etc)
+
+      Many Modern websites are actually made up of a single page. They just look like multiple pages because they contain components 
+      which render like separate pages. These are usually referred to as SPAs - singlepage applications. 
+
+      Router injects the component we need - rahter than the client having to talk to the server. 
+
+      EXAMPLE: 
+
+      <BroswerRouter>
+        <Route exact path='/' component={Home}>
+        <Route  path='/About' component={About}>
+      </BroswerRouter>
+
+
+    -------NAVBAR LINKS -----
+    These stop the client from contacting the server and lets react serve the content instead. 
+
+      import {Link, NavLink} from  'react-router-dom'
+
+      <nav> 
+        <ul>
+          <li>  <Link to='/'>Home </Link>  </li>
+          <li>  <Link to='/about'>About </Link>  </li>
+        </ul>
+      </nav>
+
+
+
+
+
 
 ____________________________
   Higher Order Components HOC
