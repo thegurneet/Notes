@@ -1,0 +1,66 @@
+
+
+
+            Library Script:              <script src="https://d3js.org/d3.v5.min.js"></script>
+
+
+************************************
+                 SVG - Scalabale Vector Graphics
+************************************
+--------------------------------------------------------------------------------------------------
+ - Scalabale Vector Graphics 
+    - Make them bigger(or smaller) without losing qulity 
+        - Unlike other formats like png or jpg
+    - Very small file size ( quick to load)
+
+    ####### SYNTAX ######
+        <svg width='600' height='600'>  
+            <circle cx='150' cy='150' r='5' fill='grey'></circle>
+        </svg>
+
+---------------------------------------------------------------------------------------------------
+
+    *****************************
+             SVG Paths 
+    *****************************
+---------------------------------------------------------------------------------------------------
+
+    <path d='M150 0 L75 200 L225 200 Z'/>
+
+    M - moveto 
+
+    L - lineto
+
+    Z - closepath
+
+    path has an attribute called 'd' , and the d attribute tells the SVG how to draw the path. 
+
+    H - horizontal lineto
+
+    V - vertical lineto
+    
+    S - curveto
+
+    C - smooth curveto
+
+
+
+---------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
