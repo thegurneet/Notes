@@ -426,7 +426,28 @@ What is JSX?
       </nav>
 
 
+  By adding props to a component, we automatically add router information to that component.
 
+  const About = (props) => { 
+    console.log(props)          // we add extra information to props. history, location, match
+    return()
+  }
+
+  the router adds extra info to the props object. 
+
+
+  -----------Route Parameters-----------------
+
+  - Part of a URL that can change 
+  - Usually see them on URLs for individual records
+  
+  User Profile Route: 
+    mysite.com/users/ypshi2k1
+    mysite.com/user/gurneetS
+
+  Cooking Recipe page: 
+    mycooksite.com/recipe/12
+    mycooksite.com/recipe/15
 
 
 
@@ -440,10 +461,70 @@ ____________________________
   Concretely, a higher-order componenet is a function that takes a component and returns a new component. 
   Whereas a component transforms props into UI, a higher-order component transforms a component into another component.
 
+  They're functions which wrap other components and give them 'superpowers' or rather, extra features. 
+
+
+
+
+-----------------------------
+      LifeCycle Hooks
+-----------------------------
+
+  Component follows a cycle from when it’s created and mounted on the DOM to when it is unmounted and destroyed.
+  This is what we refer to as the Component lifecycle. React provides hooks, methods that get called automatically 
+  at each point in the lifecycle, that give you good control of what happens at the point it is invoked.
+
+  Our lifecycle is broadly categorized into three parts: Mounting, Updating and Unmounting.
+
+
 
  ################################
-      Redux
+             Redux
  ################################
+
+  npm i redux 
+  npm i react-redux
+
+ - Central data store for all all data 
+ - Any component can access data from it
+ - Make state management easy
+
+We can store data, that we need for our application, that is going to be shared between componenets - Inside the
+a Central Data Store (Redux). 
+
+Any component can access this Central Data Store. 
+
+
+PROCESS: 
+
+  1. We define a central store with Redux - where our data is kept. 
+    - If a component wants to access some of that data, the component subscribes to changes to that data. 
+      and redux passes the compoenent that data in the form of props. 
+
+ 2. When we want to make a change we DISPATCH an Action. Actions describe the changes that we want to make 
+    and an action might be something like add post or to add a new item. With this action we can pass along a payload = data. 
+
+  3. The Reducer takes in the action and then understands the type of action - ('oh I know this is an add post action')
+      - so i'm going to take the data you've given me and im going to the central data store and update it there. 
+
+
+  4. REDUX THUNK (Middleware) - for using firebase/any other database.
+    - thunk: 
+      - halts the dispatch 
+      - performs async request
+      - resumes dispatch
+
+
+      Action passed to Reducer   ------------>------------ REDUCER  
+          |       ---------->middleware---^                 |  Reducer updates the Central State 
+          |                                                 |
+    DISPATCH ACTION                              REDUX  A CENTRAL DATA STORE
+          |                                                 |
+          |                                                 |  component subscribes To changes - Props
+    component dispatches an action.   ---------<---------COMPONENTS      
+    (addPost) Contains Optional Payload
+
+
 
 
 

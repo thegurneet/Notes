@@ -21,3 +21,72 @@ Tuples         -    tup         - Ordered immutable sequence of object (10,'hell
 Sets           -    set         - Unordered collection of unique objects : {'a','b'}
 
 Booleans       -    bool        - Logical True or False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+################## TO LEARN ########################
+
+
+- List Indexing and slicing 
+- built in - list(), tuple(), set(), key(), value() 
+- split () 
+- join () 
+
+- boolean types 
+- Logical operators - in, and, or & not
+- input functions
+
+- python loops() 
+- range() built-in
+
+- Python package index PyPL
+- pip 
+- Pipenv 
+
+- File manipulation
+- open() function 
+
+- Exception handling 
+
+- function in python 
+- def, return, function arguments in Python
+- global keyword
+- variable scope
+-About the 'import' statement.
+-Namespaces.
+-Using Python modules in another Python Script file.
+-Command-line arguments using sys.argv (import sys)
+
+-List comprehension
+-Tuple comprehension
+-Generators
+-yield modifier
+-Ternary operators
+
+- OOP concepts 
+- class 
+- instance creation 
+- self 
+- __init__() 
+- __name == '__main__' 
+
+
+- Learn the asynchronous programming concepts.
+- The threading and subprocess module.
+- asyncio - async and await
+
+
+- API integration  https://www.youtube.com/watch?v=pxofwuWTs7c
+- Environment setup - https://www.youtube.com/watch?v=-nh9rCzPJ20
+
