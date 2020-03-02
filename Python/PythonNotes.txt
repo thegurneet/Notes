@@ -27,6 +27,217 @@ Booleans       -    bool        - Logical True or False
 
 
 
+################## List Indexing and Slicing ###########################
+
+List - an ordered sequence of Objects : [0,1,2,3,4,'A','B','C']
+
+We can use the Slice Notation for any sequential data types like lists, strings, tuples, bytes, bytearrays and ranges. 
+
+Indexing allows you to access/change/delete only a single cell of a list.
+
+~~~~~INDEXING~~~~~~~~
+ 
+
+ colors = ['red', 'green', 'blue', 'yellow', 'white', 'black']
+
+    print(color[0])  => 'red'
+
+
+~~~~ Negative Indexing~~~~~~~
+
+ colors = ['red', 'green', 'blue', 'yellow', 'white', 'black']
+
+
+    print(color[-1]) => 'black'
+    print(color[-3]) => 'yellow'
+
+
+~~~~ Assignment ~~~~~
+
+    possible to change cell content usingg an assignment operation 
+
+    basket = ['bread', 'butter','milk']
+    basket[0] = 'cake'
+
+    print(basket) = ['cake', 'butter','milk']
+
+
+    **Assignment and deletion operations are not applicable to immutable sequential types.
+
+
+~~~~ Deletion ~~~~~~~
+    can delete any element from the list by using del statement
+
+    basket = ['bread', 'butter','milk']
+    del basket[0]
+
+    print(basket) => ['butter','milk']
+
+
+    **Assignment and deletion operations are not applicable to immutable sequential types.
+
+
+~~~~ SLICE NOTATION ~~~~~~~
+
+    Slice allows us to updates a bunch of cells at once. 
+
+     nums = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+     
+     sliced_nums = nums[2:7]
+     print(sliced_nums) => [30, 40, 50, 60, 70]
+
+
+            slice syntax is : start:stop:step 
+                start = refers to the index of the elements which is used as start of our slice. 
+                stop = referes to the index of the element we should stop just before to finish slice. 
+                step = allows you to take each nth element whithin a start:stop range. 
+    
+    Slice Deletion 
+
+        nums = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+        del nums[3:7]
+        print(nums) => [10,20,30,80,90]
+
+
+
+
+
+
+############# SPLIT and JOIN ###############
+
+We can use the function split() to split a string and join() to join a string.
+
+~~~~~~~~ SPLIT ~~~~~~~~~~
+
+    string = 'Geek for Geeks'
+    string_split = string.split(' ')
+        string_split == ['Geek','for','Geeks']
+
+    the .split creates a new list and separates with each space (' ')
+
+    string = 'Greek*for*Geeks'
+    string_split = string.split('*')
+        string_split == ['Geek','for','Geeks']
+
+
+
+~~~~~~~~ JOIN ~~~~~~~~~~~
+    
+    string = ['Geek','for','Geeks'] 
+    string_join = '-'.join(string)
+        string_join = Geek-for-Geek
+    
+
+
+########### Booleans #############
+
+ A Boolean value is either true or false. 
+    Booleans values can be manipulated and combined with Boolean operators. 
+
+    Boolean Operators: 
+        - or        Returns True if one of the statements is true
+        - and       Returns True if both statements are true
+        - not       Reverse the result, returns False if the result is true
+        - == 
+        - != 
+
+
+    A = true , B = false , C = false 
+
+    A or B = true
+    A and B = false 
+    not A = false 
+    not B = true
+
+    A or (C and B) = true
+    (A and B) or C = false
+
+    
+
+
+########### Input and Output ############
+
+    Two functions to handle input from a user and system. 
+
+    1. input(prompt)   accepts input from a user
+    2. print()         display output on the console 
+
+    input() function converts it into a string. if user enters an iteger value, it will convert it into a string. 
+    have to perform a typ conversion on the input value.
+
+
+
+
+############ Loops  #############
+
+    Python has 2 type of loops: for and while. 
+
+~~ for ~~~~~~
+
+    the for loop iterates over a given sequence. 
+
+        numbers = [1,2,3,4,5]
+        
+        for number in numbers:
+            print(number) 
+
+        // print 1 2 3 4 5 on a new line. 
+
+    
+~~ for and range ~~~~~
+
+    for loops can iterate over a sequence of numbers using the range and xrange functions. The difference between range and xrange
+    is that the range function returns a new list with numbers of that specifed range, where as xrange returns an iterator (more efficient)
+
+        for x in range(5)
+            print(x)
+
+            //print 0 to 5
+        
+        for x in range(3,6)
+            print(x)
+
+            //prints 3,4,5
+
+    
+~~ while ~~~~~
+
+    while loop repeats as long as a certain Boolean condiiton is met. 
+
+    count = 0
+
+    while count < 5:
+        print(count)
+        count += 1
+
+~~ break and continue~~
+
+    break is used to exit a for loop or a while loop, whereas continue is used to 
+    skip the current block, and return to the 'for' or 'while' statement. 
+
+    count = 0
+    while True: 
+        print (count)
+        count += 1
+        if count >= 5:
+            break
+    
+    for x in range(10):
+        if x % 2 == 0:
+            continue
+        print(x)
+
+~~ else clause ~~~
+
+    We can use else for loops. When the loop condition of "for" or "while" statement fails then code part in "else" is executed. 
+    If break statement is executed inside for loop then the "else" part is skipped. 
+
+    count = 0
+    while(count<5):
+        print(count)
+        count += 1
+    else:
+        print('count valued reached')
 
 
 
@@ -34,28 +245,104 @@ Booleans       -    bool        - Logical True or False
 
 
 
+
+############ File Handling #############
+
+
+    File handling in Python requires no importing of modules. 
+
+    File object provides basic functions and methods necessary to manipulate files by default. 
+        functions include: read, append or write to a file. 
+
+~~~ Open ~~~
+
+    Open(file,mode) 
+
+    The open function takes two arguments, the name of the file and the mode for which we would like to open the file. 
+    r = reading. w = writing . a = appending.
+
+        filename = "hello.txt"
+        file = open(filename, 'r')
+        for line in file:
+            print line
+
+~~ Read ~~
+
+    Read(), readLine() and readLines()
+
+    read()  : return one big string 
+
+    readline : return one line at a time 
+
+    readlines : returns a list of lines
+
+~~ Write ~~ 
+
+    the method writes a sequences of strings to the file. 
+
+    write ()   = used to wrtie a fixed sequence of character to a file. 
+
+    writelines()  = writelines can write a list of strings. 
+
+~~ Close ~~ 
+    When you’re done with a file, use close() to close it and free up any system
+    resources taken up by the open file 
+
+
+
+
+########### Exception Handling ##############
+
+    There are two distinguishable kinds of errors :
+         syntax errors and exceptions. 
+
+~~ Syntax Errors ~~
+
+    Also known as parsing error. 
+
+        while True print('Hello world')
+                        ^
+        SyntaxError: invalid syntax
+
+    The parser repeats the offending line and displays a little ‘arrow’ pointing at the earliest point in the line where the error was detected
+
+~~ Exception ~~ 
+
+    If a statement or expression is syntactially correct - may cause an error when an attempt is made to 
+    execute it. Errors detected during execution are called exceptions and are not unconditionally fatal. 
+
+~~ Handling Exceptions ~~ 
+
+    while True: 
+        try: 
+            x = int(input('please enter a number  : '))
+            break
+        except ValueError: 
+            print('Oops! that was no valid number. Try again)
+
+
+    Steps: 
+    1. the try clause (the statement(s) between the true and except keywords) is executed. 
+    2. if there is no exceptions, the except clause is skipped. 
+    3. if an exceptions occurs during execution of the try - the rest of the clause is skipped. 
+        If the exception type matches the except then it moves into the except clause (). 
+    4. If an exception occurs which does not match the exception named in the except clause, 
+        it is passed on to outer try statements; if no handler is found, it is an unhandled
+        exception and execution stops with a message as shown above.
+
+
+
+
+########### ##############
 
 ################## TO LEARN ########################
 
 
-- List Indexing and slicing 
-- built in - list(), tuple(), set(), key(), value() 
-- split () 
-- join () 
-
-- boolean types 
-- Logical operators - in, and, or & not
-- input functions
-
-- python loops() 
-- range() built-in
 
 - Python package index PyPL
 - pip 
 - Pipenv 
 
-- File manipulation
-- open() function 
 
 - Exception handling 
 
