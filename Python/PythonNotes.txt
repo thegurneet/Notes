@@ -199,6 +199,11 @@ We can use the function split() to split a string and join() to join a string.
 
             //prints 3,4,5
 
+        a = ['Mary', 'had', 'a', 'little', 'lamb']
+        
+        for i in range(len(a)):
+            print(i, a[i])
+
     
 ~~ while ~~~~~
 
@@ -242,7 +247,72 @@ We can use the function split() to split a string and join() to join a string.
 
 
 
+########### Control Flows  ##############
 
+~~ If Statements ~~
+
+
+    x = int(input(" Please enter an integer: ))
+        if < 0:
+            x = 0
+            print('negative changed to 0')
+        elif x >= 0: 
+            print ('Zero and higher')
+        else:
+            print('yh')
+
+~~ Switch Statements ~~ 
+
+    There are 2 ways to write Switch cases in Python: 
+
+    string week(int i) { 
+        siwtch(i) { 
+            case 0: 
+                return "Sunday"
+                break;
+            case 1:
+                return "Monday"
+                break;
+            case 2:
+                return "Tuesday"
+                break;
+            case 3:
+                return "Wednesday"
+                break;
+            case 4: 
+                return "Thursday" 
+                break;
+            case 5: 
+                return "Friday"
+                break;
+            case 6: 
+                return "Saturday"
+                break;
+            default
+                return "Invalid day"
+        }
+    }
+
+    def week(i):
+        switcher={
+            0:'Sunday',
+            1:'Monday',
+            2:'Tuesday',
+            3:'Wednesday',
+            4:'Thursday',
+            5:'Friday',
+            6:'Saturday'
+        }
+        return switcher.get(i, "Invalid day of week)
+
+~~ break and continue ~~
+    the break statement, breaks out of the innermost enclosing for or while loop. 
+
+~~ pass Statements ~~
+
+~~ Functions ~~
+
+~~ Lambda Expressions ~~
 
 
 
@@ -331,9 +401,26 @@ We can use the function split() to split a string and join() to join a string.
         exception and execution stops with a message as shown above.
 
 
+    Try statement may have more than one except clause - specify handlers for different exceptions. 
+
+~~ Raising Exceptions ~~ 
+
+    The raise statement allows us to force a specifed exception to occur. Example:
+
+        >>>raise NameError('HiThere)
+        TraceBack (most recent call last):
+            File "<stdin>", line 1,  in <module>
+        NameError: HiThere
 
 
-########### ##############
+
+
+
+
+
+
+
+
 
 ################## TO LEARN ########################
 
