@@ -415,6 +415,197 @@ We can use the function split() to split a string and join() to join a string.
 
 
 
+########### Functions definition  ##############
+
+    a function definition defines a user-defined function object. 
+
+    def area(radius): 
+        area = 3.142*radius*radius
+        printThis(area)
+
+
+    def greet(name='gurneet',time='morning'):
+        print(f'Good {time} {name}, hope you good')
+
+    name = input('enter your name : ')
+    time = input('enter time time of day: ')
+
+
+
+
+########### Class definition ##############
+    A class definition defines a class object.
+
+    A class is basically a blueprint for creating instances. 
+
+
+        class Employee:
+            pass 
+
+    pass  - means the class is empty and we don't want to do anything with it now. 
+
+
+
+
+    Class objects support two kinds of operations: Attribute References and Instantiation.
+
+ ~~ Attribute References ~~ 
+    
+    class MyClass: 
+        i = 12345
+
+        def f(self):
+            return 'hello world
+
+    MyClass.i and MyClass.f are valid Attribute References.
+
+ ~~ Instantiation ~~
+
+        class MyClass: 
+            i = 12345
+
+            def f(self):
+                return 'hello world
+
+    Class Instantiation uses function nontation. 
+
+    x = MyClass()    - creates a new instance of the class and assigns this object to the loval variable x. 
+
+~~ __init__ ~~   (constructor)
+    The instantiation operation (“calling” a class object) creates an empty object. 
+    Many classes like to create objects with instances customized to a specific initial state.
+
+    class Employee:
+        def __init__(self, first, last , pay): 
+            self.fname = first                         // this is an instance variable.
+            self.lname = last 
+            self.pay = pay 
+
+    emp1 = Employee('Gurneet', 'Singh', 50000)
+           
+
+~~ Class functions ~~ 
+
+    class Employee:
+    def __init__(self,first,last,pay):
+        self.fname = first
+        self.lname = last
+        self.pay = pay
+        self.email = first + '.' + last + '@company.com'
+
+    def print_fullname(self):
+        return '{} {}'.format(self.fname, self.lname)
+
+
+    emp1 = Employee('Gurneet', 'Singh', 50000)
+    print(emp1.print_fullname())
+
+~~ Class Variables ~~ 
+
+    class Employee:
+
+        num_of_emp = 0                      // class variables
+        raise_amount = 1.04
+
+        def __init__(self,first,last,pay):
+            self.fname = first
+            self.lname = last
+            self.pay = pay
+            self.email = first + '.' + last + '@company.com'
+
+            Employee.num_of_emp += 1        // updating class variable everytime a new instance of employee is made
+
+        def print_fullname(self):
+            return '{} {}'.format(self.fname, self.lname)
+
+        def apply_raise(self):
+            self.pay = int(self.pay * self.raise_amount)
+
+
+        emp1 = Employee('Gurneet', 'Singh', 50000)
+        emp2 = Employee('tom', 'Gareth', 20000)
+        print(emp1.num_of_emp)
+
+~~ classMethod vs staticMethod ~~ 
+
+    regular methods in a class automatically take the instance as the first argument.
+
+    classMethods are alternative constructors.
+    
+    class Employee:
+
+        num_of_emp = 0
+        raise_amount = 1.04
+
+        def __init__(self,first,last,pay):
+            self.fname = first
+            self.lname = last
+            self.pay = pay
+            self.email = first + '.' + last + '@company.com'
+
+            Employee.num_of_emp += 1
+
+        def print_fullname(self):
+            return '{} {}'.format(self.fname, self.lname)
+
+        def apply_raise(self):
+            self.pay = int(self.pay * self.raise_amount)
+
+        @classmethod 
+        def set_raise_amount(cls, amount):
+            cls.raise_amount = amount
+
+        @classmethod
+        def from_string(cls,emp_str):
+            first, last, pay = emp_str.split('-')
+            return cls(first,last,pay)
+
+
+    new_emp1 = Employee.from_string('Gurneet-Singh-7000')
+    print(new_emp1.lname)
+
+
+
+    STATIC METHODS 
+
+    regular methods automatically pass the instance(self) as the first argument
+    classMethod automatically pass the class (cls) as the first argument. 
+
+    Static Methods pass nothing automatically. 
+
+    import datetime
+    class Employee:
+
+        num_of_emp = 0
+        raise_amount = 1.04
+
+        def __init__(self,first,last,pay):
+            self.fname = first
+            self.lname = last
+            self.pay = pay
+            self.email = first + '.' + last + '@company.com'
+
+        @staticmethod
+        def is_workDay(day):
+            if (day.weekday() == 5) or day.weekday() == 6:
+                return False
+            return True
+
+
+
+emp_1 = Employee('Gurneet', "Singh", 50000)
+my_date = datetime.date(2020,4, 10)
+print(Employee.is_workDay(my_date))
+
+
+
+
+###########  ##############
+###########  ##############
+###########  ##############
+###########  ##############
+###########  ##############
+
 
 
 
