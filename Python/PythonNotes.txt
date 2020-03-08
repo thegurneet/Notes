@@ -591,21 +591,38 @@ We can use the function split() to split a string and join() to join a string.
                 return False
             return True
 
+~~ Inheritance ~~ 
+    
+    Inheritance allows us to inherit attributes and methods from a parent class. 
+    This is useful because we can create subclasses and get all the functionality 
+    of our parent class and we can overwrite or add completey new functionality. 
 
 
-emp_1 = Employee('Gurneet', "Singh", 50000)
-my_date = datetime.date(2020,4, 10)
-print(Employee.is_workDay(my_date))
+
+    class Animal:
+        has_eyes = True 
+
+        def __init__(self,type,breed,color,legs):
+            self.type = type
+            self.breed = breed 
+            self.color = color
+            self.legs = legs
+
+    class Dog(Animal):              // inherits all the Animal attributes
+        pass
 
 
+~~ Property Decorators, Getters, Setters and Deleters ~~ 
 
 
 ###########  ##############
 ###########  ##############
 ###########  ##############
 ###########  ##############
-###########  ##############
 
+
+########### RESTFUL API  ##############
+https://realpython.com/api-integration-in-python/#appendix-rest-in-a-nutshell
 
 
 
